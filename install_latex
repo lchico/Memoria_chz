@@ -1,0 +1,6 @@
+ sudo apt-get install texlive-science
+ sudo apt-get install texlive-lang-spanish 
+ sudo apt-get install texlive-bibtex-extra biber
+ sudo tlmgr install collection-fontsrecommended
+ sudo apt-get install texlive-fonts-recommended
+ sudo apt-get install ttf-mscorefonts-installer
