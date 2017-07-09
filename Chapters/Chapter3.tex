@@ -38,53 +38,114 @@
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
-\section{Análisis del software}
- 
-La idea de esta sección es resaltar los problemas encontrados, los criterios utilizados y la justificación de las decisiones que se hayan tomado.
+\section{Diseño e Implementación}
+En este capítulo se verá como se desarroló un hardware básico para poder simular el entorno de funcionamiento y como fue implementado el firmware.
+%La idea de esta sección es resaltar los problemas encontrados, los criterios utilizados y la justificación de las decisiones que se hayan tomado.
+%Se puede agregar código o pseudocódigo dentro de un entorno lstlisting con el siguiente código:
 
-Se puede agregar código o pseudocódigo dentro de un entorno lstlisting con el siguiente código:
+\section{Hardware}
 
-\begin{verbatim}
-\begin{lstlisting}[caption= "un epígrafe descriptivo"]
+Se implemento el diseño de un circuito, el cual permitiria simular el entorno de funcionamiento de la bodega. Para ello se utilizó lo aprendido a la largo del curso de \emph{diseño de PCBs en KICAD}. El sistema cuanta con:
+  \begin{itemize}
+    \item 1 Salida con regulacion de corriente, para simular sensores de 4mA a 20mA. Figura \ref{fig:temp_tens}.
+    \item 1 Salida con tension variable, utilizando el regulador LM317. Figura \ref{fig:temp_tens}.
+    \item 1 Salida del sensor de temperatura LM35. Figura \ref{fig:temp_tens}.
+    \item 2 Salidas con tensión variable, utilizando potenciometros. Figura \ref{fig:temp_tens}.
+    \item 4 Entradas digitales conectadas a leds. Figura \ref{fig:pul_leds}.
+    \item 4 Salidas conectadas a pulsadores. Figura \ref{fig:pul_leds}.
+    \item 1 Socalo para la conxion del modulo SIM800L. Figura \ref{fig:essim800}.
+    \item 1 salida de 5V a 3A y otra de 3.3V a 1A. Figura \ref{fig:fuente}.
+  \end{itemize}
 
-	las líneas de código irían aquí...
-	
-\end{lstlisting}
-\end{verbatim}
+El esquemático implementado es el siguiente:
+\begin{figure}[h]
+      \centering
+      \includegraphics[page=1,scale=0.3,angle=270]{./Figures/schematic.pdf}
+      \caption{Esquemático para la coneccion del módulo sim800l e indice de esquemáticos.}
+      \label{fig:essim800}
+\end{figure}
 
-A modo de ejemplo:
+\begin{figure}[h]
+      \centering
+      \includegraphics[page=3,scale=0.3,angle=270]{./Figures/schematic.pdf}
+      \caption{Esquemático de la fuente de alimentacion DC/DC.}
+      \label{fig:fuente}
+\end{figure}
 
-\begin{lstlisting}[caption=Pseudocódigo del lazo principal de control.]  % Start your code-block
+\begin{figure}[h]
+      \centering
+      \includegraphics[page=4,scale=0.3,angle=270]{./Figures/schematic.pdf}
+      \caption{Esquema del regulador de corriente, de tensión y del sensor de temperatura.}
+      \label{fig:temp_tens}
+\end{figure}
 
-#define MAX_SENSOR_NUMBER 3
-#define MAX_ALARM_NUMBER  6
-#define MAX_ACTUATOR_NUMBER 6
+\begin{figure}[h]
+      \centering
+      \includegraphics[page=5,scale=0.3,angle=270]{./Figures/schematic.pdf}
+      \caption{Esquema entradas a leds y salidas de los pulsadores.}
+      \label{fig:pul_leds}
+\end{figure}
 
-uint32_t sensorValue[MAX_SENSOR_NUMBER];		
-FunctionalState alarmControl[MAX_ALARM_NUMBER];	//ENABLE or DISABLE
-state_t alarmState[MAX_ALARM_NUMBER];						//ON or OFF
-state_t actuatorState[MAX_ACTUATOR_NUMBER];			//ON or OFF
 
-void vControl() {
+El modulo sim800l que se muestra en la siguiente Figura \ref{fig:sim800l}, es un modem gprs que cuenta con las siguientes especificaciones:
 
-	initGlobalVariables();
-	
-	period = 500 ms;
-		
-	while(1) {
+\begin{figure}[h]
+      \centering
+      \includegraphics[scale=0.2]{./Figures/sim800.png}
+      \caption{Modem SIM800L.}
+      \label{fig:sim800l}
+\end{figure}
 
-		ticks = xTaskGetTickCount();
-		
-		updateSensors();
-		
-		updateAlarms();
-		
-		controlActuators();
-		
-		vTaskDelayUntil(&ticks, period);
-	}
-}
-\end{lstlisting}
+\begin{itemize}
+ \item Alimentacion: 3.4V a 4.4V (4.0V recomendado)
+ \item  Todos los pines del módulo disponibles en pads de 2.54mm.
+ \item  CuatriBanda 850/900/1800/1900MHz
+ \item  GPRS Multi Slot class 8/10
+ \item  Control mediante comandos AT (GSM 07.07 ,07.05 y comandos AT SIMCOM).
+\end{itemize}
 
+%
+%\begin{verbatim}
+%\begin{lstlisting}[caption= "un epígrafe descriptivo"]
+%
+%	las líneas de código irían aquí...
+%	
+%\end{lstlisting}
+%\end{verbatim}
+%
+%A modo de ejemplo:
+%
+%\begin{lstlisting}[caption=Pseudocódigo del lazo principal de control.]  % Start your code-block
+%
+%#define MAX_SENSOR_NUMBER 3
+%#define MAX_ALARM_NUMBER  6
+%#define MAX_ACTUATOR_NUMBER 6
+%
+%uint32_t sensorValue[MAX_SENSOR_NUMBER];		
+%FunctionalState alarmControl[MAX_ALARM_NUMBER];	//ENABLE or DISABLE
+%state_t alarmState[MAX_ALARM_NUMBER];						//ON or OFF
+%state_t actuatorState[MAX_ACTUATOR_NUMBER];			//ON or OFF
+%
+%void vControl() {
+%
+%	initGlobalVariables();
+%	
+%	period = 500 ms;
+%		
+%	while(1) {
+%
+%		ticks = xTaskGetTickCount();
+%		
+%		updateSensors();
+%		
+%		updateAlarms();
+%		
+%		controlActuators();
+%		
+%		vTaskDelayUntil(&ticks, period);
+%	}
+%}
+%\end{lstlisting}
+%
 
 
