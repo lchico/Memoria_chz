@@ -1,0 +1,178 @@
+% Chapter Template
+\chapter{Ensayos y Resultados} % Main chapter title
+En este capítulo se expone cuales fueron las pruebas realizadas para determinar que el sistema funciona en forma correcta.
+\label{Chapter4} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
+
+\section{Banco de pruebas}
+Para poder simular el comportamiento de un sensor de temperatura y la descarga de una bateria. Se implemento una placa básica la cual ya fue vista en el capitulo 3.2, que para facilidad del lector volvemos a mostrarla en la siguiente figura \ref{fig:placa_básica}, la cual consta de dos potenciomtros, que permiten simular la variacion de estos dispositivos. Sobre la misma se conecto un conversor RS232 a TTL, para lograr la integración del modem GPRS \emph{SIM800L}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.03]{./Figures/placa_basica.jpg}
+  \caption{Placa de simulación de temperatura y estado de la batería con el modulo SIM800l integrado.}
+  \label{fig:placa_básica}
+\end{figure}
+
+Todo esto se integra la Plataforma de la CIAA-NXP, vease figura \ref{fig:prototipo} para verificar el correcto funcionamiento del firmware desarrollado.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.04]{./Figures/prototipo.jpg}
+  \caption{Placa de simulación de temperatura y estado de la batería con el modulo SIM800l integrado.}
+  \label{fig:prototipo}
+\end{figure}
+
+\section{Configuraciones para la PC}
+
+Para la realizacion de los ensayos, comenzamos configurando la PC en forma adecuada. Para ello en la siguiente figura \ref{fig:hw_pc} vamos a ver como configurar en linux la interfaz de red. Es importante destacar que dichos comandos son ejecutados con el permiso se super usuario, \emph{root}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.35]{./Figures/config_net_console.png}
+  \caption{Configuración de una red estatica para la interfaz ethernet.}
+  \label{fig:hw_pc}
+\end{figure}
+
+Una vez que tenemos la configuracion de red adecuada vamos a proceder a dirigirnos a un navegador web. Y como vemos en la siguiente imagen\ref{fig:web_monitoreo} ingresamos el numero de ip correspondiente al dispositivo de control, la cual es: 192.168.1.11 
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.25]{./Figures/web_monitoreo.png}
+  \caption{Pantalla principal de la web de monitoreo.}
+  \label{fig:web_monitoreo}
+\end{figure}
+
+En esta pantalla vamos a tener toda la informacion correspondiente al sistema. Arriba a la izquierda podemos ver el estado de la temperatura, con sus rangos maximos y minimos seteados. Y debajo de dicho termometro podemos ver si esta activada: la alarma y el control automatico.
+
+Luego arriba y a la derecha podemos ver los estados de los actuadores, la electrovalvula y la bomba. Estos le permiten al cliente controlar en forma remota dos actuadores y el sistema correspondiente a la bomba de refigeración con la electroválvula asociada. El sensor de temperatura permitira informarle al sistema de control automático cuando debe acutar acorde a los rangos establecidos, esto solo en el caso de estar activado dicho control automático. 
+
+Abajo a la izquierda tenemos en nivel de señal correspondiente al modem GSM, mediante el cual podremos saber si la cobertura de señal de la red de telefonia movil esta en condiciones de operar y permitirnos el servicio de alertas mediante mensajes SMS. 
+
+Finalmente abajo a la derecha tenemos el estado de la batería, el cual va a permitir al sitema continuar en funcionamiento en caso de un corte de energía. El principal uso de este será mantener la posibilidad de enviar un mensaje SMS notificando el corte de energía.
+
+\section{Verificación del sistema web embebido} 
+De lo explicado en la seccion anterior, se procedera a navergar por el menú, vease figura \ref{fig:web_menus_num} las diferentes configuraciones para constatar de que todo el sistema esta funcionando en forma correcta. Al precionar donde dice menu, obtendremos las opciones que vemos en la figura anterior. Donde:
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.25]{./Figures/web_menus_num.png}
+  \caption{Opciones del al precionar sobre el menu desplegable.}
+  \label{fig:web_menus_num}
+\end{figure}
+
+
+
+\begin{description}
+  \item[1. Monitoreo:] Nos dirige a la pantalla principal, donde podemos ver el estado del sistema. Figura \ref{fig:web_monitoreo}.
+  \item[2. Actuadores:] Podemos setear en forma manual el estado de los mismos. Figura \ref{fig:web_act}.
+  \item[3. Bateria:] Aquí podrá setear la alarma debido al nivel de descarga de batería que configuremos. Esta enviara un SMS indidando el estado. Figura \ref{fig:web_bat}.
+  \item[4. Modem GPRS:] En este menu podremos configurar 2 personas a quienes seran enviadas las alertas debido al accionar de alguna alarma.\ref{fig:web_Modem}.
+  \item[5. Temperatura:] Aqui se configura el rango de temperatura, la alarma correspondiente y si deseamos activar el control automático de la misma. De estar activado, actuará en forma atuomática sobre la bomba y la electroválvula para mantener la temepratura dentro de dicho rango. Figura \ref{fig:web_temp}.
+  \item[6. Cerrar Menú:] Esta opción cerrar el menu, permitiendo qudarse en la seccion que estaba antes de presionar en menú.
+\end{description}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.25]{./Figures/config_act.png}
+  \caption{ Activar/Desactivar actuadores.}
+  \label{fig:web_act}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.25]{./Figures/config_bat.png}
+  \caption{Configurar nivel de descarga para accionar la alerta por bateria baja.}
+  \label{fig:web_bat}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.25]{./Figures/config_Modem.png}
+  \caption{Configuracion de los celulares de quienes van a recibir las alarmas por SMS.}
+  \label{fig:web_Modem}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.25]{./Figures/config_temp.png}
+  \caption{Configuración del rango de temperatura y activacion del estado de control automatico y alarma.}
+  \label{fig:web_temp}
+\end{figure}
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Pruebas funcionales del hardware}
+\label{sec:pruebasHW}
+
+Una vez recorrido todas las opciones que permite la interfaz web y verificar que el comportamiento haya sido el esperado. Se procede interactuar con el sistema, por medio de alteraciones generadas a travez de los potenciometros que representarian la temperatura y el estado de la bateria.
+Estando activado el control automaticol y al simular un incremento de temperatura, se comprobó que al execer la temperatura máxima inicio en forma automática la bombra que permite la circulacion del refrigenrante y la activación de la electrovalvula que interviene sobre el tanque que estamos monitoreando. En la web no muestra: Figura \ref{fig:auto_control_active}. y dado su respectiva alerta mediante un SMS como vemos en la Figura \ref{fig:sms_temp_max}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.25]{./Figures/auto_control_active.png}
+  \caption{Activación por control automatico debido a temperatura elevada.}
+  \label{fig:auto_control_active}
+\end{figure}
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.05]{./Figures/auto_control_active.png}
+  \caption{Captura del SMS recibido debido temperatura máxima.}
+  \label{fig:sms_temp_max}
+\end{figure}
+
+Lego verificamos que este se mantiene activado hasta llegar a la temperatura mínima, donde procede a desconectar la bomba y a cerrar la electrovalvula. En la web no muestra: Figura \ref{fig:auto_control_inactive}. y dado su respectiva alerta mediante un SMS como vemos en la Figura \ref{fig:sms_temp_min}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.25]{./Figures/auto_control_inactive.png}
+  \caption{Temperatura en nivel mínimo, se desactiva la bomba y la electroválvula.}
+  \label{fig:auto_control_inactive}
+\end{figure}
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.05]{./Figures/auto_control_inactive.png}
+  \caption{Captura del SMS recibido debido temperatura mínima.}
+  \label{fig:sms_temp_min}
+\end{figure}
+
+
+
+De forma similar se realizo para verificar la alerta debido a variaciones en la carga de la bartería.En la web no muestra: Figura \ref{fig:bat_low_level}. y dado su respectiva alerta mediante un SMS como vemos en la Figura \ref{fig:SMS_bat}
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.25]{./Figures/bat_low_level.png}
+  \caption{Temperatura en nivel mínimo, se desactiva la bomba y la electroválvula.}
+  \label{fig:bat_low_level}
+\end{figure}
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.05]{./Figures/SMS_bat.png}
+  \caption{Captura del SMS recibido debido temperatura mínima.}
+  \label{fig:SMS_bat}
+\end{figure}
+
+Finalmente para contrastar que los actuadores funcionen en forma manual. No dirigimos a la sección de configuración de actuadores y seteamos para cada de ellos en los diferentes estados, primero encendiendo y apagando uno por uno. Y luego en bloques de varios actuadores. Verificando que cumplan la indicado. En la siguiente figura \ref{fig:test_contact} se ve uno de los casos probados.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.25]{./Figures/test_contact.png}
+  \caption{Activación manual de actuador 1 y 2, electroválvula y bomba inactivo.}
+  \label{fig:test_contact}
+\end{figure}
+
+
+De esta forma podemos concluir que el funcionamiento del sistema es el correcto.
+
+
+
+
+

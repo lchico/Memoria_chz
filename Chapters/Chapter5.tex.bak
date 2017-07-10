@@ -1,0 +1,47 @@
+% Chapter Template
+
+\chapter{Conclusiones} % Main chapter title
+
+\label{Chapter5} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
+
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Conclusiones generales }
+
+% La idea de esta sección es resaltar cuáles son los principales aportes del trabajo realizado y cómo se podría continuar. Debe ser especialmente breve y concisa. Es buena idea usar un listado para enumerar los logros obtenidos.
+
+Al finalizar esta primera etapa del prototipo, podemos concluir que se logro:
+  \begin{itemize}
+    \item Mediante una página web accedemos al estado del sistema.
+    \item Permite navegacion mediante pc, celulares, tablets compatibles con navegadoes como Chrome y Firefox.
+    \item Haciendo uso de un sensor de temperatura y salidas para actuadores. Permite un control manual y automático del sistema.
+    \item Alertar mediante SMS cuando: la temeratura excede el rango permitido, y/o para un determinado nivel de Bateria.
+    \item Implementar mediante el stack TCP/IPlwIP con el RTOS freeRTOS. 
+    \item Uso del lenguaje C, HTML, CSS y JavaScript. 
+    \item Hacer uso de un sitema de control de versiones, GitHub. 
+   \end{itemize} 
+
+Es decir, ya podemos controlar la temperatura de un tanque y recibir alertas en los principales estados criticos del proceso. Tenemos incorporado un a interfaz de monitoreo que su vez nos permite actuar en forma remota.  
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 2
+%----------------------------------------------------------------------------------------
+\section{Próximos pasos}
+
+%Acá se indica cómo se podría continuar el trabajo más adelante.
+Si bien en la primera estapa se dió una primera interacion con todo lo que involucra controlar el proceso de fermentación. Ya estamos en condiciones de perfeccionar este producto extendiendo sus funciones.
+Para ello podriamos optimizar los siguientes puntos:
+  \begin{itemize}
+    \item Ampliar la capacidad de control a 4 tanques.
+    \item Mejorar la interfaz web, para dichos cambios y realizar un entorno mas amigable.
+    \item Ampliar las funcionalidades de los SMS, no solo para reportes de alertas sino tambien para consultas y posibles controles. 
+   \end{itemize} 
+
+

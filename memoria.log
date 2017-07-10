@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.7.4)  7 JUL 2017 01:37
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.7.4)  9 JUL 2017 21:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1259,7 +1259,7 @@ LaTeX Info: Redefining \% on input line 29.
  (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux)
 (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux
 
-LaTeX Warning: Label `fig:hw_pc' multiply defined.
+LaTeX Warning: Label `fig:placa_b\IeC {\'a}sica' multiply defined.
 
 ) (./Chapters/Chapter5.aux))
 \openout1 = `memoria.aux'.
@@ -1513,7 +1513,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \c__siunitx_mathtt_int=\count377
 
 1: section
-<./Figures/logoFIUBA.png, id=116, 220.825pt x 220.825pt>
+<./Figures/logoFIUBA.png, id=132, 220.825pt x 220.825pt>
 File: ./Figures/logoFIUBA.png Graphic file (type png)
 
 <use ./Figures/logoFIUBA.png>
@@ -2009,7 +2009,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 128.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 128.
- <./Figures/texmaker.png, id=274, 1371.1225pt x 710.655pt>
+ <./Figures/texmaker.png, id=349, 1371.1225pt x 710.655pt>
 File: ./Figures/texmaker.png Graphic file (type png)
 
 <use ./Figures/texmaker.png>
@@ -2201,7 +2201,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 45.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 45.
-<./Figures/cuadradoAzul.png, id=307, 180.675pt x 180.675pt>
+<./Figures/cuadradoAzul.png, id=381, 180.675pt x 180.675pt>
 File: ./Figures/cuadradoAzul.png Graphic file (type png)
 
 <use ./Figures/cuadradoAzul.png>
@@ -2212,7 +2212,7 @@ File: ./Figures/cuadradoAzul.png Graphic file (type png)
 Package pdftex.def Info: ./Figures/cuadradoAzul.png used on input line 58.
 (pdftex.def)             Requested size: 63.23718pt x 63.23718pt.
 
-<./Figures/word.jpeg, id=310, 259.97125pt x 194.7275pt>
+<./Figures/word.jpeg, id=384, 259.97125pt x 194.7275pt>
 File: ./Figures/word.jpeg Graphic file (type jpg)
 
 <use ./Figures/word.jpeg>
@@ -2234,7 +2234,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 76.
  [10 <./Figures/cuadradoAzul.png> <./Figures/word.jpeg>] <./Figures/questionMar
-k.png, id=321, 225.84375pt x 225.84375pt>
+k.png, id=395, 225.84375pt x 225.84375pt>
 File: ./Figures/questionMark.png Graphic file (type png)
 
 <use ./Figures/questionMark.png>
@@ -2337,108 +2337,537 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 41.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 41.
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 58.
-)
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 46.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 46.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 46.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 46.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 46.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 46.
+
+<./Figures/sim800.png, id=420, 879.285pt x 590.205pt>
+File: ./Figures/sim800.png Graphic file (type png)
+
+<use ./Figures/sim800.png>
+Package pdftex.def Info: ./Figures/sim800.png used on input line 64.
+(pdftex.def)             Requested size: 175.85388pt x 118.0389pt.
+
 1: section
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 236.
+(babel)             in language  on input line 72.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 236.
+(babel)             in language  on input line 72.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 236.
+(babel)             in language  on input line 72.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 236.
+(babel)             in language  on input line 72.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 236.
+(babel)             in language  on input line 72.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 236.
+(babel)             in language  on input line 72.
 [13
 
 
 
-]
-\openout2 = `Chapters/Chapter4.aux'.
+ <./Figures/sim800.png>]
+<./Figures/schematic.pdf, id=427, page=1, 597.50786pt x 845.04686pt>
+File: ./Figures/schematic.pdf Graphic file (type pdf)
 
- (./Chapters/Chapter4.tex
+<use ./Figures/schematic.pdf, page 1>
+Package pdftex.def Info: ./Figures/schematic.pdf, page1 used on input line 80.
+(pdftex.def)             Requested size: 179.25374pt x 253.516pt.
+
+<./Figures/schematic.pdf, id=430, page=3, 597.50786pt x 845.04686pt>
+File: ./Figures/schematic.pdf Graphic file (type pdf)
+
+<use ./Figures/schematic.pdf, page 3>
+Package pdftex.def Info: ./Figures/schematic.pdf, page3 used on input line 89.
+(pdftex.def)             Requested size: 179.25374pt x 253.516pt.
+
+<./Figures/schematic.pdf, id=433, page=4, 597.50786pt x 845.04686pt>
+File: ./Figures/schematic.pdf Graphic file (type pdf)
+
+<use ./Figures/schematic.pdf, page 4>
+Package pdftex.def Info: ./Figures/schematic.pdf, page4 used on input line 97.
+(pdftex.def)             Requested size: 179.25374pt x 253.516pt.
+LaTeX Info: Redefining \sptext on input line 101.
+LaTeX Info: Redefining \. on input line 101.
+LaTeX Info: Redefining \% on input line 101.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 101.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 101.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 101.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 101.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 101.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 3.
- [14
+(babel)             in language  on input line 101.
+ [14 <./Figures/schematic.pdf> <./Figures/schematic.pdf
 
+pdfTeX warning: pdflatex (file ./Figures/schematic.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 102--102
+[][][]\T1/ppl/m/n/9 http://www.proyecto-ciaa.com.ar/devwiki/lib/exe/fetch.php?m
+edia=desarrollo:edu-
+ []
 
+<./Figures/schematic.pdf, id=444, page=5, 597.50786pt x 845.04686pt>
+File: ./Figures/schematic.pdf Graphic file (type pdf)
 
-]
-Cap\'{\i }tulo 4.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 3.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 3.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 3.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 3.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 3.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 3.
-<./Figures/config_net_console.png, id=383, 1076.02pt x 642.4pt>
-File: ./Figures/config_net_console.png Graphic file (type png)
+<use ./Figures/schematic.pdf, page 5>
+Package pdftex.def Info: ./Figures/schematic.pdf, page5 used on input line 106.
 
-<use ./Figures/config_net_console.png>
-Package pdftex.def Info: ./Figures/config_net_console.png used on input line 12
-.
-(pdftex.def)             Requested size: 376.61266pt x 224.84337pt.
+(pdftex.def)             Requested size: 179.25374pt x 253.516pt.
 
+<./Figures/pcb_layer.pdf, id=447, page=1, 597.50786pt x 845.04686pt>
+File: ./Figures/pcb_layer.pdf Graphic file (type pdf)
 
-LaTeX Warning: Reference `fig:web_example' on page 15 undefined on input line 1
-7.
+<use ./Figures/pcb_layer.pdf, page 1>
+Package pdftex.def Info: ./Figures/pcb_layer.pdf, page1 used on input line 114.
 
-<./Figures/web_example.png, id=384, 1362.08875pt x 764.8575pt>
-File: ./Figures/web_example.png Graphic file (type png)
+(pdftex.def)             Requested size: 298.75319pt x 422.5224pt.
 
-<use ./Figures/web_example.png>
-Package pdftex.def Info: ./Figures/web_example.png used on input line 21.
-(pdftex.def)             Requested size: 340.52135pt x 191.2139pt.
+Overfull \hbox (32.71971pt too wide) in paragraph at lines 114--115
+ [][] 
+ []
+
+<./Figures/pcb_layer.pdf, id=448, page=2, 597.50786pt x 845.04686pt>
+File: ./Figures/pcb_layer.pdf Graphic file (type pdf)
+
+<use ./Figures/pcb_layer.pdf, page 2>
+Package pdftex.def Info: ./Figures/pcb_layer.pdf, page2 used on input line 120.
+
+(pdftex.def)             Requested size: 298.75319pt x 422.5224pt.
+
+Overfull \hbox (32.71971pt too wide) in paragraph at lines 120--121
+ [][] 
+ []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Info: Redefining \sptext on input line 126.
+LaTeX Info: Redefining \. on input line 126.
+LaTeX Info: Redefining \% on input line 126.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 126.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 126.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 126.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 126.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 126.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 126.
+[15 <./Figures/schematic.pdf> <./Figures/schematic.pdf
+
+pdfTeX warning: pdflatex (file ./Figures/schematic.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+>] <./Figures/pcb_3d.png, id=457, 1303.87125pt x 661.47125pt>
+File: ./Figures/pcb_3d.png Graphic file (type png)
+
+<use ./Figures/pcb_3d.png>
+Package pdftex.def Info: ./Figures/pcb_3d.png used on input line 129.
+(pdftex.def)             Requested size: 391.1644pt x 198.4429pt.
+
+<./Figures/pcb_3d_back.png, id=458, 1303.87125pt x 661.47125pt>
+File: ./Figures/pcb_3d_back.png Graphic file (type png)
+
+<use ./Figures/pcb_3d_back.png>
+Package pdftex.def Info: ./Figures/pcb_3d_back.png used on input line 130.
+(pdftex.def)             Requested size: 391.1644pt x 198.4429pt.
+
+Overfull \hbox (1.36171pt too wide) in paragraph at lines 129--131
+ [][] 
+ []
+
+
+Overfull \hbox (1.36171pt too wide) in paragraph at lines 129--131
+ [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./Figures/placa_basica.jpg, id=460, 3052.40375pt x 2898.83pt>
+File: ./Figures/placa_basica.jpg Graphic file (type jpg)
+
+<use ./Figures/placa_basica.jpg>
+Package pdftex.def Info: ./Figures/placa_basica.jpg used on input line 139.
+(pdftex.def)             Requested size: 91.56816pt x 86.96114pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+)
+LaTeX Info: Redefining \sptext on input line 236.
+LaTeX Info: Redefining \. on input line 236.
+LaTeX Info: Redefining \% on input line 236.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 236.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 236.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 236.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 236.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 236.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 236.
+ [16 <./Figures/pcb_layer.pdf>]
+LaTeX Info: Redefining \sptext on input line 236.
+LaTeX Info: Redefining \. on input line 236.
+LaTeX Info: Redefining \% on input line 236.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 236.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 236.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 236.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 236.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 236.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 236.
+ [17 <./Figures/pcb_layer.pdf>]
+LaTeX Info: Redefining \sptext on input line 236.
+LaTeX Info: Redefining \. on input line 236.
+LaTeX Info: Redefining \% on input line 236.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 236.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 236.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 236.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 236.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 236.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 236.
+ [18 <./Figures/pcb_3d.png> <./Figures/pcb_3d_back.png> <./Figures/placa_basica
+.jpg>]
+\openout2 = `Chapters/Chapter4.aux'.
+
+
+(./Chapters/Chapter4.tex
+Cap\'{\i }tulo 4.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 2.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 2.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 2.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 2.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 2.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 2.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 6.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 6.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 6.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 6.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 6.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 6.
+File: ./Figures/placa_basica.jpg Graphic file (type jpg)
+<use ./Figures/placa_basica.jpg>
+Package pdftex.def Info: ./Figures/placa_basica.jpg used on input line 11.
+(pdftex.def)             Requested size: 91.56816pt x 86.96114pt.
+
+<./Figures/prototipo.jpg, id=481, 4175.6pt x 3131.7pt>
+File: ./Figures/prototipo.jpg Graphic file (type jpg)
+
+<use ./Figures/prototipo.jpg>
+Package pdftex.def Info: ./Figures/prototipo.jpg used on input line 20.
+(pdftex.def)             Requested size: 166.99556pt x 125.24666pt.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 25.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 25.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 25.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 25.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 25.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 25.
+
 1: section
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 28.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 28.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 28.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 28.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 28.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 31.
-[15 <./Figures/config_net_console.png>]
+(babel)             in language  on input line 28.
+[19
+
+
+
+ <./Figures/prototipo.jpg>]
+<./Figures/config_net_console.png, id=487, 1076.02pt x 642.4pt>
+File: ./Figures/config_net_console.png Graphic file (type png)
+
+<use ./Figures/config_net_console.png>
+Package pdftex.def Info: ./Figures/config_net_console.png used on input line 31
+.
+(pdftex.def)             Requested size: 376.61266pt x 224.84337pt.
+
+<./Figures/web_monitoreo.png, id=489, 1362.08875pt x 764.8575pt>
+File: ./Figures/web_monitoreo.png Graphic file (type png)
+
+<use ./Figures/web_monitoreo.png>
+Package pdftex.def Info: ./Figures/web_monitoreo.png used on input line 40.
+(pdftex.def)             Requested size: 340.52135pt x 191.2139pt.
+LaTeX Info: Redefining \sptext on input line 48.
+LaTeX Info: Redefining \. on input line 48.
+LaTeX Info: Redefining \% on input line 48.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 41.
+(babel)             in language  on input line 48.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 41.
+(babel)             in language  on input line 48.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 41.
+(babel)             in language  on input line 48.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 41.
+(babel)             in language  on input line 48.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 41.
+(babel)             in language  on input line 48.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 41.
+(babel)             in language  on input line 48.
+ [20 <./Figures/config_net_console.png (PNG copy)> <./Figures/web_monitoreo.png
+>]
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 53.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 53.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 53.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 53.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 53.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 53.
+
+<./Figures/web_menus_num.png, id=495, 1371.1225pt x 770.88pt>
+File: ./Figures/web_menus_num.png Graphic file (type png)
+
+<use ./Figures/web_menus_num.png>
+Package pdftex.def Info: ./Figures/web_menus_num.png used on input line 58.
+(pdftex.def)             Requested size: 342.77979pt x 192.71953pt.
+LaTeX Info: Redefining \sptext on input line 71.
+LaTeX Info: Redefining \. on input line 71.
+LaTeX Info: Redefining \% on input line 71.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 71.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 71.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 71.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 71.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 71.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 71.
+ [21 <./Figures/web_menus_num.png>]
+<./Figures/config_act.png, id=506, 600.2425pt x 490.83376pt>
+File: ./Figures/config_act.png Graphic file (type png)
+
+<use ./Figures/config_act.png>
+Package pdftex.def Info: ./Figures/config_act.png used on input line 76.
+(pdftex.def)             Requested size: 150.06026pt x 122.70813pt.
+
+<./Figures/config_bat.png, id=507, 602.25pt x 486.81876pt>
+File: ./Figures/config_bat.png Graphic file (type png)
+
+<use ./Figures/config_bat.png>
+Package pdftex.def Info: ./Figures/config_bat.png used on input line 83.
+(pdftex.def)             Requested size: 150.56212pt x 121.70439pt.
+
+<./Figures/config_Modem.png, id=508, 854.19125pt x 392.46625pt>
+File: ./Figures/config_Modem.png Graphic file (type png)
+
+<use ./Figures/config_Modem.png>
+Package pdftex.def Info: ./Figures/config_Modem.png used on input line 89.
+(pdftex.def)             Requested size: 213.54729pt x 98.11632pt.
+
+<./Figures/config_temp.png, id=509, 856.19875pt x 521.95pt>
+File: ./Figures/config_temp.png Graphic file (type png)
+
+<use ./Figures/config_temp.png>
+Package pdftex.def Info: ./Figures/config_temp.png used on input line 95.
+(pdftex.def)             Requested size: 214.04916pt x 130.48717pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 105.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 105.
+LaTeX Info: Redefining \sptext on input line 110.
+LaTeX Info: Redefining \. on input line 110.
+LaTeX Info: Redefining \% on input line 110.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 110.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 110.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 110.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 110.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 110.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 110.
+[22 <./Figures/config_act.png> <./Figures/config_bat.png> <./Figures/config_Mod
+em.png>]
+<./Figures/auto_control_active.png, id=516, 1370.11874pt x 764.8575pt>
+File: ./Figures/auto_control_active.png Graphic file (type png)
+
+<use ./Figures/auto_control_active.png>
+Package pdftex.def Info: ./Figures/auto_control_active.png used on input line 1
+13.
+(pdftex.def)             Requested size: 342.52884pt x 191.2139pt.
+File: ./Figures/auto_control_active.png Graphic file (type png)
+
+<use ./Figures/auto_control_active.png>
+Package pdftex.def Info: ./Figures/auto_control_active.png used on input line 1
+21.
+(pdftex.def)             Requested size: 68.50995pt x 38.2451pt.
+
+
+LaTeX Warning: File `./Figures/auto_control_inactive.png' not found on input li
+ne 130.
+
+
+! Package pdftex.def Error: File `./Figures/auto_control_inactive.png' not foun
+d.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.130 ....25]{./Figures/auto_control_inactive.png}
+                                                  
+? 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: File `./Figures/auto_control_inactive.png' not found on input li
+ne 138.
+
+
+! Package pdftex.def Error: File `./Figures/auto_control_inactive.png' not foun
+d.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.138 ....05]{./Figures/auto_control_inactive.png}
+                                                  
+? 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: File `./Figures/bat_low_level.png' not found on input line 150.
+
+
+! Package pdftex.def Error: File `./Figures/bat_low_level.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.150 ...s[scale=.25]{./Figures/bat_low_level.png}
+                                                  
+? 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: File `./Figures/SMS_bat.png' not found on input line 158.
+
+
+! Package pdftex.def Error: File `./Figures/SMS_bat.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.158 ...raphics[scale=.05]{./Figures/SMS_bat.png}
+                                                  
+? 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Info: Redefining \sptext on input line 164.
+LaTeX Info: Redefining \. on input line 164.
+LaTeX Info: Redefining \% on input line 164.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 164.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 164.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 164.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 164.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 164.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 164.
+[23 <./Figures/config_temp.png> <./Figures/auto_control_active.png>]
+<./Figures/test_contact.png, id=527, 683.55376pt x 488.82625pt>
+File: ./Figures/test_contact.png Graphic file (type png)
+
+<use ./Figures/test_contact.png>
+Package pdftex.def Info: ./Figures/test_contact.png used on input line 167.
+(pdftex.def)             Requested size: 170.88802pt x 122.20625pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 )
 LaTeX Info: Redefining \sptext on input line 237.
 LaTeX Info: Redefining \. on input line 237.
@@ -2455,11 +2884,43 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 237.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 237.
- [16 <./Figures/web_example.png>]
+ [24]
+LaTeX Info: Redefining \sptext on input line 237.
+LaTeX Info: Redefining \. on input line 237.
+LaTeX Info: Redefining \% on input line 237.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 237.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 237.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 237.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 237.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 237.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 237.
+ [25 <./Figures/test_contact.png>]
 \openout2 = `Chapters/Chapter5.aux'.
 
+ (./Chapters/Chapter5.tex
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 3.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 3.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 3.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 3.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 3.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 3.
+ [26
 
-(./Chapters/Chapter5.tex
+
+
+]
 Cap\'{\i }tulo 5.
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 3.
@@ -2486,17 +2947,17 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 14.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 32.
+(babel)             in language  on input line 36.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 32.
+(babel)             in language  on input line 36.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 32.
+(babel)             in language  on input line 36.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 32.
+(babel)             in language  on input line 36.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 32.
+(babel)             in language  on input line 36.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 32.
+(babel)             in language  on input line 36.
 )
 1: section
 Package babel Info: Redefining spanish shorthand <<
@@ -2511,11 +2972,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 238.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 238.
-[17
-
-
-
-]
+[27]
 
 LaTeX Warning: Empty bibliography on input line 259.
 
@@ -2530,7 +2987,7 @@ LaTeX Info: Redefining \% on input line 29.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 263.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 263.
 Package rerunfilecheck Info: File `memoria.out' has not changed.
-(rerunfilecheck)             Checksum: EBE0C136750EB46E3F1D2CB08438DABE;4950.
+(rerunfilecheck)             Checksum: A9CE4B907F762AEB221BA033866AE5BF;5648.
 
 
 LaTeX Warning: There were undefined references.
@@ -2548,13 +3005,13 @@ Package logreq Info: Writing requests to 'memoria.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 31032 strings out of 494925
- 619393 string characters out of 6178545
- 739664 words of memory out of 5000000
- 33717 multiletter control sequences out of 15000+600000
- 65486 words of font info for 120 fonts, out of 8000000 for 9000
+ 30798 strings out of 494925
+ 619077 string characters out of 6178545
+ 707381 words of memory out of 5000000
+ 33449 multiletter control sequences out of 15000+600000
+ 66103 words of font info for 122 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
- 56i,20n,77p,10405b,1445s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,20n,79p,10405b,1445s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -2572,10 +3029,10 @@ e/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist
 /urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on memoria.pdf (31 pages, 610788 bytes).
+Output written on memoria.pdf (41 pages, 8098103 bytes).
 PDF statistics:
- 475 PDF objects out of 1000 (max. 8388607)
- 410 compressed objects within 5 object streams
- 110 named destinations out of 1000 (max. 500000)
- 260 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 625 PDF objects out of 1000 (max. 8388607)
+ 527 compressed objects within 6 object streams
+ 122 named destinations out of 1000 (max. 500000)
+ 382 words of extra memory for PDF output out of 10000 (max. 10000000)
 

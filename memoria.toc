@@ -23,9 +23,13 @@
 \contentsline {subsection}{\numberline {2.1.4}Tablas}{11}{subsection.37}
 \contentsline {subsection}{\numberline {2.1.5}Ecuaciones}{12}{subsection.39}
 \contentsline {chapter}{\numberline {3}Dise\IeC {\~n}o e Implementaci\IeC {\'o}n}{13}{chapter.42}
-\contentsline {section}{\numberline {3.1}An\IeC {\'a}lisis del software}{13}{section.43}
-\contentsline {chapter}{\numberline {4}Ensayos y Resultados}{15}{chapter.73}
-\contentsline {section}{\numberline {4.1}Pruebas funcionales del hardware}{16}{section.76}
-\contentsline {chapter}{\numberline {5}Conclusiones}{17}{chapter.77}
-\contentsline {section}{\numberline {5.1}Conclusiones generales }{17}{section.78}
-\contentsline {section}{\numberline {5.2}Pr\IeC {\'o}ximos pasos}{17}{section.79}
+\contentsline {section}{\numberline {3.1}Dise\IeC {\~n}o e Implementaci\IeC {\'o}n}{13}{section.43}
+\contentsline {section}{\numberline {3.2}Hardware}{13}{section.44}
+\contentsline {chapter}{\numberline {4}Ensayos y Resultados}{19}{chapter.58}
+\contentsline {section}{\numberline {4.1}Banco de pruebas}{19}{section.59}
+\contentsline {section}{\numberline {4.2}Configuraciones para la PC}{20}{section.62}
+\contentsline {section}{\numberline {4.3}Verificaci\IeC {\'o}n del sistema web embebido}{21}{section.65}
+\contentsline {section}{\numberline {4.4}Pruebas funcionales del hardware}{22}{section.71}
+\contentsline {chapter}{\numberline {5}Conclusiones}{27}{chapter.79}
+\contentsline {section}{\numberline {5.1}Conclusiones generales }{27}{section.80}
+\contentsline {section}{\numberline {5.2}Pr\IeC {\'o}ximos pasos}{27}{section.81}
