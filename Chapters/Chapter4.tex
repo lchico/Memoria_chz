@@ -63,11 +63,11 @@ De lo explicado en la sección anterior, se procederá a navegar por el menú, v
 
 
 \begin{description}
-  \item[1. Monitoreo:] Nos dirige a la pantalla principal, donde podemos ver el estado del sistema. Figura \ref{fig:web_monitoreo}.
-  \item[2. Actuadores:] Podemos setear en forma manual el estado de los mismos. Figura \ref{fig:web_act}.
-  \item[3. Batería:] Aquí podrá setear la alarma debido al nivel de descarga de batería que configuremos. Esta enviara un SMS indicando el estado. Figura \ref{fig:web_bat}.
+  \item[1. Monitoreo:] Nos dirige a la pantalla principal, donde podemos ver el estado del sistema. figura \ref{fig:web_monitoreo}.
+  \item[2. Actuadores:] Podemos setear en forma manual el estado de los mismos. figura \ref{fig:web_act}.
+  \item[3. Batería:] Aquí podrá setear la alarma debido al nivel de descarga de batería que configuremos. Esta enviara un SMS indicando el estado. figura \ref{fig:web_bat}.
   \item[4. Módem GPRS:] En este menú podremos configurar 2 personas a quienes serán enviadas las alertas debido al accionar de alguna alarma.\ref{fig:web_Modem}.
-  \item[5. Temperatura:] Aquí se configura el rango de temperatura, la alarma correspondiente y si deseamos activar el control automático de la misma. De estar activado, actuará en forma automática sobre la bomba y la electroválvula para mantener la temperatura dentro de dicho rango. Figura \ref{fig:web_temp}.
+  \item[5. Temperatura:] Aquí se configura el rango de temperatura, la alarma correspondiente y si deseamos activar el control automático de la misma. De estar activado, actuará en forma automática sobre la bomba y la electroválvula para mantener la temperatura dentro de dicho rango. figura \ref{fig:web_temp}.
   \item[6. Cerrar Menú:] Esta opción cerrar el menú, permitiendo quedarse en la sección que estaba antes de presionar en menú.
 \end{description}
 
@@ -106,7 +106,8 @@ De lo explicado en la sección anterior, se procederá a navegar por el menú, v
 \label{sec:pruebasHW}
 
 Una vez recorrido todas las opciones que permite la interfaz web y verificar que el comportamiento haya sido el esperado. Se procede interactuar con el sistema, por medio de alteraciones generadas a través de los potenciómetros que representaran la temperatura y el estado de la batería.
-Estando activado el control automático y al simular un incremento de temperatura, se comprobó que al exceder la temperatura máxima inicio en forma automática la bomba que permite la circulación del refrigerante y la activación de la electroválvula que interviene sobre el tanque que estamos monitorizando. En la web no muestra: Figura \ref{fig:auto_control_active}. y dado su respectiva alerta mediante un SMS como vemos en la Figura \ref{fig:sms_temp_max}
+
+Estando activado el control automático y al simular un incremento de temperatura, se comprobó que al exceder la temperatura máxima inicio en forma automática la bomba que permite la circulación del refrigerante y la activación de la electroválvula que interviene sobre el tanque que estamos monitorizando. En la web no muestra figura \ref{fig:auto_control_active}. y dado su respectiva alerta mediante un SMS como vemos en la figura \ref{fig:sms_temp_max}
 
 \begin{figure}[h]
   \centering
@@ -118,12 +119,12 @@ Estando activado el control automático y al simular un incremento de temperatur
 
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=.05]{./Figures/auto_control_active.png}
+  \includegraphics[scale=.05]{./Figures/sms_max_temp.png}
   \caption{Captura del SMS recibido debido temperatura máxima.}
   \label{fig:sms_temp_max}
 \end{figure}
 
-Lego verificamos que este se mantiene activado hasta llegar a la temperatura mínima, donde procede a desconectar la bomba y a cerrar la electroválvula. En la web no muestra: Figura \ref{fig:auto_control_inactive}. y dado su respectiva alerta mediante un SMS como vemos en la Figura \ref{fig:sms_temp_min}
+Se verificó que éste se mantiene activado hasta llegar a la temperatura mínima, en este instante procede a desconectar la bomba y a cerrar la electroválvula. En la web se verá como en la figura \ref{fig:auto_control_inactive}. y dado su respectiva alerta mediante un SMS como vemos en la figura \ref{fig:sms_temp_min}
 
 \begin{figure}[h]
   \centering
@@ -132,35 +133,30 @@ Lego verificamos que este se mantiene activado hasta llegar a la temperatura mí
   \label{fig:auto_control_inactive}
 \end{figure}
 
-
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=.05]{./Figures/auto_control_inactive.png}
+  \includegraphics[scale=.05]{./Figures/sms_temp_min.png}
   \caption{Captura del SMS recibido debido temperatura mínima.}
   \label{fig:sms_temp_min}
 \end{figure}
 
-
-
-De forma similar se realizo para verificar la alerta debido a variaciones en la carga de la baratería.En la web no muestra: Figura \ref{fig:bat_low_level}. y dado su respectiva alerta mediante un SMS como vemos en la Figura \ref{fig:SMS_bat}
-
+En el caso de la batería se analíza las variaciones en la carga. Si esta disminuye más de un valor que es determinado, se enviará SMS como el que observamos en figura \ref{fig:SMS_bat}. Y en la web se mostrara como en la figura \ref{fig:bat_low_level}. 
 
 \begin{figure}[h]
   \centering
   \includegraphics[scale=.25]{./Figures/bat_low_level.png}
-  \caption{Temperatura en nivel mínimo, se desactiva la bomba y la electroválvula.}
+  \caption{Bateria baja.}
   \label{fig:bat_low_level}
 \end{figure}
-
 
 \begin{figure}[h]
   \centering
   \includegraphics[scale=.05]{./Figures/SMS_bat.png}
-  \caption{Captura del SMS recibido debido temperatura mínima.}
+  \caption{Captura del SMS recibido debido a bateria baja.}
   \label{fig:SMS_bat}
 \end{figure}
 
-Finalmente para contrastar que los actuadores funcionen en forma manual. No dirigimos a la sección de configuración de actuadores y seteamos para cada de ellos en los diferentes estados, primero encendiendo y apagando uno por uno. Y luego en bloques de varios actuadores. Verificando que cumplan la indicado. En la siguiente figura \ref{fig:test_contact} se ve uno de los casos probados.
+Para verificar los actuadores nos dirigimos a la web en la sección de configuración de actuadores y seteamos para cada uno de ellos los diferentes estados, encendiendo y apagando. Luego se probó en bloques de varios actuadores. En la siguiente figura \ref{fig:test_contact} se ve un ejemplo de los casos probados.
 
 \begin{figure}[h]
   \centering
