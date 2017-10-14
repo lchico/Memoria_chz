@@ -38,14 +38,49 @@
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
-\section{Diseño e Implementación}
-En este capítulo se mostrará cómo se desarrolló un hardware básico para poder simular el entorno de funcionamiento y cómo se implementó el firmware.
+En este capítulo se veremos cómo se desarrolló un hardware básico para poder simular el entorno de funcionamiento y cómo fue implementado el firmware.
 %La idea de esta sección es resaltar los problemas encontrados, los criterios utilizados y la justificación de las decisiones que se hayan tomado.
 %Se puede agregar código o pseudocódigo dentro de un entorno lstlisting con el siguiente código:
 
 \section{Hardware}
 
-Se implementó el diseño de un circuito, que permite simular el entorno de funcionamiento de la bodega. Para ello se utilizó lo aprendido a la largo del curso de \emph{diseño de PCBs en KICAD}. El sistema cuenta con:
+Se diseño de un circuito, que permite simular el entorno de funcionamiento de una bodega. Para ello se utilizó lo aprendido a la largo del curso de \emph{diseño de PCBs en KICAD}. Si bien, por falta de tiempo, no se llevo a cabo el desarrollo de la placa diseñada que veremos a , a fines de poder testear el sistema se elaboro una versión simplificada. 
+
+Surgieron varios imprevistos, principalmente con el modulo SIM800L, el cual posee grandes inconvenientes a la hora de destectar la SIM. Luego de una serie de búsquedas en internet, donde muchos habian tenido un problema similar debido a:
+\begin{itemize}
+  \item Fuente de alimentacion subdimensionada.
+  \item Modulo muy sensible, limpiar bien los contactos de la sim.
+  \item Problemas en la soldadura del módulo.
+\end{tiemize}
+Finalmente, si bien dicho modulo ya habia sido comprado y se encontro la falla a tiempo se utilizó en el prototipo, pero este no se recomienda. Ya que trae consigo los problemas mencionados anteriormente.. A futuras implementacion este módulo será reemplazado.
+
+
+\subsection{Diagrama en bloque}
+En el siguiente esquema, Figura \ref{fig:diagrama_sistema} podemos apreciar el entorno de trabano del dispositivo. Donde el mismo debera interactuar con una bomba de agua que permite llevar desde el deposito del liquido refrigerate a los tanques que estan en proceso de fermentación.
+Recibiendo como informacion la temperatura de los tanques, este debe controlar la bomba y la electroválvula correspondiente. De esta forma permitira tener controlada la temperatura acorde a los parametros seteados por el usuario. 
+
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=0.2]{./Figures/diagrama_del_sistema.png}
+  \caption{Esquema de interaccion del dispositivo.}
+  \label{fig:diagrama_sistema}
+\end{figure}
+
+\subsection{ Módulos requeridos}
+Para llevar a cabo el proyecto, se dividio el sistema en los siguientes módulos:
+\begin{description}
+  \item[Modem:] sera el encargado de transmitir las alertas mediante SMS utilizando el modulo SIM800L.
+  \item[Actuadores:] salidas que nos permiten controlar la bomba y electroválvulas. Debido a que se utilizo la CIA-NXP ya esta resuelto.
+  \item[Sensores:] entradas que permitan simular el comportamiento de los sensores, para esto se utilizaron potenciometros.
+  \item[CPU:] unidad encargada de controlar el funcionamiento del sistema. Incorporada en la placa CIA-NXP. 
+\end{description}
+
+Con lo cual podemos ver que el CPU y los actuadores ya estan desarrollados al haber elegido la CIA. Nos quedara ver los sensores y el modem en la próxima sección.
+
+\subsection{Características del hardware}
+El sistema cuenta con:
+
 \begin{itemize}
   \item 1 Salida con regulación de corriente, para simular sensores de 4mA a 20mA.
   \item 1 Salida con tensión variable, utilizando el regulador LM317.
@@ -59,7 +94,7 @@ Se implementó el diseño de un circuito, que permite simular el entorno de func
 
 El módulo sim800l que se muestra en la siguiente Figura \ref{fig:sim800l}, es un módem GPRS que cuenta con las siguientes especificaciones:
 
-\begin{figure}[h]
+\begin{figure}[htb]
   \centering
   \includegraphics[scale=0.2]{./Figures/sim800.png}
   \caption{Modem SIM800L.}
@@ -75,7 +110,7 @@ El módulo sim800l que se muestra en la siguiente Figura \ref{fig:sim800l}, es u
 
 
 En la figura \ref{fig:essim800} se puede apreciar el esquemático implementado para la conexión del módem GSM. Éste requiere adaptar los niveles de tensión para interactuar con la CIA-NXP, para el cual utilizamos un max3232.
-\begin{figure}[h]
+\begin{figure}[htb]
   \centering
   \includegraphics[page=1,scale=0.3,angle=270]{./Figures/schematic.pdf}
   \caption{Módulo sim800l e índice de esquemáticos.}
@@ -84,7 +119,7 @@ En la figura \ref{fig:essim800} se puede apreciar el esquemático implementado p
 
 Para la alimentación del circuito se utilizó el regulador LM2576. El mismo se tomó de la nota de aplicación el diagrama típico.\footnote{Nota de aplicación Texas Instruments: http://www.ti.com/lit/ds/symlink/lm2576.pdf}
 Para regular a 3.3V se utilizó el integrado LM11733 circuito extraído de la nota de aplicación. \footnote{ Texas Instruments: http://www.ti.com/lit/ds/symlink/lm1117.pdf - Capitulo 8 Figura 16 } 
-\begin{figure}[h]
+\begin{figure}[htb]
   \centering
   \includegraphics[page=3,scale=0.3,angle=270]{./Figures/schematic.pdf}
   \caption{Fuente de alimentación DC/DC.}
@@ -92,7 +127,7 @@ Para regular a 3.3V se utilizó el integrado LM11733 circuito extraído de la no
 \end{figure}
 
 Para lograr la simulación de distintos tipos de sensores, se utilizaron circuitos como se muestra en la figura \ref{fig:temp_tens}  que permiten generar corrientes 4mA a 20mA, variaciones de la tensión, y hasta un sensor de temperatura. Para los circuitos se utilizaron las notas de aplicación de Texas Instruments\footnote{Reguladores de Tensión y Corriente http://www.ti.com/lit/ds/symlink/lm317.pdf - capitulo 8 páginas 12 y 13 y sensor temperatura: http://www.ti.com/lit/ds/symlink/lm35.pdf - 8.2.1 Basic Centigrade Temperature Sensor } 
-\begin{figure}[h]
+\begin{figure}[htb]
   \centering
   \includegraphics[page=4,scale=0.3,angle=270]{./Figures/schematic.pdf}
   \caption{Regulador de corriente, de tensión y del sensor de temperatura.}
@@ -101,7 +136,7 @@ Para lograr la simulación de distintos tipos de sensores, se utilizaron circuit
 
 Para concluir, se utilizaron unos circuitos básicos que permiten interactuar en forma simple con el sistema y realizar pruebas de funcionamiento. Los mismos fueron extraídos del esquemático utilizado en el proyecto de la EDU-CIA\footnote{http://www.proyecto-ciaa.com.ar/devwiki/lib/exe/fetch.php?media=desarrollo:edu-ciaa:edu-ciaa-nxp:edu-ciaa-nxp\_color.pdf}
 
-\begin{figure}[h]
+\begin{figure}[!htb]
   \centering
   \includegraphics[page=5,scale=0.3,angle=270]{./Figures/schematic.pdf}
   \caption{Entradas a leds y salidas de los pulsadores.}
@@ -109,13 +144,13 @@ Para concluir, se utilizaron unos circuitos básicos que permiten interactuar en
 \end{figure}
 
 Una vez realizados los esquemáticos, se pasó a la elaboración del PCB. Se realizaron los ruteo necesarios. Y como se puede observar en la siguientes figuras \ref{fig:layer_sup} - \ref{fig:layer_inf} 
-\begin{figure}[h]
+\begin{figure}[!htb]
   \centering
   \includegraphics[page=1,angle=270,clip,trim=5.5cm 10cm 7.7cm 8.5cm]{./Figures/pcb_layer.pdf}
   \caption{Capa superior de la placa simulador de sensores.}
   \label{fig:layer_sup}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[!htb]
   \centering
   \includegraphics[page=2,angle=270,clip,trim=5.5cm 10cm 7.7cm 8.5cm]{./Figures/pcb_layer.pdf}
   \caption{Capa inferior de la placa simulador de sensores.}
@@ -124,7 +159,7 @@ Una vez realizados los esquemáticos, se pasó a la elaboración del PCB. Se rea
 
 Realizando una vista previa de como quedaría el esquema y aprovechando el potencial de la herramienta de kicad, se realizó una vista 3D de como quedaría, la que se puede apreciar en la figura \ref{fig:pcb3d}.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
   \centering
   \includegraphics[scale=0.3]{./Figures/pcb_3d.png}
   \includegraphics[scale=0.3]{./Figures/pcb_3d_back.png}
@@ -132,30 +167,65 @@ Realizando una vista previa de como quedaría el esquema y aprovechando el poten
   \label{fig:pcb3d}
 \end{figure}
 
-No obstante, por cuestiones de tiempo no se llegó a implementar. Simplemente quedó en una primera etapa para una posterior implementación. Se terminó desarrollando una placa experimental que permitió realizar las primeras pruebas. Podemos verla en la siguiente figura \ref{fig:placa_básica}
+No obstante, por cuestiones de tiempo no se llegó a implementar. Simplemente quedó en una primera etapa para una posterior implementación. Se terminó desarrollando una placa experimental que permitió realizar las primeras pruebas. Podemos verla en la siguiente figura \ref{fig:placa_básicafirst}
 
-\begin{figure}[h]
+\begin{figure}[!htb]
   \centering
   \includegraphics[scale=.03]{./Figures/placa_basica.jpg}
   \caption{Placa de simulación de temperatura y estado de la batería con el modulo SIM800l integrado.}
-  \label{fig:placa_básica}
+  \label{fig:placa_básicafirst}
 \end{figure}
 
 
 \section{Software}
 
-Se dividieron las tareas por recursos, una controla el modem, ver Figura \ref{fig:modem_task}.
+Se dividieron las tareas por recursos:
+\begin{itemize}
+  \item Modem 
+  \item Control
+  \item Sensores
+\end{itemize}
 
-\begin{figure}[h]
+\subsection*{Modem}
+En esta tarea se inicializa las configuraciones iniciales para el uso del modem. Es la encargada de interactuar con el módulo GPRS, realizando consultas del estado de señal y de enviando los mensajes de alarmas en caso de ser necesarios.
+
+Podemos ver como fue implementado en el diagrama de flujo en la siguiente figura \ref{fig:modem_task}.
+
+\begin{figure}[!htb]
   \centering
-  \includegraphics[scale=.4]{./Figures/modem_task.png}
-  \caption{Placa de simulación de temperatura y estado de la batería con el modulo SIM800l integrado.}
+  \includegraphics[scale=.5]{./Figures/modem_task.png}
+  \caption{Diagrama de flujo de la tarea que controla el modem GPRS.}
   \label{fig:modem_task}
 \end{figure}
 
 
+\subsection*{Control}
+Con esta tarea se analiza el resultado los sensores de temperatura, y de labatería. Se verifica que esten dentro de los parametros configurados por el usuario y se actua en consecuencia.
 
-%
+También es la encargada de setear los actuadores sugún sean especificados en la plataforma web.
+
+La implementacion se puede apreciar en la siguiente figura: \ref{fig:control_task}.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[scale=.5]{./Figures/control_task.png}
+  \caption{Diagrama de flujo de la tarea de control.}
+  \label{fig:control_task}
+\end{figure}
+
+
+\subsection*{Sensor}
+ En este caso la tarea es más simple, consulta el estado de los sensores y calcula el promedio de las ultimas N muestras, este es el valor que usa el control para definir si es necesario encender los actuadores correspondientes.
+
+ Como vemos en el siguiente diagrama de flujo, figura: \ref{fig: sensor_task}.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[scale=.5]{./Figures/sensor_task.png}
+  \caption{Diagrama de flujo del sensor.}
+  \label{fig:sensor_task}
+\end{figure}
+
 %\begin{verbatim}
 %\begin{lstlisting}[caption= "un epígrafe descriptivo"]
 %

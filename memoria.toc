@@ -2,34 +2,18 @@
 \defcounter {refsection}{0}\relax 
 \select@language {spanish}
 \contentsline {chapter}{Resumen}{\es@scroman {iii}}{section*.1}
-\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n General}{1}{chapter.8}
-\contentsline {section}{\numberline {1.1}Aprendiendo \textlatin {\LaTeX }{}}{1}{section.9}
-\contentsline {subsection}{\numberline {1.1.1}Una introducci\IeC {\'o}n (no tan corta) a \textlatin {\LaTeX }{}}{1}{subsection.10}
-\contentsline {subsection}{\numberline {1.1.2}Gu\IeC {\'\i }a matem\IeC {\'a}tica r\IeC {\'a}pida para \textlatin {\LaTeX }{}}{1}{subsection.11}
-\contentsline {section}{\numberline {1.2}Utilizando esta plantilla}{2}{section.12}
-\contentsline {subsection}{\numberline {1.2.1}Acerca de esta plantilla}{2}{subsection.13}
-\contentsline {section}{\numberline {1.3}Qu\IeC {\'e} incluye esta plantilla}{2}{section.14}
-\contentsline {subsection}{\numberline {1.3.1}Carpetas}{2}{subsection.15}
-\contentsline {subsection}{\numberline {1.3.2}Archivos}{3}{subsection.18}
-\contentsline {section}{\numberline {1.4}Entorno de trabajo}{4}{section.19}
-\contentsline {subsection}{\numberline {1.4.1}Configurando TexMaker}{5}{subsection.20}
-\contentsline {section}{\numberline {1.5}Personalizando la plantilla en el archivo \texttt {\bfseries memoria.tex}}{6}{section.22}
-\contentsline {section}{\numberline {1.6}El c\IeC {\'o}digo del archivo \texttt {\bfseries memoria.tex} explicado}{6}{section.23}
-\contentsline {chapter}{\numberline {2}Introducci\IeC {\'o}n Espec\IeC {\'\i }fica}{9}{chapter.24}
-\contentsline {section}{\numberline {2.1}Estilo y convenciones}{9}{section.25}
-\contentsline {subsection}{\numberline {2.1.1}Uso de may\IeC {\'u}scula inicial para los t\IeC {\'\i }tulo de secciones}{9}{subsection.26}
-\contentsline {subsection}{\numberline {2.1.2}Este es el t\IeC {\'\i }tulo de una subsecci\IeC {\'o}n}{9}{subsection.29}
-\contentsline {subsection}{\numberline {2.1.3}Figuras}{10}{subsection.30}
-\contentsline {subsection}{\numberline {2.1.4}Tablas}{11}{subsection.37}
-\contentsline {subsection}{\numberline {2.1.5}Ecuaciones}{12}{subsection.39}
-\contentsline {chapter}{\numberline {3}Dise\IeC {\~n}o e Implementaci\IeC {\'o}n}{13}{chapter.42}
-\contentsline {section}{\numberline {3.1}Dise\IeC {\~n}o e Implementaci\IeC {\'o}n}{13}{section.43}
-\contentsline {section}{\numberline {3.2}Hardware}{13}{section.44}
-\contentsline {chapter}{\numberline {4}Ensayos y Resultados}{19}{chapter.58}
-\contentsline {section}{\numberline {4.1}Banco de pruebas}{19}{section.59}
-\contentsline {section}{\numberline {4.2}Configuraciones para la PC}{20}{section.62}
-\contentsline {section}{\numberline {4.3}Verificaci\IeC {\'o}n del sistema web embebido}{21}{section.65}
-\contentsline {section}{\numberline {4.4}Pruebas funcionales del hardware}{22}{section.71}
-\contentsline {chapter}{\numberline {5}Conclusiones}{27}{chapter.79}
-\contentsline {section}{\numberline {5.1}Conclusiones generales }{27}{section.80}
-\contentsline {section}{\numberline {5.2}Pr\IeC {\'o}ximos pasos}{27}{section.81}
+\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n General}{1}{chapter.7}
+\contentsline {chapter}{\numberline {2}Dise\IeC {\~n}o e Implementaci\IeC {\'o}n}{3}{chapter.8}
+\contentsline {section}{\numberline {2.1}Dise\IeC {\~n}o e Implementaci\IeC {\'o}n}{3}{section.9}
+\contentsline {section}{\numberline {2.2}Hardware}{3}{section.10}
+\contentsline {subsection}{\numberline {2.2.1}Diagrama en bloque}{3}{subsection.11}
+\contentsline {subsection}{\numberline {2.2.2}Caracter\IeC {\'\i }sticas del Hardware}{3}{subsection.13}
+\contentsline {section}{\numberline {2.3}Software}{7}{section.27}
+\contentsline {chapter}{\numberline {3}Ensayos y Resultados}{11}{chapter.34}
+\contentsline {section}{\numberline {3.1}Banco de pruebas}{11}{section.35}
+\contentsline {section}{\numberline {3.2}Configuraciones para la PC}{12}{section.38}
+\contentsline {section}{\numberline {3.3}Verificaci\IeC {\'o}n del sistema web embebido}{13}{section.41}
+\contentsline {section}{\numberline {3.4}Pruebas funcionales del hardware}{15}{section.48}
+\contentsline {chapter}{\numberline {4}Conclusiones}{19}{chapter.53}
+\contentsline {section}{\numberline {4.1}Conclusiones generales }{19}{section.54}
+\contentsline {section}{\numberline {4.2}Pr\IeC {\'o}ximos pasos}{19}{section.55}

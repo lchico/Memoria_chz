@@ -2,36 +2,33 @@
 \defcounter {refsection}{0}\relax 
 \select@language {spanish}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Entorno de trabajo del texMaker.\relax }}{5}{figure.caption.21}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Ilustraci\IeC {\'o}n del cuadrado azul que se eligi\IeC {\'o} para el dise\IeC {\~n}o del logo.\relax }}{10}{figure.caption.32}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Imagen tomada de la p\IeC {\'a}gina oficial del procesador\footnotemark .\relax }}{10}{figure.caption.33}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces El lector no sabe por qu\IeC {\'e} de pronto aparece esta figura.\relax }}{11}{figure.caption.36}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Modem SIM800L.\relax }}{3}{figure.caption.12}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Modem SIM800L.\relax }}{4}{figure.caption.14}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces M\IeC {\'o}dulo sim800l e \IeC {\'\i }ndice de esquem\IeC {\'a}ticos.\relax }}{4}{figure.caption.15}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Fuente de alimentaci\IeC {\'o}n DC/DC.\relax }}{5}{figure.caption.18}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Regulador de corriente, de tensi\IeC {\'o}n y del sensor de temperatura.\relax }}{5}{figure.caption.20}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Entradas a leds y salidas de los pulsadores.\relax }}{6}{figure.caption.22}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Capa superior de la placa simulador de sensores.\relax }}{6}{figure.caption.23}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Capa inferior de la placa simulador de sensores.\relax }}{7}{figure.caption.24}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Placa simulador de sensores 3D.\relax }}{8}{figure.caption.25}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Placa de simulaci\IeC {\'o}n de temperatura y estado de la bater\IeC {\'\i }a con el modulo SIM800l integrado.\relax }}{8}{figure.caption.26}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Diagrama de flujo de la tarea que controla el modem GPRS.\relax }}{9}{figure.caption.29}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Diagrama de flujo de la tarea de control.\relax }}{10}{figure.caption.31}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Diagrama de flujo del sensor.\relax }}{10}{figure.caption.33}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Modem SIM800L.\relax }}{13}{figure.caption.45}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Conexi\IeC {\'o}n del m\IeC {\'o}dulo sim800l e \IeC {\'\i }ndice de esquem\IeC {\'a}ticos.\relax }}{14}{figure.caption.46}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Fuente de alimentaci\IeC {\'o}n DC/DC.\relax }}{14}{figure.caption.49}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Regulador de corriente, de tensi\IeC {\'o}n y del sensor de temperatura.\relax }}{15}{figure.caption.51}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Entradas a leds y salidas de los pulsadores.\relax }}{15}{figure.caption.53}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Capa superior de la placa simulador de sensores.\relax }}{16}{figure.caption.54}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Capa inferior de la placa simulador de sensores.\relax }}{17}{figure.caption.55}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Placa simulador de sensores 3D.\relax }}{18}{figure.caption.56}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Placa de simulaci\IeC {\'o}n de temperatura y estado de la bater\IeC {\'\i }a con el modulo SIM800l integrado.\relax }}{18}{figure.caption.57}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Placa de simulaci\IeC {\'o}n de temperatura y estado de la bater\IeC {\'\i }a con el modulo SIM800l integrado.\relax }}{19}{figure.caption.60}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Placa de simulaci\IeC {\'o}n de temperatura y estado de la bater\IeC {\'\i }a con el modulo SIM800l integrado.\relax }}{19}{figure.caption.61}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Configuraci\IeC {\'o}n de una red est\IeC {\'a}tica para la interfaz Ethernet.\relax }}{20}{figure.caption.63}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Pantalla principal de la web de monitoreo.\relax }}{20}{figure.caption.64}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Opciones del al presionar sobre el men\IeC {\'u} desplegable.\relax }}{21}{figure.caption.66}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Activar/Desactivar actuadores.\relax }}{22}{figure.caption.67}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Configurar nivel de descarga para accionar la alerta por bater\IeC {\'\i }a baja.\relax }}{22}{figure.caption.68}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Configuraci\IeC {\'o}n de los celulares de quienes van a recibir las alarmas por SMS.\relax }}{22}{figure.caption.69}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Configuraci\IeC {\'o}n del rango de temperatura y activaci\IeC {\'o}n del estado de control autom\IeC {\'a}tico y alarma.\relax }}{23}{figure.caption.70}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Activaci\IeC {\'o}n por control autom\IeC {\'a}tico debido a temperatura elevada.\relax }}{23}{figure.caption.72}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Captura del SMS recibido debido temperatura m\IeC {\'a}xima.\relax }}{23}{figure.caption.73}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Temperatura en nivel m\IeC {\'\i }nimo, se desactiva la bomba y la electrov\IeC {\'a}lvula.\relax }}{24}{figure.caption.74}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Captura del SMS recibido debido temperatura m\IeC {\'\i }nima.\relax }}{24}{figure.caption.75}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Temperatura en nivel m\IeC {\'\i }nimo, se desactiva la bomba y la electrov\IeC {\'a}lvula.\relax }}{25}{figure.caption.76}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Captura del SMS recibido debido temperatura m\IeC {\'\i }nima.\relax }}{25}{figure.caption.77}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Activaci\IeC {\'o}n manual de actuador 1 y 2, electrov\IeC {\'a}lvula y bomba inactivo.\relax }}{25}{figure.caption.78}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Placa de simulaci\IeC {\'o}n de temperatura y estado de la bater\IeC {\'\i }a con el modulo SIM800l integrado.\relax }}{11}{figure.caption.36}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Placa b\IeC {\'a}sica integrada con la CIAA-NXP.\relax }}{11}{figure.caption.37}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Configuraci\IeC {\'o}n de una red est\IeC {\'a}tica para la interfaz Ethernet.\relax }}{12}{figure.caption.39}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Pantalla principal de la web de monitoreo.\relax }}{12}{figure.caption.40}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Opciones del al presionar sobre el men\IeC {\'u} desplegable.\relax }}{13}{figure.caption.42}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Activar/Desactivar actuadores.\relax }}{14}{figure.caption.43}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Configurar nivel de descarga para accionar la alerta por bater\IeC {\'\i }a baja.\relax }}{14}{figure.caption.44}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Configuraci\IeC {\'o}n de los celulares de quienes van a recibir las alarmas por SMS.\relax }}{14}{figure.caption.45}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Configuraci\IeC {\'o}n del rango de temperatura y activaci\IeC {\'o}n del estado de control autom\IeC {\'a}tico y alarma.\relax }}{15}{figure.caption.46}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Formulario de configuraci\IeC {\'o}n de IP, mascara y puerta de enlace.\relax }}{15}{figure.caption.47}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Activaci\IeC {\'o}n por control autom\IeC {\'a}tico debido a temperatura elevada.\relax }}{16}{figure.caption.49}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces SMS recibidos debido a temperatura m\IeC {\'a}xima. El segundo SMS recibido es por temperatura m\IeC {\'\i }nima. Y el \IeC {\'u}ltimo recibido debido a bateria baja.\relax }}{17}{figure.caption.50}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Temperatura en nivel m\IeC {\'\i }nimo, se desactiva la bomba y la electrov\IeC {\'a}lvula.\relax }}{17}{figure.caption.51}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Activaci\IeC {\'o}n manual de actuador 1 y 2, electrov\IeC {\'a}lvula y bomba inactivo.\relax }}{18}{figure.caption.52}
 \addvspace {10\p@ }
