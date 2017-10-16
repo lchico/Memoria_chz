@@ -51,7 +51,7 @@ Surgieron varios imprevistos, principalmente con el modulo SIM800L, el cual pose
   \item Fuente de alimentacion subdimensionada.
   \item Modulo muy sensible, limpiar bien los contactos de la sim.
   \item Problemas en la soldadura del módulo.
-\end{tiemize}
+\end{itemize}
 Finalmente, si bien dicho modulo ya habia sido comprado y se encontro la falla a tiempo se utilizó en el prototipo, pero este no se recomienda. Ya que trae consigo los problemas mencionados anteriormente.. A futuras implementacion este módulo será reemplazado.
 
 
@@ -178,7 +178,7 @@ No obstante, por cuestiones de tiempo no se llegó a implementar. Simplemente qu
 
 
 \section{Software}
-
+\subsection{Aplicación}
 Se dividieron las tareas por recursos:
 \begin{itemize}
   \item Modem 
@@ -217,7 +217,7 @@ La implementacion se puede apreciar en la siguiente figura: \ref{fig:control_tas
 \subsection*{Sensor}
  En este caso la tarea es más simple, consulta el estado de los sensores y calcula el promedio de las ultimas N muestras, este es el valor que usa el control para definir si es necesario encender los actuadores correspondientes.
 
- Como vemos en el siguiente diagrama de flujo, figura: \ref{fig: sensor_task}.
+ Como vemos en el siguiente diagrama de flujo, figura: \ref{fig:sensor_task}.
 
 \begin{figure}[!htb]
   \centering
@@ -225,6 +225,76 @@ La implementacion se puede apreciar en la siguiente figura: \ref{fig:control_tas
   \caption{Diagrama de flujo del sensor.}
   \label{fig:sensor_task}
 \end{figure}
+
+\subsection{Web}
+Mediante la plataforma web diseñada se busca que el usuario pueda ver los datos de los sensores, tener control sobre los actuadores y realizar las configuraciones necesarias. 
+
+Para poder realizarlo, fue necesario profundizar los siguites temas:
+\begin{description}
+    \item[HTML:] En dicho código se desarrollo la página web, este permite darle la estructura basica y se realiza sobre texto plano, es decir no se requiere ninguna aplicacion adicional simplemente un editor de texto. Luego es el navegador web quien tiene la tarea de interpretarlo. 
+    \item[CSS:] Mediante este codigo se realiza la precentacion de la página, permitiendo asi modificar la visualizacion de la misma y darle un formato mas profecional y elegante.
+    \item[SVG:] Mediante este codigo se implementaro los gráficos correspondientes para mostrar los resultados de los sensores y el estado de los actuadores.
+    \item[AJAX:] es un recurso muy utilizado para cuando de desarrollan web en sistemas embebidos. Permite actulizar el estado de la web sin tener que consultar todo el contenido, simplemente se descarga una primera vez y luego se puede realizar consultar los valores que quieren actualizar. 
+    \item[SSI:] Si bien la implementacion que nos ofrece FreeRtos es reduciada. Es más que suficiente para poder agregar contenido a nuestra pagina en forma dinámica.
+    \item[CGI:] Por medio de este el cliente que navegar por nuestra plataforma puede enviar y solicitar datos, al servidor.
+\end{description}
+
+\subsection*{Diseño web}
+Al iniciar el diseño de la web, no tenía experiencia previa. Es por ello que se inició buscando información en internet, varias páginas facilitaban algunos cursos de HTML, CSS, y AJAX  de forma online y gratuita.Como por ejemplo: https://www.w3schools.com, https://es.khanacademy.org y https://www.codecademy.com, con lo cual se logro una primera versión de la web, ver figura:\ref{fig:old_web}.
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[scale=.25]{./Figures/old_web.png}
+    \caption{Primera versión de la web de monitoreo.}
+    \label{fig:ajax_sec}
+\end{figure}
+
+Luego una vez que esta, estaba funcionando en forma correcta, se paso a mejorar las presentación de la misma, y para ello se usó un template que se ajustara a las necesidades, es decir mediante un archivo que contiene un estilo ya predefinido modifica la apariencia de la web. Pudiendo ver dicho cambio en la siguiente figura:\ref{fig:web_monitoreo}.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=.25]{./Figures/web_monitoreo.png}
+  \caption{Versirón actualizada haciendo uso del template.}
+  \label{fig:web_monitoreo}
+\end{figure}
+
+Este fue encontrando en w3school\footnote{\url{https://www.w3schools.com/w3css/w3css_templates.asp}}. Siendo que cumplia los siguientes requerimientos:
+\begin{itemize}
+  \item Sea amigable
+  \item Compatibles con distintos navegadores, especialmente los más utilizados como ser: Google-chrome y Firefox. 
+  \item Sea comodo de navegar en distintos dispositivos, como tables, celulares y PCs.
+\end{itemize}
+
+
+\subsection*{Configuracitón del servidor}
+Al iniciar el servidor debemos tener en cuenta que este sera el encargado de gestionar las peticiones del usuario. Es decir una vez que el usuario ingresa la direccion del servidor, este le transmite la información de la web.  Para realizar la comunicacion entre cliente y servidor, se utilizo la API de lwIP  que utiliza una serie de callbacks para controlar los eventos debido a la comunicacion de la red. Es por ello que para optimizar los recursos se utilizo AJAX, permitiendo que el cliente sea el encargado de realizar las consultas al server en forma periodica. La informacion se solicita mediante directivas del tipo SSI. Es decir, solo se transmite un archivo ajax.shtml con los parametros que se van a actualizar. Luego el browser, mediante una serie de funciones en JavaScript es el encargado de actualizar los cambios realizados.  
+Podemos ver el procedimiento mencionado den la siguiente figura\footnote{\url{http://laboratorios.fi.uba.ar/lse/tesis/LSE-FIUBA-Trabajo-Final-CESE-Patricio-Bos-2016.pdf}, figura:3.9.}:\ref{fig:ajax_sec} 
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[scale=.8]{./Figures/ajax_sec.png}
+    \caption{Diagrama de secuencia AJAX.}
+    \label{fig:ajax_sec}
+\end{figure}
+
+
+La configuracion establecida por default es la que se muestra en la siguiente tabla:\ref{tab:servercfg}.
+
+\begin{table}[!h]
+  \centering
+  \begin{tabular}{l c}
+    \hline 
+    Parámetro    & Valor \\
+    \hline \hline
+    IP               & 192.168.1.11 \\
+    Mascara de red   & 255.255.255.0 \\
+    Puerta de enlace & 192.168.0.1 \\
+    Puerto           & 80 \\
+    DHCP             & Deshabilitado \\
+    \hline
+  \end{tabular}
+  \caption{Configuracion por default del servidor}
+  \label{tab:servercfg}
+\end{table}
+
 
 %\begin{verbatim}
 %\begin{lstlisting}[caption= "un epígrafe descriptivo"]

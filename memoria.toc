@@ -4,16 +4,18 @@
 \contentsline {chapter}{Resumen}{\es@scroman {iii}}{section*.1}
 \contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n General}{1}{chapter.7}
 \contentsline {chapter}{\numberline {2}Dise\IeC {\~n}o e Implementaci\IeC {\'o}n}{3}{chapter.8}
-\contentsline {section}{\numberline {2.1}Dise\IeC {\~n}o e Implementaci\IeC {\'o}n}{3}{section.9}
-\contentsline {section}{\numberline {2.2}Hardware}{3}{section.10}
-\contentsline {subsection}{\numberline {2.2.1}Diagrama en bloque}{3}{subsection.11}
-\contentsline {subsection}{\numberline {2.2.2}Caracter\IeC {\'\i }sticas del Hardware}{3}{subsection.13}
-\contentsline {section}{\numberline {2.3}Software}{7}{section.27}
-\contentsline {chapter}{\numberline {3}Ensayos y Resultados}{11}{chapter.34}
-\contentsline {section}{\numberline {3.1}Banco de pruebas}{11}{section.35}
-\contentsline {section}{\numberline {3.2}Configuraciones para la PC}{12}{section.38}
-\contentsline {section}{\numberline {3.3}Verificaci\IeC {\'o}n del sistema web embebido}{13}{section.41}
-\contentsline {section}{\numberline {3.4}Pruebas funcionales del hardware}{15}{section.48}
-\contentsline {chapter}{\numberline {4}Conclusiones}{19}{chapter.53}
-\contentsline {section}{\numberline {4.1}Conclusiones generales }{19}{section.54}
-\contentsline {section}{\numberline {4.2}Pr\IeC {\'o}ximos pasos}{19}{section.55}
+\contentsline {section}{\numberline {2.1}Hardware}{3}{section.9}
+\contentsline {subsection}{\numberline {2.1.1}Diagrama en bloque}{3}{subsection.10}
+\contentsline {subsection}{\numberline {2.1.2} M\IeC {\'o}dulos requeridos}{4}{subsection.12}
+\contentsline {subsection}{\numberline {2.1.3}Caracter\IeC {\'\i }sticas del hardware}{4}{subsection.13}
+\contentsline {section}{\numberline {2.2}Software}{8}{section.27}
+\contentsline {subsection}{\numberline {2.2.1}Aplicaci\IeC {\'o}n}{8}{subsection.28}
+\contentsline {subsection}{\numberline {2.2.2}Web}{10}{subsection.35}
+\contentsline {chapter}{\numberline {3}Ensayos y Resultados}{15}{chapter.44}
+\contentsline {section}{\numberline {3.1}Banco de pruebas}{15}{section.45}
+\contentsline {section}{\numberline {3.2}Configuraciones para la PC}{16}{section.48}
+\contentsline {section}{\numberline {3.3}Verificaci\IeC {\'o}n del sistema web embebido}{17}{section.51}
+\contentsline {section}{\numberline {3.4}Pruebas funcionales del hardware}{19}{section.58}
+\contentsline {chapter}{\numberline {4}Conclusiones}{23}{chapter.63}
+\contentsline {section}{\numberline {4.1}Conclusiones generales }{23}{section.64}
+\contentsline {section}{\numberline {4.2}Pr\IeC {\'o}ximos pasos}{23}{section.65}
