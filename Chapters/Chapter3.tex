@@ -60,9 +60,9 @@ En el siguiente esquema, Figura \ref{fig:diagrama_sistema} podemos apreciar el e
 Recibiendo como informacion la temperatura de los tanques, este debe controlar la bomba y la electroválvula correspondiente. De esta forma permitira tener controlada la temperatura acorde a los parametros seteados por el usuario. 
 
 
-\begin{figure}[htb]
+\begin{figure}[!htb]
   \centering
-  \includegraphics[scale=0.2]{./Figures/diagrama_del_sistema.png}
+  \includegraphics[scale=0.3]{./Figures/diagrama_del_sistema.png}
   \caption{Esquema de interaccion del dispositivo.}
   \label{fig:diagrama_sistema}
 \end{figure}
@@ -94,7 +94,7 @@ El sistema cuenta con:
 
 El módulo sim800l que se muestra en la siguiente Figura \ref{fig:sim800l}, es un módem GPRS que cuenta con las siguientes especificaciones:
 
-\begin{figure}[htb]
+\begin{figure}[!htb]
   \centering
   \includegraphics[scale=0.2]{./Figures/sim800.png}
   \caption{Modem SIM800L.}
@@ -110,31 +110,31 @@ El módulo sim800l que se muestra en la siguiente Figura \ref{fig:sim800l}, es u
 
 
 En la figura \ref{fig:essim800} se puede apreciar el esquemático implementado para la conexión del módem GSM. Éste requiere adaptar los niveles de tensión para interactuar con la CIA-NXP, para el cual utilizamos un max3232.
-\begin{figure}[htb]
+\begin{figure}[!htb]
   \centering
   \includegraphics[page=1,scale=0.3,angle=270]{./Figures/schematic.pdf}
   \caption{Módulo sim800l e índice de esquemáticos.}
   \label{fig:essim800}
 \end{figure}
 
-Para la alimentación del circuito se utilizó el regulador LM2576. El mismo se tomó de la nota de aplicación el diagrama típico.\footnote{Nota de aplicación Texas Instruments: http://www.ti.com/lit/ds/symlink/lm2576.pdf}
-Para regular a 3.3V se utilizó el integrado LM11733 circuito extraído de la nota de aplicación. \footnote{ Texas Instruments: http://www.ti.com/lit/ds/symlink/lm1117.pdf - Capitulo 8 Figura 16 } 
-\begin{figure}[htb]
+Para la alimentación del circuito se utilizó el regulador LM2576. El mismo se tomó de la nota de aplicación el diagrama típico.\footnote{Nota de aplicación Texas Instruments: \url{http://www.ti.com/lit/ds/symlink/lm2576.pdf}}
+Para regular a 3.3V se utilizó el integrado LM11733 circuito extraído de la nota de aplicación. \footnote{ Texas Instruments: \url{http://www.ti.com/lit/ds/symlink/lm1117.pdf} - Capitulo 8 Figura 16 } 
+\begin{figure}[!htb]
   \centering
   \includegraphics[page=3,scale=0.3,angle=270]{./Figures/schematic.pdf}
   \caption{Fuente de alimentación DC/DC.}
   \label{fig:fuente}
 \end{figure}
 
-Para lograr la simulación de distintos tipos de sensores, se utilizaron circuitos como se muestra en la figura \ref{fig:temp_tens}  que permiten generar corrientes 4mA a 20mA, variaciones de la tensión, y hasta un sensor de temperatura. Para los circuitos se utilizaron las notas de aplicación de Texas Instruments\footnote{Reguladores de Tensión y Corriente http://www.ti.com/lit/ds/symlink/lm317.pdf - capitulo 8 páginas 12 y 13 y sensor temperatura: http://www.ti.com/lit/ds/symlink/lm35.pdf - 8.2.1 Basic Centigrade Temperature Sensor } 
-\begin{figure}[htb]
+Para lograr la simulación de distintos tipos de sensores, se utilizaron circuitos como se muestra en la figura \ref{fig:temp_tens}  que permiten generar corrientes 4mA a 20mA, variaciones de la tensión, y hasta un sensor de temperatura. Para los circuitos se utilizaron las notas de aplicación de Texas Instruments\footnote{Reguladores de Tensión y Corriente \url{http://www.ti.com/lit/ds/symlink/lm317.pdf} - capitulo 8 páginas 12 y 13 y sensor temperatura: \url{http://www.ti.com/lit/ds/symlink/lm35.pdf} - 8.2.1 Basic Centigrade Temperature Sensor } 
+\begin{figure}[!htb]
   \centering
   \includegraphics[page=4,scale=0.3,angle=270]{./Figures/schematic.pdf}
   \caption{Regulador de corriente, de tensión y del sensor de temperatura.}
   \label{fig:temp_tens}
 \end{figure}
 
-Para concluir, se utilizaron unos circuitos básicos que permiten interactuar en forma simple con el sistema y realizar pruebas de funcionamiento. Los mismos fueron extraídos del esquemático utilizado en el proyecto de la EDU-CIA\footnote{http://www.proyecto-ciaa.com.ar/devwiki/lib/exe/fetch.php?media=desarrollo:edu-ciaa:edu-ciaa-nxp:edu-ciaa-nxp\_color.pdf}
+Para concluir, se utilizaron unos circuitos básicos que permiten interactuar en forma simple con el sistema y realizar pruebas de funcionamiento. Los mismos fueron extraídos del esquemático utilizado en el proyecto de la EDU-CIA\footnote{\url{http://www.proyecto-ciaa.com.ar/devwiki/lib/exe/fetch.php?media=desarrollo:edu-ciaa:edu-ciaa-nxp:edu-ciaa-nxp\_color.pdf}}
 
 \begin{figure}[!htb]
   \centering
@@ -240,12 +240,18 @@ Para poder realizarlo, fue necesario profundizar los siguites temas:
 \end{description}
 
 \subsection*{Diseño web}
-Al iniciar el diseño de la web, no tenía experiencia previa. Es por ello que se inició buscando información en internet, varias páginas facilitaban algunos cursos de HTML, CSS, y AJAX  de forma online y gratuita.Como por ejemplo: https://www.w3schools.com, https://es.khanacademy.org y https://www.codecademy.com, con lo cual se logro una primera versión de la web, ver figura:\ref{fig:old_web}.
+Al iniciar el diseño de la web, no tenía experiencia previa. Es por ello que se inició buscando información en internet, varias páginas facilitaban algunos cursos de HTML, CSS, y AJAX  de forma online y gratuita. Las mas usadas fueron:
+\begin{itemize}
+  \item \url{https://www.w3schools.com}
+  \item \url{https://es.khanacademy.org}
+  \item \url{https://www.codecademy.com}
+\end{itemize}
+  con lo cual se logro una primera versión de la web, ver figura:\ref{fig:old_web}.
 \begin{figure}[!htb]
     \centering
     \includegraphics[scale=.25]{./Figures/old_web.png}
     \caption{Primera versión de la web de monitoreo.}
-    \label{fig:ajax_sec}
+    \label{fig:old_web}
 \end{figure}
 
 Luego una vez que esta, estaba funcionando en forma correcta, se paso a mejorar las presentación de la misma, y para ello se usó un template que se ajustara a las necesidades, es decir mediante un archivo que contiene un estilo ya predefinido modifica la apariencia de la web. Pudiendo ver dicho cambio en la siguiente figura:\ref{fig:web_monitoreo}.
