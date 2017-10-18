@@ -46,37 +46,37 @@ En este capítulo se veremos cómo se desarrolló un hardware básico para poder
 
 Se diseño de un circuito, que permite simular el entorno de funcionamiento de una bodega. Para ello se utilizó lo aprendido a la largo del curso de \emph{diseño de PCBs en KICAD}. Si bien, por falta de tiempo, no se llevo a cabo el desarrollo de la placa diseñada que veremos a , a fines de poder testear el sistema se elaboro una versión simplificada. 
 
-Surgieron varios imprevistos, principalmente con el modulo SIM800L, el cual posee grandes inconvenientes a la hora de destectar la SIM. Luego de una serie de búsquedas en internet, donde muchos habian tenido un problema similar debido a:
+Surgieron varios imprevistos, principalmente con el modulo SIM800L, el cual posee grandes inconvenientes a la hora de detectar la SIM. Luego de una serie de búsquedas en internet, donde muchos habían tenido un problema similar debido a:
 \begin{itemize}
-  \item Fuente de alimentacion subdimensionada.
-  \item Modulo muy sensible, limpiar bien los contactos de la sim.
+  \item Fuente de alimentación subdimensionada.
+  \item Modulo muy sensible, limpiar bien los contactos de la SIM.
   \item Problemas en la soldadura del módulo.
 \end{itemize}
-Finalmente, si bien dicho modulo ya habia sido comprado y se encontro la falla a tiempo se utilizó en el prototipo, pero este no se recomienda. Ya que trae consigo los problemas mencionados anteriormente.. A futuras implementacion este módulo será reemplazado.
+Finalmente, si bien dicho modulo ya había sido comprado y se encontró la falla a tiempo se utilizó en el prototipo, pero este no se recomienda. Ya que trae consigo los problemas mencionados anteriormente.. A futuras implementación este módulo será reemplazado.
 
 
 \subsection{Diagrama en bloque}
-En el siguiente esquema, Figura \ref{fig:diagrama_sistema} podemos apreciar el entorno de trabano del dispositivo. Donde el mismo debera interactuar con una bomba de agua que permite llevar desde el deposito del liquido refrigerate a los tanques que estan en proceso de fermentación.
-Recibiendo como informacion la temperatura de los tanques, este debe controlar la bomba y la electroválvula correspondiente. De esta forma permitira tener controlada la temperatura acorde a los parametros seteados por el usuario. 
+En el siguiente esquema, Figura \ref{fig:diagrama_sistema} podemos apreciar el entorno de trabajo del dispositivo. Donde el mismo   interactuar con una bomba de agua que permite llevar desde el deposito del liquido refrigerante a los tanques que están en proceso de fermentación.
+Recibiendo como información la temperatura de los tanques, este debe controlar la bomba y la electroválvula correspondiente. De esta forma permitirá tener controlada la temperatura acorde a los parámetros definidos por el usuario. 
 
 
 \begin{figure}[!htb]
   \centering
   \includegraphics[scale=0.3]{./Figures/diagrama_del_sistema.png}
-  \caption{Esquema de interaccion del dispositivo.}
+  \caption{Esquema de interacción del dispositivo.}
   \label{fig:diagrama_sistema}
 \end{figure}
 
 \subsection{ Módulos requeridos}
-Para llevar a cabo el proyecto, se dividio el sistema en los siguientes módulos:
+Para llevar a cabo el proyecto, se dividió el sistema en los siguientes módulos:
 \begin{description}
-  \item[Modem:] sera el encargado de transmitir las alertas mediante SMS utilizando el modulo SIM800L.
+  \item[Módem:] sera el encargado de transmitir las alertas mediante SMS utilizando el modulo SIM800L.
   \item[Actuadores:] salidas que nos permiten controlar la bomba y electroválvulas. Debido a que se utilizo la CIA-NXP ya esta resuelto.
-  \item[Sensores:] entradas que permitan simular el comportamiento de los sensores, para esto se utilizaron potenciometros.
+  \item[Sensores:] entradas que permitan simular el comportamiento de los sensores, para esto se utilizaron potenciómetros.
   \item[CPU:] unidad encargada de controlar el funcionamiento del sistema. Incorporada en la placa CIA-NXP. 
 \end{description}
 
-Con lo cual podemos ver que el CPU y los actuadores ya estan desarrollados al haber elegido la CIA. Nos quedara ver los sensores y el modem en la próxima sección.
+Con lo cual podemos ver que el CPU y los actuadores ya están desarrollados al haber elegido la CIA. Nos quedara ver los sensores y el módem en la próxima sección.
 
 \subsection{Características del hardware}
 El sistema cuenta con:
@@ -88,16 +88,16 @@ El sistema cuenta con:
   \item 2 Salidas con tensión variable, utilizando potenciómetros. 
   \item 4 Entradas digitales conectadas a leds.
   \item 4 Salidas conectadas a pulsadores. 
-  \item 1 Sócalo para la conexión del modulo SIM800L. 
+  \item 1 Zócalo para la conexión del modulo SIM800L. 
   \item 1 salida de 5V a 3A y otra de 3.3V a 1A. 
 \end{itemize}
 
-El módulo sim800l que se muestra en la siguiente Figura \ref{fig:sim800l}, es un módem GPRS que cuenta con las siguientes especificaciones:
+El módulo SIM800l que se muestra en la siguiente Figura \ref{fig:sim800l}, es un módem GPRS que cuenta con las siguientes especificaciones:
 
 \begin{figure}[!htb]
   \centering
   \includegraphics[scale=0.2]{./Figures/sim800.png}
-  \caption{Modem SIM800L.}
+  \caption{Módem SIM800L.}
   \label{fig:sim800l}
 \end{figure}
 
@@ -113,7 +113,7 @@ En la figura \ref{fig:essim800} se puede apreciar el esquemático implementado p
 \begin{figure}[!htb]
   \centering
   \includegraphics[page=1,scale=0.3,angle=270]{./Figures/schematic.pdf}
-  \caption{Módulo sim800l e índice de esquemáticos.}
+  \caption{Módulo SIM800l e índice de esquemáticos.}
   \label{fig:essim800}
 \end{figure}
 
@@ -157,9 +157,9 @@ Una vez realizados los esquemáticos, se pasó a la elaboración del PCB. Se rea
   \label{fig:layer_inf}
 \end{figure}
 
-Realizando una vista previa de como quedaría el esquema y aprovechando el potencial de la herramienta de kicad, se realizó una vista 3D de como quedaría, la que se puede apreciar en la figura \ref{fig:pcb3d}.
+Realizando una vista previa de como quedaría el esquema y aprovechando el potencial de la herramienta de KICAD, se realizó una vista 3D de como quedaría, la que se puede apreciar en la figura \ref{fig:pcb3d}.
 
-\begin{figure}[!htb]
+\begin{figure}[!h]
   \centering
   \includegraphics[scale=0.3]{./Figures/pcb_3d.png}
   \includegraphics[scale=0.3]{./Figures/pcb_3d_back.png}
@@ -169,7 +169,7 @@ Realizando una vista previa de como quedaría el esquema y aprovechando el poten
 
 No obstante, por cuestiones de tiempo no se llegó a implementar. Simplemente quedó en una primera etapa para una posterior implementación. Se terminó desarrollando una placa experimental que permitió realizar las primeras pruebas. Podemos verla en la siguiente figura \ref{fig:placa_básicafirst}
 
-\begin{figure}[!htb]
+\begin{figure}[!h]
   \centering
   \includegraphics[scale=.03]{./Figures/placa_basica.jpg}
   \caption{Placa de simulación de temperatura y estado de la batería con el modulo SIM800l integrado.}
@@ -181,30 +181,30 @@ No obstante, por cuestiones de tiempo no se llegó a implementar. Simplemente qu
 \subsection{Aplicación}
 Se dividieron las tareas por recursos:
 \begin{itemize}
-  \item Modem 
+  \item Módem 
   \item Control
   \item Sensores
 \end{itemize}
 
-\subsection*{Modem}
-En esta tarea se inicializa las configuraciones iniciales para el uso del modem. Es la encargada de interactuar con el módulo GPRS, realizando consultas del estado de señal y de enviando los mensajes de alarmas en caso de ser necesarios.
+\subsection*{Módem}
+En esta tarea se inicializa las configuraciones iniciales para el uso del módem. Es la encargada de interactuar con el módulo GPRS, realizando consultas del estado de señal y de enviando los mensajes de alarmas en caso de ser necesarios.
 
 Podemos ver como fue implementado en el diagrama de flujo en la siguiente figura \ref{fig:modem_task}.
 
 \begin{figure}[!htb]
   \centering
   \includegraphics[scale=.5]{./Figures/modem_task.png}
-  \caption{Diagrama de flujo de la tarea que controla el modem GPRS.}
+  \caption{Diagrama de flujo de la tarea que controla el módem GPRS.}
   \label{fig:modem_task}
 \end{figure}
 
 
 \subsection*{Control}
-Con esta tarea se analiza el resultado los sensores de temperatura, y de labatería. Se verifica que esten dentro de los parametros configurados por el usuario y se actua en consecuencia.
+Con esta tarea se analiza el resultado los sensores de temperatura, y de la batería. Se verifica que estén dentro de los parámetros configurados por el usuario y se actúa en consecuencia.
 
-También es la encargada de setear los actuadores sugún sean especificados en la plataforma web.
+También es la encargada de setear los actuadores según sean especificados en la plataforma web.
 
-La implementacion se puede apreciar en la siguiente figura: \ref{fig:control_task}.
+La implementación se puede apreciar en la siguiente figura \ref{fig:control_task}.
 
 \begin{figure}[!htb]
   \centering
@@ -217,7 +217,7 @@ La implementacion se puede apreciar en la siguiente figura: \ref{fig:control_tas
 \subsection*{Sensor}
  En este caso la tarea es más simple, consulta el estado de los sensores y calcula el promedio de las ultimas N muestras, este es el valor que usa el control para definir si es necesario encender los actuadores correspondientes.
 
- Como vemos en el siguiente diagrama de flujo, figura: \ref{fig:sensor_task}.
+ Como vemos en el siguiente diagrama de flujo, figura \ref{fig:sensor_task}.
 
 \begin{figure}[!htb]
   \centering
@@ -229,13 +229,13 @@ La implementacion se puede apreciar en la siguiente figura: \ref{fig:control_tas
 \subsection{Web}
 Mediante la plataforma web diseñada se busca que el usuario pueda ver los datos de los sensores, tener control sobre los actuadores y realizar las configuraciones necesarias. 
 
-Para poder realizarlo, fue necesario profundizar los siguites temas:
+Para poder realizarlo, fue necesario profundizar los siguientes temas:
 \begin{description}
-    \item[HTML:] En dicho código se desarrollo la página web, este permite darle la estructura basica y se realiza sobre texto plano, es decir no se requiere ninguna aplicacion adicional simplemente un editor de texto. Luego es el navegador web quien tiene la tarea de interpretarlo. 
-    \item[CSS:] Mediante este codigo se realiza la precentacion de la página, permitiendo asi modificar la visualizacion de la misma y darle un formato mas profecional y elegante.
-    \item[SVG:] Mediante este codigo se implementaro los gráficos correspondientes para mostrar los resultados de los sensores y el estado de los actuadores.
-    \item[AJAX:] es un recurso muy utilizado para cuando de desarrollan web en sistemas embebidos. Permite actulizar el estado de la web sin tener que consultar todo el contenido, simplemente se descarga una primera vez y luego se puede realizar consultar los valores que quieren actualizar. 
-    \item[SSI:] Si bien la implementacion que nos ofrece FreeRtos es reduciada. Es más que suficiente para poder agregar contenido a nuestra pagina en forma dinámica.
+    \item[HTML:] En dicho código se desarrollo la página web, este permite darle la estructura básica y se realiza sobre texto plano, es decir no se requiere ninguna aplicación adicional simplemente un editor de texto. Luego es el navegador web quien tiene la tarea de interpretarlo. 
+    \item[CSS:] Mediante este código se realiza la presentación de la página, permitiendo así modificar la visualización de la misma y darle un formato mas profesional y elegante.
+    \item[SVG:] Mediante este código se implementaron los gráficos correspondientes para mostrar los resultados de los sensores y el estado de los actuadores.
+    \item[AJAX:] es un recurso muy utilizado para cuando de desarrollan web en sistemas embebidos. Permite actualizar el estado de la web sin tener que consultar todo el contenido, simplemente se descarga una primera vez y luego se puede realizar consultar los valores que quieren actualizar. 
+    \item[SSI:] Si bien la implementación que nos ofrece FreeRTOS es reducida. Es más que suficiente para poder agregar contenido a nuestra pagina en forma dinámica.
     \item[CGI:] Por medio de este el cliente que navegar por nuestra plataforma puede enviar y solicitar datos, al servidor.
 \end{description}
 
@@ -246,7 +246,7 @@ Al iniciar el diseño de la web, no tenía experiencia previa. Es por ello que s
   \item \url{https://es.khanacademy.org}
   \item \url{https://www.codecademy.com}
 \end{itemize}
-  con lo cual se logro una primera versión de la web, ver figura:\ref{fig:old_web}.
+  con lo cual se logro una primera versión de la web, ver figura \ref{fig:old_web}.
 \begin{figure}[!htb]
     \centering
     \includegraphics[scale=.25]{./Figures/old_web.png}
@@ -254,26 +254,26 @@ Al iniciar el diseño de la web, no tenía experiencia previa. Es por ello que s
     \label{fig:old_web}
 \end{figure}
 
-Luego una vez que esta, estaba funcionando en forma correcta, se paso a mejorar las presentación de la misma, y para ello se usó un template que se ajustara a las necesidades, es decir mediante un archivo que contiene un estilo ya predefinido modifica la apariencia de la web. Pudiendo ver dicho cambio en la siguiente figura:\ref{fig:web_monitoreo}.
+Luego una vez que esta, estaba funcionando en forma correcta, se paso a mejorar las presentación de la misma, y para ello se usó un témplate que se ajustara a las necesidades, es decir mediante un archivo que contiene un estilo ya predefinido modifica la apariencia de la web. Pudiendo ver dicho cambio en la siguiente figura \ref{fig:web_monitoreo}.
 
 \begin{figure}[!h]
   \centering
   \includegraphics[scale=.25]{./Figures/web_monitoreo.png}
-  \caption{Versirón actualizada haciendo uso del template.}
+  \caption{Versión actualizada haciendo uso del témplate.}
   \label{fig:web_monitoreo}
 \end{figure}
 
-Este fue encontrando en w3school\footnote{\url{https://www.w3schools.com/w3css/w3css_templates.asp}}. Siendo que cumplia los siguientes requerimientos:
+Este fue encontrando en w3school\footnote{\url{https://www.w3schools.com/w3css/w3css_templates.asp}}. Siendo que cumplía los siguientes requerimientos:
 \begin{itemize}
-  \item Sea amigable
+  \item Sea amigable.
   \item Compatibles con distintos navegadores, especialmente los más utilizados como ser: Google-chrome y Firefox. 
-  \item Sea comodo de navegar en distintos dispositivos, como tables, celulares y PCs.
+  \item Sea cómodo de navegar en distintos dispositivos, como tablets, celulares y PCs.
 \end{itemize}
 
 
-\subsection*{Configuracitón del servidor}
-Al iniciar el servidor debemos tener en cuenta que este sera el encargado de gestionar las peticiones del usuario. Es decir una vez que el usuario ingresa la direccion del servidor, este le transmite la información de la web.  Para realizar la comunicacion entre cliente y servidor, se utilizo la API de lwIP  que utiliza una serie de callbacks para controlar los eventos debido a la comunicacion de la red. Es por ello que para optimizar los recursos se utilizo AJAX, permitiendo que el cliente sea el encargado de realizar las consultas al server en forma periodica. La informacion se solicita mediante directivas del tipo SSI. Es decir, solo se transmite un archivo ajax.shtml con los parametros que se van a actualizar. Luego el browser, mediante una serie de funciones en JavaScript es el encargado de actualizar los cambios realizados.  
-Podemos ver el procedimiento mencionado den la siguiente figura\footnote{\url{http://laboratorios.fi.uba.ar/lse/tesis/LSE-FIUBA-Trabajo-Final-CESE-Patricio-Bos-2016.pdf}, figura:3.9.}:\ref{fig:ajax_sec} 
+\subsection*{Configuración del servidor}
+Al iniciar el servidor debemos tener en cuenta que este sera el encargado de gestionar las peticiones del usuario. Es decir una vez que el usuario ingresa la dirección del servidor, este le transmite la información de la web.  Para realizar la comunicación entre cliente y servidor, se utilizo la API de lwIP  que utiliza una serie de callbacks para controlar los eventos debido a la comunicación de la red. Es por ello que para optimizar los recursos se utilizo AJAX, permitiendo que el cliente sea el encargado de realizar las consultas al server en forma periódica. La información se solicita mediante directivas del tipo SSI. Es decir, solo se transmite un archivo AJAX.shtml con los parámetros que se van a actualizar. Luego el navegador, mediante una serie de funciones en JavaScript es el encargado de actualizar los cambios realizados.  
+Podemos ver el procedimiento mencionado den la siguiente figura\footnote{\url{http://laboratorios.fi.uba.ar/lse/tesis/LSE-FIUBA-Trabajo-Final-CESE-Patricio-Bos-2016.pdf}, figura 3.9.}:\ref{fig:ajax_sec} 
 \begin{figure}[!htb]
     \centering
     \includegraphics[scale=.8]{./Figures/ajax_sec.png}
@@ -282,7 +282,7 @@ Podemos ver el procedimiento mencionado den la siguiente figura\footnote{\url{ht
 \end{figure}
 
 
-La configuracion establecida por default es la que se muestra en la siguiente tabla:\ref{tab:servercfg}.
+La configuración establecida por default es la que se muestra en la siguiente Tabla \ref{tab:servercfg}.
 
 \begin{table}[!h]
   \centering
@@ -297,7 +297,7 @@ La configuracion establecida por default es la que se muestra en la siguiente ta
     DHCP             & Deshabilitado \\
     \hline
   \end{tabular}
-  \caption{Configuracion por default del servidor}
+  \caption{Configuración por default del servidor}
   \label{tab:servercfg}
 \end{table}
 

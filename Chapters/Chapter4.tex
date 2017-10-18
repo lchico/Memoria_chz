@@ -33,7 +33,7 @@ Para la realización de los ensayos, comenzamos configurando la PC en forma adec
   \label{fig:hw_pc}
 \end{figure}
 
-Una vez que tenemos la configuración de red adecuada vamos a proceder a dirigirnos a un navegador web. Y como vemos en la imagen \ref{fig:web_monitoreo} que fue vista en el capítulo anterior y que para facilitar al lector se ingreso nuevamente, donde el numero de ip correspondiente al dispositivo de control es: 192.168.1.11 
+Una vez que tenemos la configuración de red adecuada vamos a proceder a dirigirnos a un navegador web. Y como vemos en la imagen \ref{fig:web_monitoreo} que fue vista en el capítulo anterior y que para facilitar al lector se ingreso nuevamente, donde el numero de IP correspondiente al dispositivo de control es: 192.168.1.11 
 
 \begin{figure}[h]
   \centering
@@ -68,7 +68,7 @@ De lo explicado en la sección anterior, se procederá a navegar por el menú, v
   \item[3. Batería:] Aquí podrá setear la alarma debido al nivel de descarga de batería que configuremos. Esta enviara un SMS indicando el estado. figura \ref{fig:web_bat}.
   \item[4. Módem GPRS:] En este menú podremos configurar 2 personas a quienes serán enviadas las alertas debido al accionar de alguna alarma.\ref{fig:web_Modem}.
   \item[5. Temperatura:] Aquí se configura el rango de temperatura, la alarma correspondiente y si deseamos activar el control automático de la misma. De estar activado, actuará en forma automática sobre la bomba y la electroválvula para mantener la temperatura dentro de dicho rango. figura \ref{fig:web_temp}.
-  \item[6. Network:] Aqui se configura los parametros de la red, IP, mascara de red y puerta de enlace. figura \ref{fig:cfg_net}.
+  \item[6. Network:] Aquí se configura los parámetros de la red, IP, mascara de red y puerta de enlace. figura \ref{fig:cfg_net}.
   \item[7. Cerrar Menú:] Esta opción cerrar el menú, permitiendo quedarse en la sección que estaba antes de presionar en menú.
 \end{description}
 
@@ -130,7 +130,7 @@ Estando activado el control automático y al simular un incremento de temperatur
   \includegraphics[scale=.15]{./Figures/sms_min_max_bat.png}
   \caption{SMS recibidos debido a temperatura máxima. \\
    El segundo SMS recibido es por temperatura mínima. \\
-   Y el último recibido debido a bateria baja.}
+   Y el último recibido debido a batería baja.}
   \label{fig:sms_min_max_bat}
 \end{figure}
 
@@ -144,7 +144,7 @@ Se verificó que éste se mantiene activado hasta llegar a la temperatura mínim
 \end{figure}
 
 
-En el caso de la batería se analíza las variaciones en la carga. Si esta disminuye más de un valor que es determinado, se enviará SMS como el que observamos en figura \ref{fig:sms_min_max_bat}. 
+En el caso de la batería se analiza las variaciones en la carga. Si esta disminuye más de un valor que es determinado, se enviará SMS como el que observamos en figura \ref{fig:sms_min_max_bat}. 
 
 Para verificar los actuadores nos dirigimos a la web en la sección de configuración de actuadores y seteamos para cada uno de ellos los diferentes estados, encendiendo y apagando. Luego se probó en bloques de varios actuadores. En la siguiente figura \ref{fig:test_contact} se ve un ejemplo de los casos probados.
 

@@ -1,4 +1,6 @@
+*.bak
 *.swp
+*.lot
 *.aux
 *.log
 *.out
