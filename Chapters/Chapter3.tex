@@ -117,8 +117,8 @@ En la figura \ref{fig:essim800} se puede apreciar el esquemático implementado p
   \label{fig:essim800}
 \end{figure}
 
-Para la alimentación del circuito se utilizó el regulador LM2576. El mismo se tomó de la nota de aplicación el diagrama típico.\footnote{Nota de aplicación Texas Instruments: \url{http://www.ti.com/lit/ds/symlink/lm2576.pdf}}
-Para regular a 3.3V se utilizó el integrado LM11733 circuito extraído de la nota de aplicación. \footnote{ Texas Instruments: \url{http://www.ti.com/lit/ds/symlink/lm1117.pdf} - Capitulo 8 Figura 16 } 
+Para la alimentación del circuito se utilizó el regulador LM2576. El mismo se tomó de la nota de aplicación el diagrama típico.\citep{Texas:LM2576}.
+Para regular a 3.3V se utilizó el integrado LM11733 circuito extraído de la nota de aplicación. \citep{Texas:LM11733}.
 \begin{figure}[!htb]
   \centering
   \includegraphics[page=3,scale=0.3,angle=270]{./Figures/schematic.pdf}
@@ -136,7 +136,7 @@ Para lograr la simulación de distintos tipos de sensores, se utilizaron circuit
 
 Para concluir, se utilizaron unos circuitos básicos que permiten interactuar en forma simple con el sistema y realizar pruebas de funcionamiento. Los mismos fueron extraídos del esquemático utilizado en el proyecto de la EDU-CIA\footnote{\url{http://www.proyecto-ciaa.com.ar/devwiki/lib/exe/fetch.php?media=desarrollo:edu-ciaa:edu-ciaa-nxp:edu-ciaa-nxp\_color.pdf}}
 
-\begin{figure}[!htb]
+\begin{figure}[!hp]
   \centering
   \includegraphics[page=5,scale=0.3,angle=270]{./Figures/schematic.pdf}
   \caption{Entradas a leds y salidas de los pulsadores.}
@@ -144,13 +144,13 @@ Para concluir, se utilizaron unos circuitos básicos que permiten interactuar en
 \end{figure}
 
 Una vez realizados los esquemáticos, se pasó a la elaboración del PCB. Se realizaron los ruteo necesarios. Y como se puede observar en la siguientes figuras \ref{fig:layer_sup} - \ref{fig:layer_inf} 
-\begin{figure}[!htb]
+\begin{figure}[!hp]
   \centering
   \includegraphics[page=1,angle=270,clip,trim=5.5cm 10cm 7.7cm 8.5cm]{./Figures/pcb_layer.pdf}
   \caption{Capa superior de la placa simulador de sensores.}
   \label{fig:layer_sup}
 \end{figure}
-\begin{figure}[!htb]
+\begin{figure}[!hp]
   \centering
   \includegraphics[page=2,angle=270,clip,trim=5.5cm 10cm 7.7cm 8.5cm]{./Figures/pcb_layer.pdf}
   \caption{Capa inferior de la placa simulador de sensores.}
@@ -159,7 +159,7 @@ Una vez realizados los esquemáticos, se pasó a la elaboración del PCB. Se rea
 
 Realizando una vista previa de como quedaría el esquema y aprovechando el potencial de la herramienta de KICAD, se realizó una vista 3D de como quedaría, la que se puede apreciar en la figura \ref{fig:pcb3d}.
 
-\begin{figure}[!h]
+\begin{figure}[!hp]
   \centering
   \includegraphics[scale=0.3]{./Figures/pcb_3d.png}
   \includegraphics[scale=0.3]{./Figures/pcb_3d_back.png}
@@ -167,12 +167,12 @@ Realizando una vista previa de como quedaría el esquema y aprovechando el poten
   \label{fig:pcb3d}
 \end{figure}
 
-No obstante, por cuestiones de tiempo no se llegó a implementar. Simplemente quedó en una primera etapa para una posterior implementación. Se terminó desarrollando una placa experimental que permitió realizar las primeras pruebas. Podemos verla en la siguiente figura \ref{fig:placa_básicafirst}
+No obstante, por cuestiones de tiempo no se llegó a implementar. Simplemente quedó en una primera etapa para una posterior implementación. Se terminó desarrollando una placa experimental que permitió realizar las primeras pruebas. Podemos verla en la siguiente figura \ref{fig:placa_básicafirst}.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
   \centering
   \includegraphics[scale=.03]{./Figures/placa_basica.jpg}
-  \caption{Placa de simulación de temperatura y estado de la batería con el modulo SIM800l integrado.}
+  \caption{Placa de simulación de temperatura y estado de la batería con el modulo SIM800L integrado.}
   \label{fig:placa_básicafirst}
 \end{figure}
 
@@ -191,7 +191,7 @@ En esta tarea se inicializa las configuraciones iniciales para el uso del módem
 
 Podemos ver como fue implementado en el diagrama de flujo en la siguiente figura \ref{fig:modem_task}.
 
-\begin{figure}[!htb]
+\begin{figure}[!hp]
   \centering
   \includegraphics[scale=.5]{./Figures/modem_task.png}
   \caption{Diagrama de flujo de la tarea que controla el módem GPRS.}
@@ -206,7 +206,7 @@ También es la encargada de setear los actuadores según sean especificados en l
 
 La implementación se puede apreciar en la siguiente figura \ref{fig:control_task}.
 
-\begin{figure}[!htb]
+\begin{figure}[!hp]
   \centering
   \includegraphics[scale=.5]{./Figures/control_task.png}
   \caption{Diagrama de flujo de la tarea de control.}
@@ -219,7 +219,7 @@ La implementación se puede apreciar en la siguiente figura \ref{fig:control_tas
 
  Como vemos en el siguiente diagrama de flujo, figura \ref{fig:sensor_task}.
 
-\begin{figure}[!htb]
+\begin{figure}[!hp]
   \centering
   \includegraphics[scale=.5]{./Figures/sensor_task.png}
   \caption{Diagrama de flujo del sensor.}
