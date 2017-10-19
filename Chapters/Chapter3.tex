@@ -38,25 +38,26 @@
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
-En este capítulo se veremos cómo se desarrolló un hardware básico para poder simular el entorno de funcionamiento y cómo fue implementado el firmware.
+En este capítulo veremos cómo se desarrolló el hardware básico para poder simular el entorno de funcionamiento y cómo fue implementado el firmware.
 %La idea de esta sección es resaltar los problemas encontrados, los criterios utilizados y la justificación de las decisiones que se hayan tomado.
 %Se puede agregar código o pseudocódigo dentro de un entorno lstlisting con el siguiente código:
 
 \section{Hardware}
 
-Se diseño de un circuito, que permite simular el entorno de funcionamiento de una bodega. Para ello se utilizó lo aprendido a la largo del curso de \emph{diseño de PCBs en KICAD}. Si bien, por falta de tiempo, no se llevo a cabo el desarrollo de la placa diseñada que veremos a , a fines de poder testear el sistema se elaboro una versión simplificada. 
+Se diseño de un circuito, que permite simular el entorno de funcionamiento de una bodega. Para ello se utilizó lo aprendido a la largo del curso de \emph{diseño de PCBs en KICAD}. Dado que por falta de tiempo no se elaboro el PCB diseñado, se realizó una versión simplificada como se verá más adelante. 
 
-Surgieron varios imprevistos, principalmente con el modulo SIM800L, el cual posee grandes inconvenientes a la hora de detectar la SIM. Luego de una serie de búsquedas en internet, donde muchos habían tenido un problema similar debido a:
+Surgieron varios imprevistos, principalmente con el modulo SIM800L, el cual posee grandes inconvenientes a la hora de detectar la SIM. Luego de una serie de búsquedas en internet, donde muchos habían tenido un problema similar dado que:
 \begin{itemize}
-  \item Fuente de alimentación subdimensionada.
+  \item La fuente de alimentación fue subdimensionada.
   \item Modulo muy sensible, limpiar bien los contactos de la SIM.
-  \item Problemas en la soldadura del módulo.
+  \item Problemas con las soldaduras del módulo.
 \end{itemize}
-Finalmente, si bien dicho modulo ya había sido comprado y se encontró la falla a tiempo se utilizó en el prototipo, pero este no se recomienda. Ya que trae consigo los problemas mencionados anteriormente.. A futuras implementación este módulo será reemplazado.
+Finalmente, como el módulo ya había sido comprado y se encontró la falla a tiempo, se utilizó este en el prototipo.
+Pero este no se recomienda por los problemas mencionados anteriormente. A futuras implementación este módulo será reemplazado.
 
 
 \subsection{Diagrama en bloque}
-En el siguiente esquema, Figura \ref{fig:diagrama_sistema} podemos apreciar el entorno de trabajo del dispositivo. Donde el mismo   interactuar con una bomba de agua que permite llevar desde el deposito del liquido refrigerante a los tanques que están en proceso de fermentación.
+En el siguiente esquema, figura \ref{fig:diagrama_sistema} podemos apreciar el entorno de trabajo del dispositivo. Donde el mismo   interactuar con una bomba de agua que permite llevar desde el deposito del liquido refrigerante a los tanques que están en proceso de fermentación.
 Recibiendo como información la temperatura de los tanques, este debe controlar la bomba y la electroválvula correspondiente. De esta forma permitirá tener controlada la temperatura acorde a los parámetros definidos por el usuario. 
 
 
@@ -92,7 +93,7 @@ El sistema cuenta con:
   \item 1 salida de 5V a 3A y otra de 3.3V a 1A. 
 \end{itemize}
 
-El módulo SIM800l que se muestra en la siguiente Figura \ref{fig:sim800l}, es un módem GPRS que cuenta con las siguientes especificaciones:
+El módulo SIM800l que se muestra en la siguiente figura \ref{fig:sim800l}, es un módem GPRS que cuenta con las siguientes especificaciones:
 
 \begin{figure}[!htb]
   \centering
