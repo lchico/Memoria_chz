@@ -4,7 +4,7 @@ En este capítulo se expone cuales fueron las pruebas realizadas para determinar
 \label{Chapter4} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
 \section{Banco de pruebas}
-Para poder simular el comportamiento de un sensor de temperatura y la descarga de una batería. Se implemento una placa básica la cual ya fue vista en el capitulo 3.2, que para facilidad del lector volvemos a mostrarla en la siguiente figura \ref{fig:placa_básica}, la cual consta de dos potenciómetros, que permiten simular la variación de estos dispositivos. Sobre la misma se conecto un conversor RS232 a TTL, para lograr la integración del módem GPRS \emph{SIM800L}.
+Para poder simular el comportamiento de un sensor de temperatura y la descarga de una batería. Se implemento una placa básica la cual ya fue vista en el capitulo 3.2, que para facilidad del lector volvemos a mostrarla en la siguiente figura \ref{fig:placa_básica}. La cual consta de dos potenciómetros que permiten simular la variación de estos dispositivos. Sobre la misma se conecto un conversor RS232 a TTL, para lograr la integración con el módem.
 
 \begin{figure}[h]
   \centering
@@ -46,7 +46,7 @@ En esta pantalla vamos a tener toda la información correspondiente al sistema. 
 
 Luego arriba y a la derecha podemos ver los estados de los actuadores, la electroválvula y la bomba. Estos le permiten al cliente controlar en forma remota dos actuadores y el sistema correspondiente a la bomba de refrigeración con la electroválvula asociada. El sensor de temperatura permitirá informarle al sistema de control automático cuando debe actuar acorde a los rangos establecidos, esto solo en el caso de estar activado dicho control automático. 
 
-Abajo a la izquierda tenemos en nivel de señal correspondiente al módem GSM, mediante el cual podremos saber si la cobertura de señal de la red de telefonía móvil esta en condiciones de operar y permitirnos el servicio de alertas mediante mensajes SMS. 
+Abajo a la izquierda tenemos el nivel de señal correspondiente al módem GSM, mediante el cual podremos saber si la cobertura de señal de la red de telefonía móvil esta en condiciones de operar y permitirnos el servicio de alertas mediante mensajes SMS. 
 
 Finalmente abajo a la derecha tenemos el estado de la batería, el cual va a permitir al sistema continuar en funcionamiento en caso de un corte de energía. El principal uso de este será mantener la posibilidad de enviar un mensaje SMS notificando el corte de energía.
 
@@ -65,11 +65,11 @@ De lo explicado en la sección anterior, se procederá a navegar por el menú, v
 \begin{description}
   \item[1. Monitoreo:] Nos dirige a la pantalla principal, donde podemos ver el estado del sistema. figura \ref{fig:web_monitoreo}.
   \item[2. Actuadores:] Podemos setear en forma manual el estado de los mismos. figura \ref{fig:web_act}.
-  \item[3. Batería:] Aquí podrá setear la alarma debido al nivel de descarga de batería que configuremos. Esta enviara un SMS indicando el estado. figura \ref{fig:web_bat}.
-  \item[4. Módem GPRS:] En este menú podremos configurar 2 personas a quienes serán enviadas las alertas debido al accionar de alguna alarma.\ref{fig:web_Modem}.
+  \item[3. Batería:] Aquí se podrá setear la alarma debido al nivel de descarga de batería. Esta enviara un SMS indicando que se alcanzó dicho estado. figura \ref{fig:web_bat}.
+  \item[4. Módem GPRS:] En este menú podremos configurar 2 personas a quienes serán enviadas las alertas debido al accionar de alguna alarma, figura \ref{fig:web_Modem}.
   \item[5. Temperatura:] Aquí se configura el rango de temperatura, la alarma correspondiente y si deseamos activar el control automático de la misma. De estar activado, actuará en forma automática sobre la bomba y la electroválvula para mantener la temperatura dentro de dicho rango. figura \ref{fig:web_temp}.
   \item[6. Network:] Aquí se configura los parámetros de la red, IP, mascara de red y puerta de enlace. figura \ref{fig:cfg_net}.
-  \item[7. Cerrar Menú:] Esta opción cerrar el menú, permitiendo quedarse en la sección que estaba antes de presionar en menú.
+  \item[7. Cerrar Menú:] Esta opción cierra el menú, permitiendo quitar las opciones de menú.
 \end{description}
 
 \begin{figure}[h]
@@ -115,7 +115,7 @@ De lo explicado en la sección anterior, se procederá a navegar por el menú, v
 
 Una vez recorrido todas las opciones que permite la interfaz web y verificar que el comportamiento haya sido el esperado. Se procede interactuar con el sistema, por medio de alteraciones generadas a través de los potenciómetros que representaran la temperatura y el estado de la batería.
 
-Estando activado el control automático y al simular un incremento de temperatura, se comprobó que al exceder la temperatura máxima inicio en forma automática la bomba que permite la circulación del refrigerante y la activación de la electroválvula que interviene sobre el tanque que estamos monitorizando. En la web no muestra figura \ref{fig:auto_control_active}. y dado su respectiva alerta mediante un SMS como vemos en la figura \ref{fig:sms_min_max_bat}
+Estando activado el control automático y al simular un incremento de temperatura, se comprobó que al exceder la temperatura máxima inicio en forma automática la bomba que permite la circulación del refrigerante y la activación de la electroválvula que interviene sobre el tanque que estamos monitoreando. En la web se podrá ver como en la figura \ref{fig:auto_control_active}. y se recibirá la alerta correspondiente mediante un SMS como se puede observar en la figura \ref{fig:sms_min_max_bat}.
 
 \begin{figure}[h]
   \centering

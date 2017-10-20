@@ -44,13 +44,13 @@ En este capítulo veremos cómo se desarrolló el hardware básico para poder si
 
 \section{Hardware}
 
-Se diseño de un circuito, que permite simular el entorno de funcionamiento de una bodega. Para ello se utilizó lo aprendido a la largo del curso de \emph{diseño de PCBs en KICAD}. Dado que por falta de tiempo no se elaboro el PCB diseñado, se realizó una versión simplificada como se verá más adelante. 
+Se diseño de un circuito electrónico que permite simular el entorno de funcionamiento de una bodega. Para ello se utilizó lo aprendido a la largo del curso de \emph{diseño de PCBs en KICAD}. Dado que por falta de tiempo no se elaboro el PCB diseñado, pero se realizó una versión simplificada del mismo que se verá más adelante. 
 
 Surgieron varios imprevistos, principalmente con el modulo SIM800L, el cual posee grandes inconvenientes a la hora de detectar la SIM. Luego de una serie de búsquedas en internet, donde muchos habían tenido un problema similar dado que:
 \begin{itemize}
   \item La fuente de alimentación fue subdimensionada.
-  \item Modulo muy sensible, limpiar bien los contactos de la SIM.
-  \item Problemas con las soldaduras del módulo.
+  \item Módulo es muy sensible y se debe limpiar bien los contactos de la SIM.
+  \item O problemas con las soldaduras del módulo.
 \end{itemize}
 Finalmente, como el módulo ya había sido comprado y se encontró la falla a tiempo, se utilizó este en el prototipo.
 Pero este no se recomienda por los problemas mencionados anteriormente. A futuras implementación este módulo será reemplazado.
@@ -72,9 +72,9 @@ Recibiendo como información la temperatura de los tanques, este debe controlar 
 Para llevar a cabo el proyecto, se dividió el sistema en los siguientes módulos:
 \begin{description}
   \item[Módem:] sera el encargado de transmitir las alertas mediante SMS utilizando el modulo SIM800L.
-  \item[Actuadores:] salidas que nos permiten controlar la bomba y electroválvulas. Debido a que se utilizo la CIA-NXP ya esta resuelto.
+  \item[Actuadores:] salidas que nos permiten controlar la bomba y electroválvulas. Debido a que se utilizo la CIAA-NXP ya esta resuelto.
   \item[Sensores:] entradas que permitan simular el comportamiento de los sensores, para esto se utilizaron potenciómetros.
-  \item[CPU:] unidad encargada de controlar el funcionamiento del sistema. Incorporada en la placa CIA-NXP. 
+  \item[CPU:] unidad encargada de controlar el funcionamiento del sistema. Incorporada en la placa CIAA-NXP. 
 \end{description}
 
 Con lo cual podemos ver que el CPU y los actuadores ya están desarrollados al haber elegido la CIA. Nos quedara ver los sensores y el módem en la próxima sección.
@@ -118,7 +118,7 @@ En la figura \ref{fig:essim800} se puede apreciar el esquemático implementado p
   \label{fig:essim800}
 \end{figure}
 
-Para la alimentación del circuito se utilizó el regulador LM2576. El mismo se tomó de la nota de aplicación el diagrama típico.\citep{Texas:LM2576}.
+Para la alimentación del circuito se utilizó el regulador LM2576. El mismo se tomó de la nota de aplicación, es uno de los diagrama típico.\citep{Texas:LM2576}.
 Para regular a 3.3V se utilizó el integrado LM11733 circuito extraído de la nota de aplicación. \citep{Texas:LM11733}.
 \begin{figure}[!htb]
   \centering
@@ -127,7 +127,7 @@ Para regular a 3.3V se utilizó el integrado LM11733 circuito extraído de la no
   \label{fig:fuente}
 \end{figure}
 
-Para lograr la simulación de distintos tipos de sensores, se utilizaron circuitos como se muestra en la figura \ref{fig:temp_tens}  que permiten generar corrientes 4mA a 20mA, variaciones de la tensión, y hasta un sensor de temperatura. Para los circuitos se utilizaron las notas de aplicación de Texas Instruments\footnote{Reguladores de Tensión y Corriente \url{http://www.ti.com/lit/ds/symlink/lm317.pdf} - capitulo 8 páginas 12 y 13 y sensor temperatura: \url{http://www.ti.com/lit/ds/symlink/lm35.pdf} - 8.2.1 Basic Centigrade Temperature Sensor } 
+Para lograr la simulación de distintos tipos de sensores, se utilizaron circuitos como el que se muestra en la figura \ref{fig:temp_tens}  que permiten generar corrientes 4mA a 20mA. También reguladores de tensión, y hasta un sensor de temperatura. Para estos circuitos se utilizaron las notas de aplicación de Texas Instruments\citep{Texas:LM317} - capitulo 8 páginas 12 y 13 y sensor temperatura: \citep{Texas:LM35} - 8.2.1 Basic Centigrade Temperature Sensor. 
 \begin{figure}[!htb]
   \centering
   \includegraphics[page=4,scale=0.3,angle=270]{./Figures/schematic.pdf}
@@ -135,7 +135,7 @@ Para lograr la simulación de distintos tipos de sensores, se utilizaron circuit
   \label{fig:temp_tens}
 \end{figure}
 
-Para concluir, se utilizaron unos circuitos básicos que permiten interactuar en forma simple con el sistema y realizar pruebas de funcionamiento. Los mismos fueron extraídos del esquemático utilizado en el proyecto de la EDU-CIA\footnote{\url{http://www.proyecto-ciaa.com.ar/devwiki/lib/exe/fetch.php?media=desarrollo:edu-ciaa:edu-ciaa-nxp:edu-ciaa-nxp\_color.pdf}}
+Para concluir, se utilizaron unos circuitos básicos que permiten interactuar en forma simple con el sistema y realizar pruebas de funcionamiento. Los mismos fueron extraídos del esquemático utilizado en el proyecto de la EDU-CIA\footnote{\url{http://www.proyecto-ciaa.com.ar/devwiki/lib/exe/fetch.php?media=desarrollo:edu-ciaa:edu-ciaa-nxp:edu-ciaa-nxp\_color.pdf}}.
 
 \begin{figure}[!hp]
   \centering
@@ -144,7 +144,7 @@ Para concluir, se utilizaron unos circuitos básicos que permiten interactuar en
   \label{fig:pul_leds}
 \end{figure}
 
-Una vez realizados los esquemáticos, se pasó a la elaboración del PCB. Se realizaron los ruteo necesarios. Y como se puede observar en la siguientes figuras \ref{fig:layer_sup} - \ref{fig:layer_inf} 
+Con los esquemáticos terminados, se pasó a la elaboración del PCB. Se realizaron los ruteo necesarios, los cuales podemos verlos en la siguientes figuras \ref{fig:layer_sup} - \ref{fig:layer_inf}.
 \begin{figure}[!hp]
   \centering
   \includegraphics[page=1,angle=270,clip,trim=5.5cm 10cm 7.7cm 8.5cm]{./Figures/pcb_layer.pdf}
@@ -158,7 +158,7 @@ Una vez realizados los esquemáticos, se pasó a la elaboración del PCB. Se rea
   \label{fig:layer_inf}
 \end{figure}
 
-Realizando una vista previa de como quedaría el esquema y aprovechando el potencial de la herramienta de KICAD, se realizó una vista 3D de como quedaría, la que se puede apreciar en la figura \ref{fig:pcb3d}.
+Realizando una vista previa de como quedaría el esquema y aprovechando el potencial de la herramienta de KICAD, se realizó una vista en 3D de como quedaría. La que se puede apreciar en la figura \ref{fig:pcb3d}.
 
 \begin{figure}[!hp]
   \centering
@@ -216,7 +216,7 @@ La implementación se puede apreciar en la siguiente figura \ref{fig:control_tas
 
 
 \subsection*{Sensor}
- En este caso la tarea es más simple, consulta el estado de los sensores y calcula el promedio de las ultimas N muestras, este es el valor que usa el control para definir si es necesario encender los actuadores correspondientes.
+ Esta consulta el estado de los sensores y calcula el promedio de las ultimas N muestras. Este es el valor que utiliza la tarea de control para definir si es necesario encender los actuadores correspondientes o apagarlos.
 
  Como vemos en el siguiente diagrama de flujo, figura \ref{fig:sensor_task}.
 
@@ -235,19 +235,19 @@ Para poder realizarlo, fue necesario profundizar los siguientes temas:
     \item[HTML:] En dicho código se desarrollo la página web, este permite darle la estructura básica y se realiza sobre texto plano, es decir no se requiere ninguna aplicación adicional simplemente un editor de texto. Luego es el navegador web quien tiene la tarea de interpretarlo. 
     \item[CSS:] Mediante este código se realiza la presentación de la página, permitiendo así modificar la visualización de la misma y darle un formato mas profesional y elegante.
     \item[SVG:] Mediante este código se implementaron los gráficos correspondientes para mostrar los resultados de los sensores y el estado de los actuadores.
-    \item[AJAX:] es un recurso muy utilizado para cuando de desarrollan web en sistemas embebidos. Permite actualizar el estado de la web sin tener que consultar todo el contenido, simplemente se descarga una primera vez y luego se puede realizar consultar los valores que quieren actualizar. 
+    \item[AJAX:] es un recurso muy utilizado cuando se desarrollan web en sistemas embebidos. Permite actualizar el estado de la web sin tener que consultar todo el contenido, simplemente se descarga una primera vez y luego se realizan consultas de los valores que quieren actualizar. 
     \item[SSI:] Si bien la implementación que nos ofrece FreeRTOS es reducida. Es más que suficiente para poder agregar contenido a nuestra pagina en forma dinámica.
     \item[CGI:] Por medio de este el cliente que navegar por nuestra plataforma puede enviar y solicitar datos, al servidor.
 \end{description}
 
 \subsection*{Diseño web}
-Al iniciar el diseño de la web, no tenía experiencia previa. Es por ello que se inició buscando información en internet, varias páginas facilitaban algunos cursos de HTML, CSS, y AJAX  de forma online y gratuita. Las mas usadas fueron:
+Al iniciar el diseño de la web, no tenía experiencia previa. Es por ello que se inició buscando información en internet, donde se encontraron varias páginas con cursos de HTML, CSS, y AJAX que son de forma online y gratuita. Las que mas se utilizó fueron:
 \begin{itemize}
   \item \url{https://www.w3schools.com}
   \item \url{https://es.khanacademy.org}
   \item \url{https://www.codecademy.com}
 \end{itemize}
-  con lo cual se logro una primera versión de la web, ver figura \ref{fig:old_web}.
+  con lo cual se logro una primera versión de la web, como se puede ver en la figura \ref{fig:old_web}.
 \begin{figure}[!htb]
     \centering
     \includegraphics[scale=.25]{./Figures/old_web.png}
@@ -255,7 +255,7 @@ Al iniciar el diseño de la web, no tenía experiencia previa. Es por ello que s
     \label{fig:old_web}
 \end{figure}
 
-Luego una vez que esta, estaba funcionando en forma correcta, se paso a mejorar las presentación de la misma, y para ello se usó un témplate que se ajustara a las necesidades, es decir mediante un archivo que contiene un estilo ya predefinido modifica la apariencia de la web. Pudiendo ver dicho cambio en la siguiente figura \ref{fig:web_monitoreo}.
+Cuando ya estaba funcionando en forma correcta, se paso a mejorar las presentación de la misma. Para ello se usó un témplate que se ajustara a las necesidades, es decir mediante un archivo que contiene un estilo ya predefinido modifica la apariencia de la web. Pudiendo ver dicho cambio en la siguiente figura \ref{fig:web_monitoreo}.
 
 \begin{figure}[!h]
   \centering
@@ -264,17 +264,18 @@ Luego una vez que esta, estaba funcionando en forma correcta, se paso a mejorar 
   \label{fig:web_monitoreo}
 \end{figure}
 
-Este fue encontrando en w3school\footnote{\url{https://www.w3schools.com/w3css/w3css_templates.asp}}. Siendo que cumplía los siguientes requerimientos:
+Este template fue encontrando en w3school\footnote{\url{https://www.w3schools.com/w3css/w3css_templates.asp}}. Siendo que cumplía los siguientes requerimientos:
 \begin{itemize}
   \item Sea amigable.
-  \item Compatibles con distintos navegadores, especialmente los más utilizados como ser: Google-chrome y Firefox. 
+  \item Compatibles con distintos navegadores, especialmente los más utilizados como ser: Google-Chrome y Firefox. 
   \item Sea cómodo de navegar en distintos dispositivos, como tablets, celulares y PCs.
 \end{itemize}
 
 
 \subsection*{Configuración del servidor}
-Al iniciar el servidor debemos tener en cuenta que este sera el encargado de gestionar las peticiones del usuario. Es decir una vez que el usuario ingresa la dirección del servidor, este le transmite la información de la web.  Para realizar la comunicación entre cliente y servidor, se utilizo la API de lwIP  que utiliza una serie de callbacks para controlar los eventos debido a la comunicación de la red. Es por ello que para optimizar los recursos se utilizo AJAX, permitiendo que el cliente sea el encargado de realizar las consultas al server en forma periódica. La información se solicita mediante directivas del tipo SSI. Es decir, solo se transmite un archivo AJAX.shtml con los parámetros que se van a actualizar. Luego el navegador, mediante una serie de funciones en JavaScript es el encargado de actualizar los cambios realizados.  
-Podemos ver el procedimiento mencionado den la siguiente figura\footnote{\url{http://laboratorios.fi.uba.ar/lse/tesis/LSE-FIUBA-Trabajo-Final-CESE-Patricio-Bos-2016.pdf}, figura 3.9.}:\ref{fig:ajax_sec} 
+Al iniciar el servidor debemos tener en cuenta que este sera el encargado de gestionar las peticiones del usuario. Es decir una vez que el usuario ingresa la dirección del servidor, este le transmite la información de la web.  Para realizar la comunicación entre cliente y servidor, se utilizo la API de lwIP  que utiliza una serie de callbacks para controlar los eventos debido a la comunicación de la red. Es por ello que para optimizar los recursos se utilizo AJAX, permitiendo que el cliente sea el encargado de realizar las consultas al server en forma periódica. La información se solicita mediante directivas del tipo SSI.
+Es decir, solo se transmite un archivo ajax.shtml con los parámetros que se van a actualizar. Luego el navegador, mediante una serie de funciones en JavaScript es el encargado de actualizar los cambios realizados.  
+Podemos ver el procedimiento mencionado en la siguiente figura\footnote{\url{http://laboratorios.fi.uba.ar/lse/tesis/LSE-FIUBA-Trabajo-Final-CESE-Patricio-Bos-2016.pdf}, figura 3.9.} \ref{fig:ajax_sec}.
 \begin{figure}[!htb]
     \centering
     \includegraphics[scale=.8]{./Figures/ajax_sec.png}
