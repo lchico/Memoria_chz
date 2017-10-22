@@ -6,17 +6,48 @@
 %%	SECTION 1
 %%----------------------------------------------------------------------------------------
 %La idea de esta sección es presentar el tema de modo que cualquier persona que no conoce el tema pueda entender de qué se trata y por qué es importante realizar este trabajo y cuál es su impacto.
-
+%\label{sec:ejemplo}
 En este sección se detallaran las tareas que se realizaron, que contratiempos se tuvieron y cuales fueron los requerimientos.
 
-%este proyecto se diseño un sistema que permiea controlar, monitorear y supervisar el proceso de fermentación del vino en las bodegas en forma automática. Aprovechando el proyecto CIAA, se utilizó esta plataforma ya que está preparada especialmente para aplicaciones industriales, siendo libre y gratuita.
+\section{Objetivos y alcances}
+
+\subsection*{Objetivos}
+    Desarrollar un software que permiea controlar, monitorear y supervisar el proceso de fermentación del vino en las bodegas en forma automática. Aprovechando el proyecto CIAA, se utilizó esta plataforma ya que está preparada especialmente para aplicaciones industriales, siendo esta libre y gratuita.
+\subsection*{Alcance}
+  \begin{itemize}
+      \item Sensar la temepratura de un tanque de fermentacion de ya se para vinos tintos o blancos.
+      \item Controlar que la temperatura se mantenga dentro del rango correspondiente según el tipo de vino. 
+      \item En caso de corte de energia se notificar vía SMS a un celuar de contacto.
+      \item Mensajes de alerta vía SMS en caso de temperatura fuera de rango.
+      \item Diseño de una página que permita mostrar la informacion del sistema y realizar las configuraciones necesarias.
+      \item Diseño de una placa básica para mostrar el funcionamiento del sitema.
+  \end{itemize}
+
+  \section{Requerimientos}
+
+Estos fueron consensuados con el responable de la Bodega Chico Zossi, para trabajar sobre un caso real. 
+
+\begin{enumerate}[label*=\arabic*.]
+  \item Medición de Temperatura:
+    \begin{enumerate}[label*=\arabic*.]
+      \item  Se requiere medir la temperatura de un tanques.
+      \item La resolución de debe ser de $\pm 1^oC$.
+    \end{enumerate}
+  \item Comunicación:
+    \begin{enumerate}[label*=\arabic*.]
+      \item Debe poder transmitir mensajes SMS notificando el estado/cambios producidos.
+      \item Acceso web para la configuración de los parámetros requeridos de temperatura. 
+    \end{enumerate}
+  \item Funcionamiento del Sistema embebido:
+    \begin{enumerate}[label*=\arabic*.]
+      \item El sistema deberá mantener la temperatura controlada a los parámetros configurados por el usuario. Para ello deberá hacer uso del actuadores.
+      \item Deberá alertar si hay corte de energía mediante un SMS.
+      \item Deberá mostrar el nivel de batería.
+  \end{enumerate}
+\end{enumerate}
 
 
-\section{Descripción del trabajo a realizar}
-%\label{sec:ejemplo}
-Para iniciar este trabajo se llevaron a cabo las siguientes consideraciones, 
-
-\subsection{Desglose de tareas - GANTT}
+\section{Desglose de tareas - GANTT}
 Para llevar el proyecto a cabo se desarrollo la siguiente planificación de tareas y se estimaron que tiempos debían emplearse para cada una de ellas.
 
 A su vez se analizaron que tareas debian realizarse primero y cuales eran sus dependencias. De esta forma, si se presentara alguna complicacion poder tener un análisis mas completo de como podria esto afectar a la fecha de entrega del proyecto.
