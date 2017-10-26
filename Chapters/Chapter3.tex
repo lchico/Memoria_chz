@@ -68,7 +68,7 @@ Para llevar a cabo el proyecto, se dividió el sistema en los siguientes módulo
 
 \subsection{Características del hardware}
 
-La placa diseñada que va a reemplazar el entorno del sistema que vimos en la figura \ref{fig:diagrama_sistema} por el sitema que va a estar compuesto por el modem y circuitos electronicos que permiten:
+La placa diseñada que va a reemplazar el entorno del sistema que se vió en la figura \ref{fig:diagrama_sistema} por el sitema que está compuesto por el modem y circuitos electronicos que permiten:
 \begin{itemize}
   \item Simular el estado de la temperatura
   \item Adaptar los niveles de tensión.
@@ -99,7 +99,7 @@ Los especificaciones de la placa de simulación son:
   \item 1 salida de 5V a 3A y otra de 3.3V a 1A. 
 \end{itemize}
 
-El módulo SIM800l que se muestra en la figura \ref{fig:sim800l}, es un módem GPRS que cuenta con las siguientes especificaciones:
+El módulo SIM800L que se muestra en la figura \ref{fig:sim800l}, es un módem GPRS que cuenta con las siguientes especificaciones:
 
 \begin{figure}[!htb]
   \centering
@@ -136,12 +136,14 @@ Para regular a 3.3V se utilizó el integrado LM11733 circuito extraído de la no
 Para lograr la simulación de distintos tipos de sensores, se utilizaron circuitos como el que se muestra en la figura \ref{fig:temp_tens}  que permiten generar corrientes de 4mA a 20mA. También reguladores de tensión, y hasta un sensor de temperatura. Para estos circuitos se utilizaron las notas de aplicación de Texas Instruments\citep{Texas:LM317} - capitulo 8 páginas 12 y 13 y sensor temperatura: \citep{Texas:LM35} - 8.2.1 Basic Centigrade Temperature Sensor. 
 \begin{figure}[!hp]
   \centering
-  \includegraphics[page=4,scale=0.6,angle=270,clip,trim=1cm 2cm 3.5cm 2.5cm]{./Figures/schematic.pdf}
+  \includegraphics[scale=0.5]{./Figures/sch_ireg.png}
+  \includegraphics[scale=0.5]{./Figures/sch_vreg.png}
+  \includegraphics[scale=0.5]{./Figures/sch_lm35.png}
   \caption{Regulador de corriente, de tensión y del sensor de temperatura.}
   \label{fig:temp_tens}
 \end{figure}
 
-Para concluir, se utilizaron unos circuitos básicos que permiten interactuar en forma simple con el sistema y realizar pruebas de funcionamiento. Los mismos fueron extraídos del esquemático utilizado en el proyecto de la EDU-CIA\footnote{\url{http://www.proyecto-ciaa.com.ar/devwiki/lib/exe/fetch.php?media=desarrollo:edu-ciaa:edu-ciaa-nxp:edu-ciaa-nxp\_color.pdf}}.
+Para concluir, se utilizaron unos circuitos básicos que permiten interactuar en forma simple con el sistema y realizar pruebas de funcionamiento. Los mismos fueron extraídos del esquemático utilizado en el proyecto de la EDU-CIA \footnote{\url{http://www.proyecto-ciaa.com.ar/devwiki/lib/exe/fetch.php?media=desarrollo:edu-ciaa:edu-ciaa-nxp:edu-ciaa-nxp\_color.pdf}}, figura \ref{fig:pul_leda_pulses}.
 
 
 \begin{figure}[!hp]
@@ -160,7 +162,7 @@ Para concluir, se utilizaron unos circuitos básicos que permiten interactuar en
   \label{fig:pul_leda_pulses}
 \end{figure}
 
-Con los esquemáticos terminados, se pasó a la elaboración del PCB. Se realizaron los ruteo necesarios, los cuales podemos verlos en la siguientes figuras \ref{fig:layer_sup} - \ref{fig:layer_inf}.
+Con los esquemáticos terminados, se pasó a la elaboración del PCB. Los cuales se presentan en las siguientes figuras \ref{fig:layer_sup}, \ref{fig:layer_inf} y \ref{fig:pcb3d}.
 \begin{figure}[!hp]
   \centering
   \includegraphics[page=1,angle=270,clip,trim=5.5cm 10cm 7.7cm 8.5cm]{./Figures/pcb_layer.pdf}
@@ -174,29 +176,41 @@ Con los esquemáticos terminados, se pasó a la elaboración del PCB. Se realiza
   \label{fig:layer_inf}
 \end{figure}
 
-Realizando una vista previa de como quedaría el esquema y aprovechando el potencial de la herramienta de KICAD, se realizó una vista en 3D de como quedaría. La que se puede apreciar en la figura \ref{fig:pcb3d}.
-
 \begin{figure}[!hp]
   \centering
   \includegraphics[scale=0.3]{./Figures/pcb_3d.png}
-  \includegraphics[scale=0.3]{./Figures/pcb_3d_back.png}
+  %\includegraphics[scale=0.3]{./Figures/pcb_3d_back.png}
   \caption{Placa simulador de sensores 3D.}
   \label{fig:pcb3d}
 \end{figure}
 
-No obstante, por cuestiones de tiempo no se llegó a implementar. Simplemente quedó en una primera etapa para una posterior implementación. Se terminó desarrollando una placa experimental que permitió realizar las primeras pruebas. Podemos verla en la siguiente figura \ref{fig:placa_básicafirst}.
+No obstante, por cuestiones de tiempo no se llegó a implementar la placa que se deiseñó del simulador del sistema. Y se terminó desarrollando una placa experimental que permitió realizar las primeras pruebas y que se presenta en la figura \ref{fig:placa_básicafirst}.
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[scale=.03]{./Figures/placa_basica.jpg}
+  \includegraphics[scale=.07]{./Figures/placa_basica.jpg}
   \caption{Placa de simulación de temperatura y estado de la batería con el modulo SIM800L integrado.}
   \label{fig:placa_básicafirst}
 \end{figure}
 
 
+%Dado que por falta de tiempo no se elaboro el PCB diseñado, pero se realizó una versión simplificada del mismo que se verá más adelante. 
+%
+%Surgieron varios imprevistos, principalmente con el modulo SIM800L, el cual posee grandes inconvenientes a la hora de detectar la SIM. Luego de una serie de búsquedas en internet, donde muchos habían tenido un problema similar dado que:
+%\begin{itemize}
+%  \item La fuente de alimentación fue subdimensionada.
+%  \item Módulo es muy sensible y se debe limpiar bien los contactos de la SIM.
+%  \item O problemas con las soldaduras del módulo.
+%\end{itemize}
+%Finalmente, como el módulo ya había sido comprado y se encontró la falla a tiempo, se utilizó este en el prototipo.
+%Pero este no se recomienda por los problemas mencionados anteriormente. A futuras implementación este módulo será reemplazado.
+
+
+
+
 \section{Software}
 \subsection{Aplicación}
-Se dividieron las tareas por recursos:
+Se dividieron las tareas en tres módulos:
 \begin{itemize}
   \item Módem 
   \item Control
@@ -204,87 +218,48 @@ Se dividieron las tareas por recursos:
 \end{itemize}
 
 \subsection*{Módem}
-En esta tarea se inicializa las configuraciones iniciales para el uso del módem. Es la encargada de interactuar con el módulo GPRS, realizando consultas del estado de señal y de enviando los mensajes de alarmas en caso de ser necesarios.
 
-Podemos ver como fue implementado en el diagrama de flujo en la siguiente figura \ref{fig:modem_task}.
+\begin{minipage}{0.4\textwidth}
+    \includegraphics[width=\textwidth]{./Figures/modem_task.png}
+\end{minipage}\hspace{5mm} %
+\begin{minipage}{0.6\textwidth}
+  En esta tarea se inicializa las configuraciones iniciales para el uso del módem. Es la encargada de interactuar con el módulo GPRS, realizando consultas del estado de señal y de enviando los mensajes de alarmas en caso de ser necesarios.
 
-\begin{figure}[!hp]
-  \centering
-  \includegraphics[scale=.5]{./Figures/modem_task.png}
-  \caption{Diagrama de flujo de la tarea que controla el módem GPRS.}
-  \label{fig:modem_task}
-\end{figure}
-
+ En el diagrama de flujo de la izquierda se ve como fue implementado.
+\end{minipage}
 
 \subsection*{Control}
 Con esta tarea se analiza el resultado los sensores de temperatura, y de la batería. Se verifica que estén dentro de los parámetros configurados por el usuario y se actúa en consecuencia. Siendo que el sitema de control actua cuando: la temperatura del sistema excede la máxima configurada, este procede a encender la bomba para que circule el líquido refrigerante y la electroválvula correspondiente. Luego una vez que el sistema llega a la temperatura mínima, este deshabilita la bomba y la electroválvula.
 
 También es la encargada de setear los actuadores según sean especificados en la plataforma web.
 
-La implementación se puede apreciar en la siguiente figura \ref{fig:control_task}.
-
+La implementación se puede apreciar en la figura \ref{fig:control_task}.
 \begin{figure}[!hp]
-  \centering
   \includegraphics[scale=.5]{./Figures/control_task.png}
   \caption{Diagrama de flujo de la tarea de control.}
   \label{fig:control_task}
 \end{figure}
 
-
 \subsection*{Sensor}
+\begin{minipage}{0.4\textwidth}
+  \includegraphics[width=\linewidth,scale=.5]{./Figures/sensor_task.png}
+\end{minipage}\hspace{5mm} %
+\begin{minipage}{0.6\textwidth}
 Esta consulta el estado de los sensores y calcula el promedio de las ultimas N muestras. Este es el valor que utiliza la tarea de control para definir si es necesario encender los actuadores correspondientes o apagarlos.
 
-Como vemos en el siguiente diagrama de flujo, figura \ref{fig:sensor_task}.
+El diagrama de flujo se puede apreciar la izquierda.
+\end{minipage}
 
-\begin{figure}[!hp]
-  \centering
-  \includegraphics[scale=.5]{./Figures/sensor_task.png}
-  \caption{Diagrama de flujo del sensor.}
-  \label{fig:sensor_task}
-\end{figure}
-
-
-
-
-
-
-
-
-
-
-
-Dado que por falta de tiempo no se elaboro el PCB diseñado, pero se realizó una versión simplificada del mismo que se verá más adelante. 
-
-Surgieron varios imprevistos, principalmente con el modulo SIM800L, el cual posee grandes inconvenientes a la hora de detectar la SIM. Luego de una serie de búsquedas en internet, donde muchos habían tenido un problema similar dado que:
-\begin{itemize}
-  \item La fuente de alimentación fue subdimensionada.
-  \item Módulo es muy sensible y se debe limpiar bien los contactos de la SIM.
-  \item O problemas con las soldaduras del módulo.
-\end{itemize}
-Finalmente, como el módulo ya había sido comprado y se encontró la falla a tiempo, se utilizó este en el prototipo.
-Pero este no se recomienda por los problemas mencionados anteriormente. A futuras implementación este módulo será reemplazado.
-
-
-
-
-
-
-
-
-
-
-
-
-\subsection{Web}
+\subsection{ Plataforma web}
 Mediante la plataforma web diseñada se busca que el usuario pueda ver los datos de los sensores, tener control sobre los actuadores y realizar las configuraciones necesarias. 
 
 Para poder realizarlo, fue necesario profundizar los siguientes temas:
 \begin{description}
-  \item[HTML:] En dicho código se desarrollo la página web, este permite darle la estructura básica y se realiza sobre texto plano, es decir no se requiere ninguna aplicación adicional simplemente un editor de texto. Luego es el navegador web quien tiene la tarea de interpretarlo. 
+  \item[HTML:] La página web se desarrolló en este lenguaje, permite darle la estructura básica y se realiza sobre texto plano, es decir no se requiere ninguna aplicación adicional simplemente un editor de texto. Luego es el navegador web quien tiene la tarea de interpretarlo. 
   \item[CSS:] Mediante este código se realiza la presentación de la página, permitiendo así modificar la visualización de la misma y darle un formato mas profesional y elegante.
-  \item[SVG:] Mediante este código se implementaron los gráficos correspondientes para mostrar los resultados de los sensores y el estado de los actuadores.
+  \item[SVG:] Mediante este lenguaje se implementaron los gráficos correspondientes para mostrar los resultados de los sensores y el estado de los actuadores.
   \item[AJAX:] es un recurso muy utilizado cuando se desarrollan web en sistemas embebidos. Permite actualizar el estado de la web sin tener que consultar todo el contenido, simplemente se descarga una primera vez y luego se realizan consultas de los valores que quieren actualizar. 
-  \item[SSI:] Si bien la implementación que nos ofrece FreeRTOS es reducida. Es más que suficiente para poder agregar contenido a nuestra pagina en forma dinámica.
+  \item[SSI:] Si bien la implementación que ofrece FreeRTOS es reducida. Es más que suficiente para poder agregar contenido a nuestra pagina en forma dinámica.
   \item[CGI:] Por medio de este el cliente que navegar por nuestra plataforma puede enviar y solicitar datos, al servidor.
 \end{description}
 
