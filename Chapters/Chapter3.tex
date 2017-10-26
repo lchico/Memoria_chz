@@ -38,33 +38,22 @@
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
-En este capítulo veremos cómo se desarrolló el hardware básico para poder simular el entorno de funcionamiento y cómo fue implementado el firmware.
+En este capítulo se presenta cómo se desarrolló el hardware básico para simular el entorno de funcionamiento y cómo fue implementado el firmware.
 %La idea de esta sección es resaltar los problemas encontrados, los criterios utilizados y la justificación de las decisiones que se hayan tomado.
 %Se puede agregar código o pseudocódigo dentro de un entorno lstlisting con el siguiente código:
 
 \section{Hardware}
 
-Se diseño de un circuito electrónico que permite simular el entorno de funcionamiento de una bodega. Para ello se utilizó lo aprendido a la largo del curso de \emph{diseño de PCBs en KICAD}. Dado que por falta de tiempo no se elaboro el PCB diseñado, pero se realizó una versión simplificada del mismo que se verá más adelante. 
+Primeramente se diseñó un circuito electrónico que permite simular el entorno de funcionamiento de una bodega. Para ello se utilizó lo aprendido a la largo del curso de \emph{diseño de PCBs en KICAD}. 
 
-Surgieron varios imprevistos, principalmente con el modulo SIM800L, el cual posee grandes inconvenientes a la hora de detectar la SIM. Luego de una serie de búsquedas en internet, donde muchos habían tenido un problema similar dado que:
-\begin{itemize}
-  \item La fuente de alimentación fue subdimensionada.
-  \item Módulo es muy sensible y se debe limpiar bien los contactos de la SIM.
-  \item O problemas con las soldaduras del módulo.
-\end{itemize}
-Finalmente, como el módulo ya había sido comprado y se encontró la falla a tiempo, se utilizó este en el prototipo.
-Pero este no se recomienda por los problemas mencionados anteriormente. A futuras implementación este módulo será reemplazado.
-
-
-\subsection{Diagrama en bloque}
-En el siguiente esquema, figura \ref{fig:diagrama_sistema} podemos apreciar el entorno de trabajo del dispositivo. Donde el mismo   interactuar con una bomba de agua que permite llevar desde el deposito del liquido refrigerante a los tanques que están en proceso de fermentación.
-Recibiendo como información la temperatura de los tanques, este debe controlar la bomba y la electroválvula correspondiente. De esta forma permitirá tener controlada la temperatura acorde a los parámetros definidos por el usuario. 
+En la figura \ref{fig:diagrama_sistema} se aprecia el entorno de trabajo del sistema. El mismo interactua con una bomba de agua que permite llevar desde el deposito del liquido refrigerante a los tanques que están en proceso de fermentación.
+Recibiendo como información la temperatura de los tanques, el equipo debe controlar la bomba y la electroválvula correspondiente. De esta forma controlada la temperatura acorde a los parámetros definidos por el usuario. 
 
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[scale=0.3]{./Figures/diagrama_del_sistema.png}
-  \caption{Esquema de interacción del dispositivo.}
+  \includegraphics[scale=0.7]{./Figures/diagrama_del_sistema.png}
+  \caption{Entorno del sistema de control del equipo.}
   \label{fig:diagrama_sistema}
 \end{figure}
 
@@ -72,15 +61,32 @@ Recibiendo como información la temperatura de los tanques, este debe controlar 
 Para llevar a cabo el proyecto, se dividió el sistema en los siguientes módulos:
 \begin{description}
   \item[Módem:] sera el encargado de transmitir las alertas mediante SMS utilizando el modulo SIM800L.
-  \item[Actuadores:] salidas que nos permiten controlar la bomba y electroválvulas. Debido a que se utilizo la CIAA-NXP ya esta resuelto.
+  \item[Actuadores:] salidas que permiten controlar la bomba y electroválvulas. Debido a que se utilizo la CIAA-NXP esto ya está resuelto.
   \item[Sensores:] entradas que permitan simular el comportamiento de los sensores, para esto se utilizaron potenciómetros.
   \item[CPU:] unidad encargada de controlar el funcionamiento del sistema. Incorporada en la placa CIAA-NXP. 
 \end{description}
 
-Con lo cual podemos ver que el CPU y los actuadores ya están desarrollados al haber elegido la CIA. Nos quedara ver los sensores y el módem en la próxima sección.
-
 \subsection{Características del hardware}
-El sistema cuenta con:
+
+La placa diseñada que va a reemplazar el entorno del sistema que vimos en la figura \ref{fig:diagrama_sistema} por el sitema que va a estar compuesto por el modem y circuitos electronicos que permiten:
+\begin{itemize}
+  \item Simular el estado de la temperatura
+  \item Adaptar los niveles de tensión.
+  \item Mostrar el estado de los actuadores.
+  \item Conectar el módem GPRS.
+\end{itemize}
+
+    La forma de conexión con la CIAA-NXP se muesetra en la figura \ref{fig:diagrama_simulado}.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[page=1,scale=1,clip,trim=1.5cm 16.5cm 5.5cm 3.5cm]{./Figures/ciaa_placa_base.pdf}
+  \caption{Entorno del sistema de control del equipo.}
+  \label{fig:diagrama_simulado}
+\end{figure}
+
+
+Los especificaciones de la placa de simulación son:
 
 \begin{itemize}
   \item 1 Salida con regulación de corriente, para simular sensores de 4mA a 20mA.
@@ -93,7 +99,7 @@ El sistema cuenta con:
   \item 1 salida de 5V a 3A y otra de 3.3V a 1A. 
 \end{itemize}
 
-El módulo SIM800l que se muestra en la siguiente figura \ref{fig:sim800l}, es un módem GPRS que cuenta con las siguientes especificaciones:
+El módulo SIM800l que se muestra en la figura \ref{fig:sim800l}, es un módem GPRS que cuenta con las siguientes especificaciones:
 
 \begin{figure}[!htb]
   \centering
@@ -110,38 +116,48 @@ El módulo SIM800l que se muestra en la siguiente figura \ref{fig:sim800l}, es u
 \end{itemize}
 
 
-En la figura \ref{fig:essim800} se puede apreciar el esquemático implementado para la conexión del módem GSM. Éste requiere adaptar los niveles de tensión para interactuar con la CIA-NXP, para el cual utilizamos un max3232.
-\begin{figure}[!htb]
+En la figura \ref{fig:essim800} se puede apreciar el esquemático implementado para la conexión del módem GSM. Éste requiere adaptar los niveles de tensión para interactuar con la CIA-NXP, para el cual se utilizó el max3232.
+\begin{figure}[!hp]
   \centering
-  \includegraphics[page=1,scale=0.3,angle=270]{./Figures/schematic.pdf}
+  \includegraphics[page=1,scale=0.5,clip,trim=1cm 4.7cm 1.2cm 2.5cm]{./Figures/sch_modem_sim800.pdf}
   \caption{Módulo SIM800l e índice de esquemáticos.}
   \label{fig:essim800}
 \end{figure}
 
-Para la alimentación del circuito se utilizó el regulador LM2576. El mismo se tomó de la nota de aplicación, es uno de los diagrama típico.\citep{Texas:LM2576}.
-Para regular a 3.3V se utilizó el integrado LM11733 circuito extraído de la nota de aplicación. \citep{Texas:LM11733}.
-\begin{figure}[!htb]
+Para la alimentación del circuito se utilizó el regulador LM2576. El mismo se tomó de la nota de aplicación \citep{Texas:LM2576}.
+Para regular a 3.3V se utilizó el integrado LM11733 circuito extraído de la nota de aplicación \citep{Texas:LM11733}.
+\begin{figure}[!hp]
   \centering
-  \includegraphics[page=3,scale=0.3,angle=270]{./Figures/schematic.pdf}
+  \includegraphics[page=3,scale=0.7,angle=270,clip,trim=2cm 3cm 6.5cm 2.5cm]{./Figures/schematic.pdf}
   \caption{Fuente de alimentación DC/DC.}
   \label{fig:fuente}
 \end{figure}
 
-Para lograr la simulación de distintos tipos de sensores, se utilizaron circuitos como el que se muestra en la figura \ref{fig:temp_tens}  que permiten generar corrientes 4mA a 20mA. También reguladores de tensión, y hasta un sensor de temperatura. Para estos circuitos se utilizaron las notas de aplicación de Texas Instruments\citep{Texas:LM317} - capitulo 8 páginas 12 y 13 y sensor temperatura: \citep{Texas:LM35} - 8.2.1 Basic Centigrade Temperature Sensor. 
-\begin{figure}[!htb]
+Para lograr la simulación de distintos tipos de sensores, se utilizaron circuitos como el que se muestra en la figura \ref{fig:temp_tens}  que permiten generar corrientes de 4mA a 20mA. También reguladores de tensión, y hasta un sensor de temperatura. Para estos circuitos se utilizaron las notas de aplicación de Texas Instruments\citep{Texas:LM317} - capitulo 8 páginas 12 y 13 y sensor temperatura: \citep{Texas:LM35} - 8.2.1 Basic Centigrade Temperature Sensor. 
+\begin{figure}[!hp]
   \centering
-  \includegraphics[page=4,scale=0.3,angle=270]{./Figures/schematic.pdf}
+  \includegraphics[page=4,scale=0.6,angle=270,clip,trim=1cm 2cm 3.5cm 2.5cm]{./Figures/schematic.pdf}
   \caption{Regulador de corriente, de tensión y del sensor de temperatura.}
   \label{fig:temp_tens}
 \end{figure}
 
 Para concluir, se utilizaron unos circuitos básicos que permiten interactuar en forma simple con el sistema y realizar pruebas de funcionamiento. Los mismos fueron extraídos del esquemático utilizado en el proyecto de la EDU-CIA\footnote{\url{http://www.proyecto-ciaa.com.ar/devwiki/lib/exe/fetch.php?media=desarrollo:edu-ciaa:edu-ciaa-nxp:edu-ciaa-nxp\_color.pdf}}.
 
+
 \begin{figure}[!hp]
-  \centering
-  \includegraphics[page=5,scale=0.3,angle=270]{./Figures/schematic.pdf}
-  \caption{Entradas a leds y salidas de los pulsadores.}
-  \label{fig:pul_leds}
+  \begin{subfigure}{0.4\textwidth}
+    \centering
+    \includegraphics[width=1\linewidth]{./Figures/pulse_sch.png}
+    \caption{Circuito de los pulsadores.}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}{0.4\textwidth}
+    \centering
+    \includegraphics[width=1\linewidth]{./Figures/led_sch.png}
+    \caption{Circuito de los leds.}
+  \end{subfigure}
+  \caption{Esquematicos extraidos de la EDU-CIAA.}
+  \label{fig:pul_leda_pulses}
 \end{figure}
 
 Con los esquemáticos terminados, se pasó a la elaboración del PCB. Se realizaron los ruteo necesarios, los cuales podemos verlos en la siguientes figuras \ref{fig:layer_sup} - \ref{fig:layer_inf}.
@@ -216,9 +232,9 @@ La implementación se puede apreciar en la siguiente figura \ref{fig:control_tas
 
 
 \subsection*{Sensor}
- Esta consulta el estado de los sensores y calcula el promedio de las ultimas N muestras. Este es el valor que utiliza la tarea de control para definir si es necesario encender los actuadores correspondientes o apagarlos.
+Esta consulta el estado de los sensores y calcula el promedio de las ultimas N muestras. Este es el valor que utiliza la tarea de control para definir si es necesario encender los actuadores correspondientes o apagarlos.
 
- Como vemos en el siguiente diagrama de flujo, figura \ref{fig:sensor_task}.
+Como vemos en el siguiente diagrama de flujo, figura \ref{fig:sensor_task}.
 
 \begin{figure}[!hp]
   \centering
@@ -227,17 +243,49 @@ La implementación se puede apreciar en la siguiente figura \ref{fig:control_tas
   \label{fig:sensor_task}
 \end{figure}
 
+
+
+
+
+
+
+
+
+
+
+Dado que por falta de tiempo no se elaboro el PCB diseñado, pero se realizó una versión simplificada del mismo que se verá más adelante. 
+
+Surgieron varios imprevistos, principalmente con el modulo SIM800L, el cual posee grandes inconvenientes a la hora de detectar la SIM. Luego de una serie de búsquedas en internet, donde muchos habían tenido un problema similar dado que:
+\begin{itemize}
+  \item La fuente de alimentación fue subdimensionada.
+  \item Módulo es muy sensible y se debe limpiar bien los contactos de la SIM.
+  \item O problemas con las soldaduras del módulo.
+\end{itemize}
+Finalmente, como el módulo ya había sido comprado y se encontró la falla a tiempo, se utilizó este en el prototipo.
+Pero este no se recomienda por los problemas mencionados anteriormente. A futuras implementación este módulo será reemplazado.
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection{Web}
 Mediante la plataforma web diseñada se busca que el usuario pueda ver los datos de los sensores, tener control sobre los actuadores y realizar las configuraciones necesarias. 
 
 Para poder realizarlo, fue necesario profundizar los siguientes temas:
 \begin{description}
-    \item[HTML:] En dicho código se desarrollo la página web, este permite darle la estructura básica y se realiza sobre texto plano, es decir no se requiere ninguna aplicación adicional simplemente un editor de texto. Luego es el navegador web quien tiene la tarea de interpretarlo. 
-    \item[CSS:] Mediante este código se realiza la presentación de la página, permitiendo así modificar la visualización de la misma y darle un formato mas profesional y elegante.
-    \item[SVG:] Mediante este código se implementaron los gráficos correspondientes para mostrar los resultados de los sensores y el estado de los actuadores.
-    \item[AJAX:] es un recurso muy utilizado cuando se desarrollan web en sistemas embebidos. Permite actualizar el estado de la web sin tener que consultar todo el contenido, simplemente se descarga una primera vez y luego se realizan consultas de los valores que quieren actualizar. 
-    \item[SSI:] Si bien la implementación que nos ofrece FreeRTOS es reducida. Es más que suficiente para poder agregar contenido a nuestra pagina en forma dinámica.
-    \item[CGI:] Por medio de este el cliente que navegar por nuestra plataforma puede enviar y solicitar datos, al servidor.
+  \item[HTML:] En dicho código se desarrollo la página web, este permite darle la estructura básica y se realiza sobre texto plano, es decir no se requiere ninguna aplicación adicional simplemente un editor de texto. Luego es el navegador web quien tiene la tarea de interpretarlo. 
+  \item[CSS:] Mediante este código se realiza la presentación de la página, permitiendo así modificar la visualización de la misma y darle un formato mas profesional y elegante.
+  \item[SVG:] Mediante este código se implementaron los gráficos correspondientes para mostrar los resultados de los sensores y el estado de los actuadores.
+  \item[AJAX:] es un recurso muy utilizado cuando se desarrollan web en sistemas embebidos. Permite actualizar el estado de la web sin tener que consultar todo el contenido, simplemente se descarga una primera vez y luego se realizan consultas de los valores que quieren actualizar. 
+  \item[SSI:] Si bien la implementación que nos ofrece FreeRTOS es reducida. Es más que suficiente para poder agregar contenido a nuestra pagina en forma dinámica.
+  \item[CGI:] Por medio de este el cliente que navegar por nuestra plataforma puede enviar y solicitar datos, al servidor.
 \end{description}
 
 \subsection*{Diseño web}
@@ -247,12 +295,12 @@ Al iniciar el diseño de la web, no tenía experiencia previa. Es por ello que s
   \item \url{https://es.khanacademy.org}
   \item \url{https://www.codecademy.com}
 \end{itemize}
-  con lo cual se logro una primera versión de la web, como se puede ver en la figura \ref{fig:old_web}.
+con lo cual se logro una primera versión de la web, como se puede ver en la figura \ref{fig:old_web}.
 \begin{figure}[!htb]
-    \centering
-    \includegraphics[scale=.25]{./Figures/old_web.png}
-    \caption{Primera versión de la web de monitoreo.}
-    \label{fig:old_web}
+  \centering
+  \includegraphics[scale=.25]{./Figures/old_web.png}
+  \caption{Primera versión de la web de monitoreo.}
+  \label{fig:old_web}
 \end{figure}
 
 Cuando ya estaba funcionando en forma correcta, se paso a mejorar las presentación de la misma. Para ello se usó un témplate que se ajustara a las necesidades, es decir mediante un archivo que contiene un estilo ya predefinido modifica la apariencia de la web. Pudiendo ver dicho cambio en la siguiente figura \ref{fig:web_monitoreo}.
@@ -277,10 +325,10 @@ Al iniciar el servidor debemos tener en cuenta que este sera el encargado de ges
 Es decir, solo se transmite un archivo ajax.shtml con los parámetros que se van a actualizar. Luego el navegador, mediante una serie de funciones en JavaScript es el encargado de actualizar los cambios realizados.  
 Podemos ver el procedimiento mencionado en la siguiente figura\footnote{\url{http://laboratorios.fi.uba.ar/lse/tesis/LSE-FIUBA-Trabajo-Final-CESE-Patricio-Bos-2016.pdf}, figura 3.9.} \ref{fig:ajax_sec}.
 \begin{figure}[!htb]
-    \centering
-    \includegraphics[scale=.8]{./Figures/ajax_sec.png}
-    \caption{Diagrama de secuencia AJAX.}
-    \label{fig:ajax_sec}
+  \centering
+  \includegraphics[scale=.8]{./Figures/ajax_sec.png}
+  \caption{Diagrama de secuencia AJAX.}
+  \label{fig:ajax_sec}
 \end{figure}
 
 
@@ -302,6 +350,69 @@ La configuración establecida por default es la que se muestra en la siguiente T
   \caption{Configuración por default del servidor}
   \label{tab:servercfg}
 \end{table}
+
+
+
+\section{Diseño del sistema web embebido}
+Se procede a navegar por el menú, figura \ref{fig:web_menus_num}, para constatar que todo el sistema esta funcionando en forma correcta. Al presionar donde dice menú, se puede configurar lo siguiente:
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.25]{./Figures/web_menus_num.png}
+  \caption{Opciones del al presionar sobre el menú desplegable.}
+  \label{fig:web_menus_num}
+\end{figure}
+
+\begin{description}
+  \item[1. Monitoreo:] Dirige a la pantalla principal, donde ver el estado del sistema. figura \ref{fig:web_monitoreo}.
+  \item[2. Actuadores:] setear en forma manual el estado de los mismos. figura \ref{fig:web_act}.
+  \item[3. Batería:] Aquí se podrá setear la alarma debido al nivel de descarga de batería. Esta enviará un SMS indicando que se alcanzó dicho estado. figura \ref{fig:web_bat}.
+  \item[4. Módem GPRS:] En este menú podremos configurar 2 personas a quienes serán enviadas las alertas debido al accionar de alguna alarma, figura \ref{fig:web_Modem}.
+  \item[5. Temperatura:] Aquí se configura el rango de temperatura, la alarma correspondiente y si se activa el control automático de la misma. De estar activado, actuará en forma automática sobre la bomba y la electroválvula para mantener la temperatura dentro de dicho rango. figura \ref{fig:web_temp}.
+  \item[6. Network:] Aquí se configura los parámetros de la red, IP, mascara de red y puerta de enlace. figura \ref{fig:cfg_net}.
+  \item[7. Cerrar Menú:] Esta opción cierra el menú, permitiendo quitar las opciones de menú.
+\end{description}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.35]{./Figures/config_act.png}
+  \caption{ Activar/Desactivar actuadores.}
+  \label{fig:web_act}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.35]{./Figures/config_bat.png}
+  \caption{Configurar nivel de descarga para accionar la alerta por batería baja.}
+  \label{fig:web_bat}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.35]{./Figures/config_Modem.png}
+  \caption{Configuración de los celulares.}
+  \label{fig:web_Modem}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.35]{./Figures/config_temp.png}
+  \caption{Configuración del rango de temperatura y activación del estado de control automático y alarma.}
+  \label{fig:web_temp}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.35]{./Figures/config_network.png}
+  \caption{Configuración de IP, mascara de red y puerta de enlace.}
+  \label{fig:cfg_net}
+\end{figure}
+
+
+
+
+
+
+
+
+
 
 
 %\begin{verbatim}

@@ -15,18 +15,16 @@
 
 % La idea de esta sección es resaltar cuáles son los principales aportes del trabajo realizado y cómo se podría continuar. Debe ser especialmente breve y concisa. Es buena idea usar un listado para enumerar los logros obtenidos.
 
-Al finalizar esta primera etapa del prototipo, podemos concluir que se logró:
+Al finalizar esta etapa se logró:
   \begin{itemize}
-    \item Mediante una página web accedemos al estado del sistema.
-    \item Permite navegación mediante pc, celulares, tablets compatibles con navegadores como Chrome y Firefox.
-    \item Permite realizar un control manual y automático del sistema. Mediante el uso de un sensor de temperatura y salidas para actuadores. 
-    \item Alertar mediante SMS cuando: la temperatura excede el rango permitido, y/o para un determinado nivel de batería.
+    \item Acceder mediante una página web accedemos al estado del sistema.
+    \item Navegación mediante pc, celulares, tablets compatibles con navegadores como Chrome y Firefox.
+    \item Realizar un control manual y automático del sistema, mediante el uso de un sensor de temperatura y salidas para actuadores. 
+    \item Alertar mediante SMS cuando la temperatura excede el rango permitido, y/o para un determinado nivel de batería.
     \item Implementar mediante el stack TCP/IP de lwIP mediante el RTOS freeRTOS. 
-    \item Uso del lenguaje C, HTML, CSS y JavaScript. 
-    \item Hacer uso de un sistema de control de versiones, GitHub. 
    \end{itemize} 
 
-Es decir, ya podemos controlar la temperatura de un tanque y recibir alertas en los principales estados críticos del proceso. Tenemos incorporado un a interfaz de monitoreo que a su vez nos permite actuar en forma remota.  
+Es decir, controlar en forma remota la temperatura de un tanque y recibir alertas en los principales estados críticos del proceso.
 
 
 
@@ -36,14 +34,12 @@ Es decir, ya podemos controlar la temperatura de un tanque y recibir alertas en 
 \section{Próximos pasos}
 
 %Acá se indica cómo se podría continuar el trabajo más adelante.
-En esta primera etapa se dió una primera interacción con todo lo que involucra controlar el proceso de fermentación. Ahora estamos en condiciones de perfeccionar este producto extendiendo sus funciones.
-Para ello podríamos optimizar los siguientes puntos:
+Extendiendo sus funciones se puede optimizar los siguientes puntos:
   \begin{itemize}
-    \item Ampliar la capacidad de control a 4 tanques.
+    \item Ampliar la capacidad de control a cuatro tanques.
     \item Mejorar la interfaz web para dichos cambios, y realizar un entorno más amigable.
     \item Ampliar las funcionalidades de los SMS, no sólo para reportes de alertas sino también para consultas y posibles controles. 
     \item Agregar retroalimentación de sensores y actuadores por hardware para un control de mas robusto.
     \item Adicionar una opción de control por intervalos de tiempos. 
    \end{itemize} 
-
 
