@@ -84,19 +84,19 @@ Se verificó que éste se mantiene activado hasta llegar a la temperatura mínim
 
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=.25]{./Figures/auto_control_inactive.png}
+  \includegraphics[scale=.3]{./Figures/auto_control_inactive.png}
   \caption{Temperatura en nivel mínimo, se desactiva la bomba y la electroválvula.}
   \label{fig:auto_control_inactive}
 \end{figure}
 
 
-En el caso de la batería se analiza las variaciones en la carga. Si esta disminuye más de un valor que es determinado, se enviará SMS como el que observamos en figura \ref{fig:sms_min_max_bat}. 
+En el caso de la batería se analiza las variaciones en la carga. Si esta disminuye más de un valor que es determinado, se enviará un SMS como el que observamos en figura \ref{fig:sms_min_max_bat}. Es importante aclarar que en caso de producirse un corte de energía, el sistema no está pensado para que se mantenga en funcionamiento por un tiempo prolongado, sino más bien lo que se busca es que este pueda mantener informado a la personas responsables que se requiere de su atención. Es por esto que no se realizó un estúdio del tiempo de vida del sistema.
 
 Para verificar los actuadores, se tiene la sección de configuración de actuadores y para cada uno de ellos se verificó los diferentes estados, encendiendo y apagando. Luego se probó en bloques de varios actuadores. En la figura \ref{fig:test_contact} se ve un ejemplo de los casos probados.
 
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=.25]{./Figures/test_contact.png}
+  \includegraphics[scale=.4]{./Figures/test_contact.png}
   \caption{Activación manual de actuador 1 y 2, electroválvula y bomba inactivo.}
   \label{fig:test_contact}
 \end{figure}

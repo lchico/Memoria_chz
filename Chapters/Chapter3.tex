@@ -260,17 +260,17 @@ Para poder realizarlo, fue necesario profundizar los siguientes temas:
   \item[SVG:] Mediante este lenguaje se implementaron los gráficos correspondientes para mostrar los resultados de los sensores y el estado de los actuadores.
   \item[AJAX:] es un recurso muy utilizado cuando se desarrollan web en sistemas embebidos. Permite actualizar el estado de la web sin tener que consultar todo el contenido, simplemente se descarga una primera vez y luego se realizan consultas de los valores que quieren actualizar. 
   \item[SSI:] Si bien la implementación que ofrece FreeRTOS es reducida. Es más que suficiente para poder agregar contenido a nuestra pagina en forma dinámica.
-  \item[CGI:] Por medio de este el cliente que navegar por nuestra plataforma puede enviar y solicitar datos, al servidor.
+  \item[CGI:] Es un mecanismo de comunicación entre el servidor web y una aplicación. Permite al cliente solicitar y enviar datos al servidor. Con esta herramienta es que se obtiene el estado de los sensores y actuadores.
 \end{description}
 
 \subsection*{Diseño web}
-Al iniciar el diseño de la web, no tenía experiencia previa. Es por ello que se inició buscando información en internet, donde se encontraron varias páginas con cursos de HTML, CSS, y AJAX que son de forma online y gratuita. Las que mas se utilizó fueron:
+Se buscó información en internet, donde se encontraron varias páginas con cursos de HTML, CSS, y AJAX que son de forma online y gratuita. Las que mas se utilizó fueron:
 \begin{itemize}
   \item \url{https://www.w3schools.com}
   \item \url{https://es.khanacademy.org}
   \item \url{https://www.codecademy.com}
 \end{itemize}
-con lo cual se logro una primera versión de la web, como se puede ver en la figura \ref{fig:old_web}.
+Así se logró una primera versión de la web, como se puede ver en la figura \ref{fig:old_web}.
 \begin{figure}[!htb]
   \centering
   \includegraphics[scale=.25]{./Figures/old_web.png}
@@ -278,7 +278,7 @@ con lo cual se logro una primera versión de la web, como se puede ver en la fig
   \label{fig:old_web}
 \end{figure}
 
-Cuando ya estaba funcionando en forma correcta, se paso a mejorar las presentación de la misma. Para ello se usó un témplate que se ajustara a las necesidades, es decir mediante un archivo que contiene un estilo ya predefinido modifica la apariencia de la web. Pudiendo ver dicho cambio en la siguiente figura \ref{fig:web_monitoreo}.
+Cuando ya estaba funcionando en forma correcta, se pasó a mejorar las presentación de la misma. Para ello se uso un témplate que se ajustara a las necesidades, es decir mediante un archivo que contiene un estilo ya predefinido modifica la apariencia de la web. Pudiendo ver dicho cambio en la figura \ref{fig:web_monitoreo}.
 
 \begin{figure}[!h]
   \centering
@@ -295,20 +295,10 @@ Este template fue encontrando en w3school\footnote{\url{https://www.w3schools.co
 \end{itemize}
 
 
-\subsection*{Configuración del servidor}
-Al iniciar el servidor debemos tener en cuenta que este sera el encargado de gestionar las peticiones del usuario. Es decir una vez que el usuario ingresa la dirección del servidor, este le transmite la información de la web.  Para realizar la comunicación entre cliente y servidor, se utilizo la API de lwIP  que utiliza una serie de callbacks para controlar los eventos debido a la comunicación de la red. Es por ello que para optimizar los recursos se utilizo AJAX, permitiendo que el cliente sea el encargado de realizar las consultas al server en forma periódica. La información se solicita mediante directivas del tipo SSI.
-Es decir, solo se transmite un archivo ajax.shtml con los parámetros que se van a actualizar. Luego el navegador, mediante una serie de funciones en JavaScript es el encargado de actualizar los cambios realizados.  
-Podemos ver el procedimiento mencionado en la siguiente figura\footnote{\url{http://laboratorios.fi.uba.ar/lse/tesis/LSE-FIUBA-Trabajo-Final-CESE-Patricio-Bos-2016.pdf}, figura 3.9.} \ref{fig:ajax_sec}.
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[scale=.8]{./Figures/ajax_sec.png}
-  \caption{Diagrama de secuencia AJAX.}
-  \label{fig:ajax_sec}
-\end{figure}
+\subsection{Configuración del servidor}
+Al iniciar el servidor se debe tener en cuenta que este será el encargado de gestionar las peticiones del usuario. Es decir una vez que el usuario ingresa la dirección del servidor, este le transmite la información de la web.  Para realizar la comunicación entre cliente y servidor, se utilizó la API de lwIP \citep{webserver}  que utiliza una serie de callbacks para controlar los eventos debido a la comunicación de la red. Es por ello que para optimizar los recursos se utilizo AJAX, permitiendo que el cliente sea el encargado de realizar las consultas al server en forma periódica.
 
-
-La configuración establecida por default es la que se muestra en la siguiente Tabla \ref{tab:servercfg}.
-
+La configuración del servidor establecida por default es la que se muestra en la Tabla \ref{tab:servercfg}.
 \begin{table}[!h]
   \centering
   \begin{tabular}{l c}
@@ -322,9 +312,20 @@ La configuración establecida por default es la que se muestra en la siguiente T
     DHCP             & Deshabilitado \\
     \hline
   \end{tabular}
-  \caption{Configuración por default del servidor}
+  \caption{Configuración por default del servidor.}
   \label{tab:servercfg}
 \end{table}
+
+
+La información se solicita mediante directivas del tipo SSI.
+Es decir, solo se transmite un archivo ajax.shtml con los parámetros que se van a actualizar. Luego el navegador, mediante una serie de funciones en JavaScript es el encargado de actualizar los cambios realizados.  
+Se puede ver el procedimiento mencionado en la siguiente figura \ref{fig:ajax_sec}.
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[scale=.8]{./Figures/ajax_sec.png}
+  \caption{Diagrama de secuencia AJAX.}
+  \label{fig:ajax_sec}
+\end{figure}
 
 
 
