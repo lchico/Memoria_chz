@@ -268,7 +268,7 @@ Para poder realizarlo fue necesario profundizar los siguientes temas:
   \item[CSS:] Mediante este código se realiza la presentación de la página, permitiendo así modificar la visualización de la misma y darle un formato más profesional y elegante.
   \item[SVG:] Mediante este lenguaje se implementaron los gráficos correspondientes para mostrar los resultados de los sensores y el estado de los actuadores.
   \item[AJAX:] es un recurso muy utilizado cuando se desarrollan web en sistemas embebidos. Permite actualizar el estado de la web sin tener que consultar todo el contenido, simplemente se descarga una primera vez y luego se realizan consultas de los valores que quieren actualizar. 
-  \item[SSI:] Si bien la implementación que ofrece FreeRTOS es reducida, es más que suficiente para poder agregar contenido a nuestra pagina en forma dinámica.
+  \item[SSI:] Si bien la implementación que ofrece FreeRTOS es reducida pero más que suficiente para poder agregar contenido a nuestra página en forma dinámica.
   \item[CGI:] Es un mecanismo de comunicación entre el servidor web y una aplicación. Permite al cliente solicitar y enviar datos al servidor. Con esta herramienta es que se obtiene el estado de los sensores y actuadores.
 \end{description}
 
@@ -287,16 +287,16 @@ Así se logró una primera versión de la web, como se puede ver en la figura \r
   \label{fig:old_web}
 \end{figure}
 
-Cuando ya estaba funcionando en forma correcta, se pasó a mejorar las presentación de la misma. Para ello se uso un témplate que se ajustara a las necesidades, es decir mediante un archivo que contiene un estilo ya predefinido modifica la apariencia de la web. La versión final se muestra en la figura \ref{fig:web_monitoreo}.
+Cuando ya estaba funcionando en forma correcta, se pasó a mejorar la presentación de la misma. Para ello se usó un template que se ajustara a las necesidades, es decir mediante un archivo que contiene un estilo ya predefinido que modifica la apariencia de la web. La versión final se muestra en la figura \ref{fig:web_template}.
 
 \begin{figure}[!h]
   \centering
   \includegraphics[scale=.25]{./Figures/web_monitoreo.png}
   \caption{Versión actualizada haciendo uso del témplate.}
-  \label{fig:web_monitoreo}
+  \label{fig:web_template}
 \end{figure}
 
-El template que se vió en la version final, fue encontrando en w3school\footnote{\url{https://www.w3schools.com/w3css/w3css_templates.asp}}.
+El template que se vió en la versión final, fue encontrando en w3school\footnote{\url{https://www.w3schools.com/w3css/w3css_templates.asp}}.
 Y cumplía los siguientes requerimientos:
 \begin{itemize}
   \item Sea amigable.
@@ -342,7 +342,7 @@ Se puede ver el procedimiento mencionado en la figura \ref{fig:ajax_sec}.
 
 
 \section{Diseño del sistema web embebido}
-Se procede a navegar por el menú, figura \ref{fig:web_menus_num}, para constatar que todo el sistema esta funcionando en forma correcta. Al presionar donde dice menú, se puede configurar lo siguiente:
+El menú implementado se muestra en la figura \ref{fig:web_menus_num}:
 
 \begin{figure}[h]
   \centering
@@ -351,13 +351,14 @@ Se procede a navegar por el menú, figura \ref{fig:web_menus_num}, para constata
   \label{fig:web_menus_num}
 \end{figure}
 
+Al presionar donde dice menú, se puede configurar lo siguiente:
 \begin{description}
-  \item[1. Monitoreo:] Dirige a la pantalla principal, donde ver el estado del sistema. figura \ref{fig:web_monitoreo}.
-  \item[2. Actuadores:] setear en forma manual el estado de los mismos. figura \ref{fig:web_act}.
-  \item[3. Batería:] Aquí se podrá setear la alarma debido al nivel de descarga de batería. Esta enviará un SMS indicando que se alcanzó dicho estado. figura \ref{fig:web_bat}.
-  \item[4. Módem GPRS:] En este menú podremos configurar 2 personas a quienes serán enviadas las alertas debido al accionar de alguna alarma, figura \ref{fig:web_Modem}.
-  \item[5. Temperatura:] Aquí se configura el rango de temperatura, la alarma correspondiente y si se activa el control automático de la misma. De estar activado, actuará en forma automática sobre la bomba y la electroválvula para mantener la temperatura dentro de dicho rango. figura \ref{fig:web_temp}.
-  \item[6. Network:] Aquí se configura los parámetros de la red, IP, mascara de red y puerta de enlace. figura \ref{fig:cfg_net}.
+  \item[1. Monitoreo:] Dirige a la pantalla principal, donde se muestra el estado del sistema. Como se muestra en la figura \ref{fig:web_monitoreo}.
+  \item[2. Actuadores:] setear en forma manual el estado de los mismos. En la figura \ref{fig:web_act} se presenta esto en mayor detalle.
+  \item[3. Batería:] Aquí se podrá setear la alarma debido al nivel de descarga de la batería. Esta enviará un SMS indicando que se alcanzó dicho estado. En la figura \ref{fig:web_bat} se muestra un ejemplo.
+  \item[4. Módem GPRS:] En este menú podremos configurar 2 personas a quienes serán enviadas las alertas debido al accionar de alguna alarma.En la figura \ref{fig:web_Modem} se presenta esto en mayor detalle.
+  \item[5. Temperatura:] Aquí se configura el rango de temperatura, la alarma correspondiente y si se activa el control automático de la misma. De estar activado, actuará en forma automática sobre la bomba y la electroválvula para mantener la temperatura dentro de dicho rango. Para apreciar esto con mayor detalle, véa la figura \ref{fig:web_temp}.
+  \item[6. Network:] Aquí se configura los parámetros de la red, IP, mascara de red y puerta de enlace. En la figura \ref{fig:cfg_net} vemos el formulario con los campos mencionados que debemos completar.
   \item[7. Cerrar Menú:] Esta opción cierra el menú, permitiendo quitar las opciones de menú.
 \end{description}
 
