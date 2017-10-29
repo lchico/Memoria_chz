@@ -46,8 +46,8 @@ En este capítulo se presenta cómo se desarrolló el hardware básico para simu
 
 Primeramente se diseñó un circuito electrónico que permite simular el entorno de funcionamiento de una bodega. Para ello se utilizó lo aprendido a la largo del curso de \emph{diseño de PCBs en KICAD}. 
 
-En la figura \ref{fig:diagrama_sistema} se aprecia el entorno de trabajo del sistema. El mismo interactua con una bomba de agua que permite llevar desde el deposito del liquido refrigerante a los tanques que están en proceso de fermentación.
-Recibiendo como información la temperatura de los tanques, el equipo debe controlar la bomba y la electroválvula correspondiente. De esta forma controlada la temperatura acorde a los parámetros definidos por el usuario. 
+En la figura \ref{fig:diagrama_sistema} se aprecia el entorno de trabajo del sistema. El mismo interactua con una bomba de agua que permite llevar liquido refrigerante desde el depósito hacia los tanques que están en proceso de fermentación.
+Recibiendo como información la temperatura de los tanques, el equipo debe controlar la bomba y la electroválvula correspondiente. De esta forma se controla la temperatura acorde a los parámetros definidos por el usuario. 
 
 
 \begin{figure}[!htb]
@@ -60,15 +60,15 @@ Recibiendo como información la temperatura de los tanques, el equipo debe contr
 \subsection{ Módulos requeridos}
 Para llevar a cabo el proyecto, se dividió el sistema en los siguientes módulos:
 \begin{description}
-  \item[Módem:] sera el encargado de transmitir las alertas mediante SMS utilizando el modulo SIM800L.
-  \item[Actuadores:] salidas que permiten controlar la bomba y electroválvulas. Debido a que se utilizo la CIAA-NXP esto ya está resuelto.
+  \item[Módem:] encargado de transmitir las alertas mediante SMS utilizando el modulo SIM800L.
+  \item[Actuadores:] salidas que permiten controlar la bomba y electroválvulas.
   \item[Sensores:] entradas que permitan simular el comportamiento de los sensores, para esto se utilizaron potenciómetros.
-  \item[CPU:] unidad encargada de controlar el funcionamiento del sistema. Incorporada en la placa CIAA-NXP. 
+  \item[CPU:] unidad encargada de controlar el funcionamiento del sistema incorporada en la placa CIAA-NXP. 
 \end{description}
 
 \subsection{Características del hardware}
 
-La placa diseñada que va a reemplazar el entorno del sistema que se vió en la figura \ref{fig:diagrama_sistema} por el sitema que está compuesto por el modem y circuitos electronicos que permiten:
+Como se vió en la figura \ref{fig:diagrama_sistema} el dispositivo de monitoreo interactua con la temperatura de los tanques, el control de la bomba y la seleccion de la electrovalvula. Es por esto que se implementó un sitema que está compuesto por el modem y circuitos electronicos que permiten:
 \begin{itemize}
   \item Simular el estado de la temperatura
   \item Adaptar los niveles de tensión.
@@ -76,30 +76,29 @@ La placa diseñada que va a reemplazar el entorno del sistema que se vió en la 
   \item Conectar el módem GPRS.
 \end{itemize}
 
-    La forma de conexión con la CIAA-NXP se muesetra en la figura \ref{fig:diagrama_simulado}.
+    De esta forma la placa desarrollada la cual llamaremos simulador del sistema, nos permite conectar el modem y validar el correcto funcionamiento del software implementado. La forma de conexión con la CIAA-NXP se muesetra en la figura \ref{fig:diagrama_simulado}.
 
 \begin{figure}[!htb]
   \centering
   \includegraphics[page=1,scale=1,clip,trim=1.5cm 16.5cm 5.5cm 3.5cm]{./Figures/ciaa_placa_base.pdf}
-  \caption{Entorno del sistema de control del equipo.}
+  \caption{Conexion de la CIAA-NXP con el simulador del sistema.}
   \label{fig:diagrama_simulado}
 \end{figure}
 
 
-Los especificaciones de la placa de simulación son:
+La placa de simulación debe contar con las siguientes entradas, salidas y zócalos:
 
 \begin{itemize}
   \item 1 Salida con regulación de corriente, para simular sensores de 4mA a 20mA.
-  \item 1 Salida con tensión variable, utilizando el regulador LM317.
-  \item 1 Salida del sensor de temperatura LM35.
-  \item 2 Salidas con tensión variable, utilizando potenciómetros. 
+  \item 3 Salida de tensión variable.
+  \item 1 Salida de sensor de temperatura LM35.
   \item 4 Entradas digitales conectadas a leds.
   \item 4 Salidas conectadas a pulsadores. 
   \item 1 Zócalo para la conexión del modulo SIM800L. 
   \item 1 salida de 5V a 3A y otra de 3.3V a 1A. 
 \end{itemize}
 
-El módulo SIM800L que se muestra en la figura \ref{fig:sim800l}, es un módem GPRS que cuenta con las siguientes especificaciones:
+El módulo SIM800L se muestra en la figura \ref{fig:sim800l} y es un módem GPRS que cuenta con las siguientes especificaciones:
 
 \begin{figure}[!htb]
   \centering
@@ -116,34 +115,40 @@ El módulo SIM800L que se muestra en la figura \ref{fig:sim800l}, es un módem G
 \end{itemize}
 
 
-En la figura \ref{fig:essim800} se puede apreciar el esquemático implementado para la conexión del módem GSM. Éste requiere adaptar los niveles de tensión para interactuar con la CIA-NXP, para el cual se utilizó el max3232.
+En la figura \ref{fig:essim800} se aprecia el esquemático implementado para la conexión del módem GSM. Éste requiere adaptar los niveles de tensión para interactuar con la CIA-NXP, para el cual se utilizó el max3232.
 \begin{figure}[!hp]
   \centering
-  \includegraphics[page=1,scale=0.5,clip,trim=1cm 4.7cm 1.2cm 2.5cm]{./Figures/sch_modem_sim800.pdf}
-  \caption{Módulo SIM800l e índice de esquemáticos.}
+  \includegraphics[page=1,scale=0.5,clip,trim=1cm 4.7cm 1.2cm 6.5cm]{./Figures/sch_modem_sim800.pdf}
+  \caption{Circuito de conexión del módulo SIM800l.}
   \label{fig:essim800}
 \end{figure}
 
 Para la alimentación del circuito se utilizó el regulador LM2576. El mismo se tomó de la nota de aplicación \citep{Texas:LM2576}.
-Para regular a 3.3V se utilizó el integrado LM11733 circuito extraído de la nota de aplicación \citep{Texas:LM11733}.
+Y para regular a 3.3V se utilizó el integrado LM11733 circuito extraído de la nota de aplicación \citep{Texas:LM11733}. El esquemático se aprecia en la figura: \ref{fig:fuente}.
 \begin{figure}[!hp]
   \centering
-  \includegraphics[page=3,scale=0.7,angle=270,clip,trim=2cm 3cm 6.5cm 2.5cm]{./Figures/schematic.pdf}
+  \includegraphics[page=3,scale=0.7,angle=270,clip,trim=5cm 3cm 6.5cm 2.5cm]{./Figures/schematic.pdf}
   \caption{Fuente de alimentación DC/DC.}
   \label{fig:fuente}
 \end{figure}
 
-Para lograr la simulación de distintos tipos de sensores, se utilizaron circuitos como el que se muestra en la figura \ref{fig:temp_tens}  que permiten generar corrientes de 4mA a 20mA. También reguladores de tensión, y hasta un sensor de temperatura. Para estos circuitos se utilizaron las notas de aplicación de Texas Instruments\citep{Texas:LM317} - capitulo 8 páginas 12 y 13 y sensor temperatura: \citep{Texas:LM35} - 8.2.1 Basic Centigrade Temperature Sensor. 
+Para lograr la simulación de distintos tipos de sensores, se utilizaron circuitos como el que se muestra en la figura \ref{fig:sch_ireg}  que permiten generar corrientes de 4mA a 20mA.
+También reguladores de tensión, vease en la figura \ref{fig:sch_vreg} y un sensor de temperatura en la figura \ref{fig:sch_lm35}. Para estos circuitos se utilizaron las notas de aplicación de Texas Instruments\citep{Texas:LM317} - capitulo 8 páginas 12 y 13 y sensor temperatura: \citep{Texas:LM35} - 8.2.1 Basic Centigrade Temperature Sensor. 
 \begin{figure}[!hp]
   \centering
   \includegraphics[scale=0.5]{./Figures/sch_ireg.png}
+  \caption{Circuito regulador de corriente.}
+  \label{fig:sch_ireg}
   \includegraphics[scale=0.5]{./Figures/sch_vreg.png}
+  \caption{Circuito regulador de tensión.}
+  \label{fig:sch_vreg}
   \includegraphics[scale=0.5]{./Figures/sch_lm35.png}
-  \caption{Regulador de corriente, de tensión y del sensor de temperatura.}
-  \label{fig:temp_tens}
+  \caption{Circuito del sensor de temperatura.}
+  \label{fig:sch_lm35}
 \end{figure}
 
-Para concluir, se utilizaron unos circuitos básicos que permiten interactuar en forma simple con el sistema y realizar pruebas de funcionamiento. Los mismos fueron extraídos del esquemático utilizado en el proyecto de la EDU-CIA \footnote{\url{http://www.proyecto-ciaa.com.ar/devwiki/lib/exe/fetch.php?media=desarrollo:edu-ciaa:edu-ciaa-nxp:edu-ciaa-nxp\_color.pdf}}, figura \ref{fig:pul_leda_pulses}.
+Para concluir, se utilizaron circuitos básicos que permiten interactuar en forma simple con el sistema y realizar pruebas de funcionamiento.
+Los mismos fueron extraídos del esquemático utilizado en el proyecto de la EDU-CIA \footnote{\url{http://www.proyecto-ciaa.com.ar/devwiki/lib/exe/fetch.php?media=desarrollo:edu-ciaa:edu-ciaa-nxp:edu-ciaa-nxp\_color.pdf}}, figura \ref{fig:pul_leda_pulses}.
 
 
 \begin{figure}[!hp]
@@ -162,17 +167,17 @@ Para concluir, se utilizaron unos circuitos básicos que permiten interactuar en
   \label{fig:pul_leda_pulses}
 \end{figure}
 
-Con los esquemáticos terminados, se pasó a la elaboración del PCB. Los cuales se presentan en las siguientes figuras \ref{fig:layer_sup}, \ref{fig:layer_inf} y \ref{fig:pcb3d}.
+Con los esquemáticos terminados, se pasó a la elaboración del circuito impreso que se presentan en las figuras \ref{fig:layer_sup}, \ref{fig:layer_inf} y \ref{fig:pcb3d}.
 \begin{figure}[!hp]
   \centering
   \includegraphics[page=1,angle=270,clip,trim=5.5cm 10cm 7.7cm 8.5cm]{./Figures/pcb_layer.pdf}
-  \caption{Capa superior de la placa simulador de sensores.}
+  \caption{Capa superior de la placa de simulación de sensores.}
   \label{fig:layer_sup}
 \end{figure}
 \begin{figure}[!hp]
   \centering
   \includegraphics[page=2,angle=270,clip,trim=5.5cm 10cm 7.7cm 8.5cm]{./Figures/pcb_layer.pdf}
-  \caption{Capa inferior de la placa simulador de sensores.}
+  \caption{Capa inferior de la placa de simulación de sensores.}
   \label{fig:layer_inf}
 \end{figure}
 
@@ -184,7 +189,7 @@ Con los esquemáticos terminados, se pasó a la elaboración del PCB. Los cuales
   \label{fig:pcb3d}
 \end{figure}
 
-No obstante, por cuestiones de tiempo no se llegó a implementar la placa que se deiseñó del simulador del sistema. Y se terminó desarrollando una placa experimental que permitió realizar las primeras pruebas y que se presenta en la figura \ref{fig:placa_básicafirst}.
+No obstante, por cuestiones de tiempo no se llegó a implementar la placa que se diseñó del simulador del sistema y se terminó desarrollando una placa experimental que se presenta en la figura \ref{fig:placa_básicafirst}, la cual permitió realizar las primeras pruebas.
 
 \begin{figure}[!ht]
   \centering
@@ -210,61 +215,65 @@ No obstante, por cuestiones de tiempo no se llegó a implementar la placa que se
 
 \section{Software}
 \subsection{Aplicación}
-Se dividieron las tareas en tres módulos:
-\begin{itemize}
-  \item Módem 
-  \item Control
-  \item Sensores
-\end{itemize}
+Para la implementacion de la lógica del sistema se dividieron en tres tareas: módem, control y sensores. 
+
+\subsection*{Sensor}
+
+Esta consulta el estado de los sensores y calcula el promedio de las ultimas N muestras. Este es el valor que utiliza la tarea de control para definir si es necesario encender los actuadores correspondientes o apagarlos.
+
+El diagrama de flujo se puede apreciar en la figura \ref{fig:sensor_task}.
+
+\begin{figure}[!htp]
+  \centering
+  \includegraphics[scale=.7]{./Figures/sensor_task.png}
+  \caption{Diagrama de flujo de la tarea sensor.}
+  \label{fig:sensor_task}
+\end{figure}
+
 
 \subsection*{Módem}
+  En esta tarea se inicializa las configuraciones iniciales para el uso del módem. El cual requiere que esté configurado en modo texto para poder transmitir mensajes SMS. A su vez, es la encargada de interactuar con el módulo GPRS realizando consultas del nivel de señal del módem y de enviar los mensajes de alarmas si estas estan activadas y son necesarias.
 
-\begin{minipage}{0.4\textwidth}
-    \includegraphics[width=\textwidth]{./Figures/modem_task.png}
-\end{minipage}\hspace{5mm} %
-\begin{minipage}{0.6\textwidth}
-  En esta tarea se inicializa las configuraciones iniciales para el uso del módem. Es la encargada de interactuar con el módulo GPRS, realizando consultas del estado de señal y de enviando los mensajes de alarmas en caso de ser necesarios.
+  En el diagrama de flujo se aprecia en la figura \ref{fig:modem_task}.
 
- En el diagrama de flujo de la izquierda se ve como fue implementado.
-\end{minipage}
+  \begin{figure}[!htp]
+    \includegraphics[scale=.7]{/Figures/modem_task.png}
+    \caption{Diagrama en flujo de la tarea modem}
+    \label{fig:modem_task}
+\end{figure}
+
 
 \subsection*{Control}
-Con esta tarea se analiza el resultado los sensores de temperatura, y de la batería. Se verifica que estén dentro de los parámetros configurados por el usuario y se actúa en consecuencia. Siendo que el sitema de control actua cuando: la temperatura del sistema excede la máxima configurada, este procede a encender la bomba para que circule el líquido refrigerante y la electroválvula correspondiente. Luego una vez que el sistema llega a la temperatura mínima, este deshabilita la bomba y la electroválvula.
+La tarea de control es la que:
+  
+\begin{itemize}
+  \item Analiza los resultado de los sensores de temperatura y de la batería verificando que estén dentro de los parámetros configurados por el usuario y actúa en consecuencia. Si la temperatura del sistema excede la máxima configurada y el control automático esta activado entonces esta procede a encender la bomba y activar la electroválvula para que circule el líquido refrigerante por el tanque correspondiente. Luego una vez que la temperatura baja hasta la mínima, este deshabilita la bomba y la electroválvula. De no estar activado el control automático, la bomba y la electroválvula continúan en el estado que estaban, es decir no se realiza ninguna acción.
+  \item Es la encargada de setear los actuadores según sean especificados en la plataforma web.
+\end{itemize}
 
-También es la encargada de setear los actuadores según sean especificados en la plataforma web.
-
-La implementación se puede apreciar en la figura \ref{fig:control_task}.
-\begin{figure}[!hp]
+El diagrama de flujo correspondiente se puede apreciar en la figura \ref{fig:control_task}.
+\begin{figure}[hp]
   \includegraphics[scale=.5]{./Figures/control_task.png}
-  \caption{Diagrama de flujo de la tarea de control.}
+  \caption{Diagrama de flujo de la tarea control.}
   \label{fig:control_task}
 \end{figure}
 
-\subsection*{Sensor}
-\begin{minipage}{0.4\textwidth}
-  \includegraphics[width=\linewidth,scale=.5]{./Figures/sensor_task.png}
-\end{minipage}\hspace{5mm} %
-\begin{minipage}{0.6\textwidth}
-Esta consulta el estado de los sensores y calcula el promedio de las ultimas N muestras. Este es el valor que utiliza la tarea de control para definir si es necesario encender los actuadores correspondientes o apagarlos.
-
-El diagrama de flujo se puede apreciar la izquierda.
-\end{minipage}
 
 \subsection{ Plataforma web}
 Mediante la plataforma web diseñada se busca que el usuario pueda ver los datos de los sensores, tener control sobre los actuadores y realizar las configuraciones necesarias. 
 
-Para poder realizarlo, fue necesario profundizar los siguientes temas:
+Para poder realizarlo fue necesario profundizar los siguientes temas:
 \begin{description}
-  \item[HTML:] La página web se desarrolló en este lenguaje, permite darle la estructura básica y se realiza sobre texto plano, es decir no se requiere ninguna aplicación adicional simplemente un editor de texto. Luego es el navegador web quien tiene la tarea de interpretarlo. 
-  \item[CSS:] Mediante este código se realiza la presentación de la página, permitiendo así modificar la visualización de la misma y darle un formato mas profesional y elegante.
+  \item[HTML:] La página web se desarrolló en este lenguaje, que permite darle la estructura básica y se realiza sobre texto plano, es decir no se requiere ninguna aplicación adicional simplemente un editor de texto. Luego es el navegador web quien tiene la tarea de interpretarlo. 
+  \item[CSS:] Mediante este código se realiza la presentación de la página, permitiendo así modificar la visualización de la misma y darle un formato más profesional y elegante.
   \item[SVG:] Mediante este lenguaje se implementaron los gráficos correspondientes para mostrar los resultados de los sensores y el estado de los actuadores.
   \item[AJAX:] es un recurso muy utilizado cuando se desarrollan web en sistemas embebidos. Permite actualizar el estado de la web sin tener que consultar todo el contenido, simplemente se descarga una primera vez y luego se realizan consultas de los valores que quieren actualizar. 
-  \item[SSI:] Si bien la implementación que ofrece FreeRTOS es reducida. Es más que suficiente para poder agregar contenido a nuestra pagina en forma dinámica.
+  \item[SSI:] Si bien la implementación que ofrece FreeRTOS es reducida, es más que suficiente para poder agregar contenido a nuestra pagina en forma dinámica.
   \item[CGI:] Es un mecanismo de comunicación entre el servidor web y una aplicación. Permite al cliente solicitar y enviar datos al servidor. Con esta herramienta es que se obtiene el estado de los sensores y actuadores.
 \end{description}
 
 \subsection*{Diseño web}
-Se buscó información en internet, donde se encontraron varias páginas con cursos de HTML, CSS, y AJAX que son de forma online y gratuita. Las que mas se utilizó fueron:
+Se buscó información en internet, donde se encontraron varias páginas con cursos de HTML, CSS, y AJAX que son de forma online y gratuita. Las que más se utilizaron fueron:
 \begin{itemize}
   \item \url{https://www.w3schools.com}
   \item \url{https://es.khanacademy.org}
@@ -278,7 +287,7 @@ Así se logró una primera versión de la web, como se puede ver en la figura \r
   \label{fig:old_web}
 \end{figure}
 
-Cuando ya estaba funcionando en forma correcta, se pasó a mejorar las presentación de la misma. Para ello se uso un témplate que se ajustara a las necesidades, es decir mediante un archivo que contiene un estilo ya predefinido modifica la apariencia de la web. Pudiendo ver dicho cambio en la figura \ref{fig:web_monitoreo}.
+Cuando ya estaba funcionando en forma correcta, se pasó a mejorar las presentación de la misma. Para ello se uso un témplate que se ajustara a las necesidades, es decir mediante un archivo que contiene un estilo ya predefinido modifica la apariencia de la web. La versión final se muestra en la figura \ref{fig:web_monitoreo}.
 
 \begin{figure}[!h]
   \centering
@@ -287,16 +296,19 @@ Cuando ya estaba funcionando en forma correcta, se pasó a mejorar las presentac
   \label{fig:web_monitoreo}
 \end{figure}
 
-Este template fue encontrando en w3school\footnote{\url{https://www.w3schools.com/w3css/w3css_templates.asp}}. Siendo que cumplía los siguientes requerimientos:
+El template que se vió en la version final, fue encontrando en w3school\footnote{\url{https://www.w3schools.com/w3css/w3css_templates.asp}}.
+Y cumplía los siguientes requerimientos:
 \begin{itemize}
   \item Sea amigable.
-  \item Compatibles con distintos navegadores, especialmente los más utilizados como ser: Google-Chrome y Firefox. 
-  \item Sea cómodo de navegar en distintos dispositivos, como tablets, celulares y PCs.
+  \item Compatible con distintos navegadores, especialmente los más utilizados como ser: Google-Chrome y Firefox. 
+  \item Ser cómodo de navegar en distintos dispositivos, como tablets, celulares y PCs.
 \end{itemize}
 
 
 \subsection{Configuración del servidor}
-Al iniciar el servidor se debe tener en cuenta que este será el encargado de gestionar las peticiones del usuario. Es decir una vez que el usuario ingresa la dirección del servidor, este le transmite la información de la web.  Para realizar la comunicación entre cliente y servidor, se utilizó la API de lwIP \citep{webserver}  que utiliza una serie de callbacks para controlar los eventos debido a la comunicación de la red. Es por ello que para optimizar los recursos se utilizo AJAX, permitiendo que el cliente sea el encargado de realizar las consultas al server en forma periódica.
+Al iniciar el servidor se debe tener en cuenta que este será el encargado de gestionar las peticiones del usuario. 
+Es decir una vez que el usuario ingresa la dirección del servidor, este le transmite la información de la web.
+Para realizar la comunicación entre cliente y servidor se utilizó la API de lwIP \citep{webserver}  que utiliza una serie de callbacks para controlar los eventos debido a la comunicación de la red. Es por ello que para optimizar los recursos se utilizo AJAX, permitiendo que el cliente sea el encargado de realizar las consultas al server en forma periódica.
 
 La configuración del servidor establecida por default es la que se muestra en la Tabla \ref{tab:servercfg}.
 \begin{table}[!h]
@@ -319,7 +331,7 @@ La configuración del servidor establecida por default es la que se muestra en l
 
 La información se solicita mediante directivas del tipo SSI.
 Es decir, solo se transmite un archivo ajax.shtml con los parámetros que se van a actualizar. Luego el navegador, mediante una serie de funciones en JavaScript es el encargado de actualizar los cambios realizados.  
-Se puede ver el procedimiento mencionado en la siguiente figura \ref{fig:ajax_sec}.
+Se puede ver el procedimiento mencionado en la figura \ref{fig:ajax_sec}.
 \begin{figure}[!htb]
   \centering
   \includegraphics[scale=.8]{./Figures/ajax_sec.png}
