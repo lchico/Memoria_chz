@@ -4,7 +4,8 @@ En este capítulo se expone cuales fueron las pruebas realizadas para determinar
 \label{Chapter4} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
 \section{Banco de pruebas}
-Para simular el comportamiento de un sensor de temperatura y la descarga de una batería, se implementó una placa básica la cual ya fue vista en el capitulo 3.2, que para facilidad del lector se vuelve a mostrar en la figura \ref{fig:placa_básica}, consta de dos potenciómetros que permiten simular la variación de estos dispositivos. Sobre la misma se conecto un conversor RS232 a TTL, para lograr la integración con el módem.
+Para simular el comportamiento de un sensor de temperatura y la descarga de una batería, se implementó la placa que fue presentada en la sección \ref{hw_placa}, que para facilidad del lector se vuelve a mostrar en la figura \ref{fig:placa_básica}. 
+Esta consta de dos potenciómetros que permiten simular la variación de la temperatura y la carga de la batería. Sobre la placa se conecto un conversor RS232 a TTL, para lograr la integración con el módem.
 
 \begin{figure}[h]
   \centering
@@ -13,7 +14,7 @@ Para simular el comportamiento de un sensor de temperatura y la descarga de una 
   \label{fig:placa_básica}
 \end{figure}
 
-En la figura \ref{fig:prototipo} se muestra la placa básica que contiene el módem y los componentes que me permiten simular las variaciones de temperatura y el estado de la batería integrado a la CIAA-NXP. 
+En la figura \ref{fig:prototipo} se muestra la placa que contiene el módem y los componentes de simulación conectada a la CIAA-NXP. 
 
 \begin{figure}[h]
   \centering
@@ -24,7 +25,7 @@ En la figura \ref{fig:prototipo} se muestra la placa básica que contiene el mó
 
 \section{Configuraciones para la PC}
 
-Para la realización de los ensayos, se configuró la PC en forma adecuada. En la figura \ref{fig:hw_pc} ver como configurar en Linux la interfaz de red. Es importante destacar que dichos comandos son ejecutados con el permiso usuario \emph{root}.
+Para la realización de los ensayos, se configuró la PC en forma adecuada. En la figura \ref{fig:hw_pc} vemos como configurar en Linux la interfaz de red. Es importante destacar que dichos comandos son ejecutados con el permiso usuario \emph{root}.
 
 \begin{figure}[h]
   \centering
@@ -33,7 +34,7 @@ Para la realización de los ensayos, se configuró la PC en forma adecuada. En l
   \label{fig:hw_pc}
 \end{figure}
 
-Una vez que se tiene la configuración de red adecuada se obtiene en el navegador web la imagen \ref{fig:web_monitoreo} que fue vista en el capítulo 3.
+Una vez que se tiene la configuración de red adecuada se obtiene en el navegador web la imagen \ref{fig:web_monitoreo} que fué introducida en el capítulo 3.
 
 \begin{figure}[h]
   \centering
@@ -61,7 +62,7 @@ Finalmente abajo a la derecha el estado de la batería, el cual va a permitir al
 
 Una vez recorrido todas las opciones que permite la interfaz web y verificar que el comportamiento haya sido el esperado. Se procede interactuar con el sistema, por medio de alteraciones generadas a través de los potenciómetros que representaran la temperatura y el estado de la batería.
 
-Estando activado el control automático y al simular un incremento de temperatura, se comprobó que al exceder la temperatura máxima inicio en forma automática la bomba que permite la circulación del refrigerante y la activación de la electroválvula que interviene sobre el tanque que estamos monitoreando. En la web se ve cómo en la figura \ref{fig:auto_control_active}. y se recibe la alerta correspondiente mediante un SMS como se puede observar en la figura \ref{fig:sms_min_max_bat}.
+Estando activado el control automático y al simular un incremento de temperatura, se comprobó que al exceder la temperatura máxima inicio en forma automática la bomba que permite la circulación del refrigerante y la activación de la electroválvula que interviene sobre el tanque que se está monitoreando. En el navegador web se verá como en la figura \ref{fig:auto_control_active}. y se recibe la alerta correspondiente mediante un SMS como se puede observar en la figura \ref{fig:sms_min_max_bat}.
 
 \begin{figure}[h]
   \centering
@@ -80,7 +81,7 @@ Estando activado el control automático y al simular un incremento de temperatur
   \label{fig:sms_min_max_bat}
 \end{figure}
 
-Se verificó que éste se mantiene activado hasta llegar a la temperatura mínima, en este instante procede a desconectar la bomba y a cerrar la electroválvula. En la web se verá como en la figura \ref{fig:auto_control_inactive}. y dado su respectiva alerta mediante un SMS como vemos en la figura \ref{fig:sms_min_max_bat}
+Se verificó que el estado de la bomba y la electroválvula se mantiene activado hasta llegar a la temperatura mínima, en este instante se procede a desconectar la bomba y a cerrar la electroválvula. En la web se mostrará  como en la figura \ref{fig:auto_control_inactive}. y dado su respectiva alerta mediante un SMS como en la figura \ref{fig:sms_min_max_bat}
 
 \begin{figure}[h]
   \centering
@@ -90,7 +91,10 @@ Se verificó que éste se mantiene activado hasta llegar a la temperatura mínim
 \end{figure}
 
 
-En el caso de la batería se analiza las variaciones en la carga. Si esta disminuye más de un valor que es determinado, se enviará un SMS como el que observamos en figura \ref{fig:sms_min_max_bat}. Es importante aclarar que en caso de producirse un corte de energía, el sistema no está pensado para que se mantenga en funcionamiento por un tiempo prolongado, sino más bien lo que se busca es que este pueda mantener informado a la personas responsables que se requiere de su atención. Es por esto que no se realizó un estúdio del tiempo de vida del sistema.
+En el caso de la batería se analiza las variaciones en la carga.
+Si esta disminuye más de un valor que es determinado, se envia un SMS como en la figura \ref{fig:sms_min_max_bat}. 
+Es importante aclarar que en caso de producirse un corte de energía, el sistema no está pensado para que se mantenga en funcionamiento por un tiempo prolongado, sino más bien lo que se busca es que este pueda mantener informado a la personas responsables que se requiere de su atención. 
+Es por esto que no se realizó un estúdio del tiempo de vida del sistema.
 
 Para verificar los actuadores, se tiene la sección de configuración de actuadores y para cada uno de ellos se verificó los diferentes estados, encendiendo y apagando. Luego se probó en bloques de varios actuadores. En la figura \ref{fig:test_contact} se ve un ejemplo de los casos probados.
 
