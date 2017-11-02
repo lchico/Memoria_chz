@@ -22,6 +22,15 @@
 %----------------------------------------------------------------------------------------
 
 \section{Producción de vino}
+\section{Proceso de elaboración del vino}
+
+\subsection{La temperatura}
+
+  Un factor vital para que la fermentación siga correctamente su curso. Es importante saber que, si la temperatura de fermentación es elevada, esos grados de más matarán prematuramente las levaduras (que no podrán completar su función metabólica).
+
+  Pero, además de este aspecto de vital importancia, también es necesario saber que una temperatura excesiva provocará la pérdida de elementos aromáticos y un incremento del amargor (ya que el calor puede desencadenar una reacción química de las partes sólidas procedentes de la vid, como pueden ser los hollejos).
+
+  Por este motivo, la temperatura es uno de los aspectos más vigilados en el proceso de fermentación del vino incluso desde antes de dejar que la naturaleza obre sus misterios químicos
 
 
 \section{Motivación}
@@ -52,17 +61,50 @@ Es importante destacar que La CIAA-NXP es la primera y única computadora del mu
   \item Ser Abierta, ya que toda la información sobre su diseño de hardware, firmware, software, etc. está libremente disponible en internet bajo la Licencia BSD, para que cualquiera la utilice como quiera.
 \end{enumerate}
 
-\section{Proceso de elaboración del vino}
+\subsection{¿Qué es la CIAA-NXP?}
 
-\subsection{La temperatura}
+La CIAA-NXP es la primer CIAA en ser diseñada, probada y producida en serie. Pensada para utilizarse en (pero no limitada a) equipos de automatización industrial. Se alimenta con 24V (CC). Tiene entradas digitales optoacopladas, entradas analógicas configurables 0-10V o 0-20mA, salidas digitales open-drain y relé, salida analógica configurable 0-10V o 0-20mA, interfaces de comunicación RS232, RS485, CAN, Ethernet y USB-OTG. Basada en el microcontrolador LPC4337. 
 
-  Un factor vital para que la fermentación siga correctamente su curso. Es importante saber que, si la temperatura de fermentación es elevada, esos grados de más matarán prematuramente las levaduras (que no podrán completar su función metabólica).
+\begin{figure}
+  \centering
+  \includegraphics[scale=.2]{./Figures/ciaa.png}
+  \label{fig:ciaa}
+  \caption{Placa CIAA-NXP para la industria.}
+\end{figure}
 
-  Pero, además de este aspecto de vital importancia, también es necesario saber que una temperatura excesiva provocará la pérdida de elementos aromáticos y un incremento del amargor (ya que el calor puede desencadenar una reacción química de las partes sólidas procedentes de la vid, como pueden ser los hollejos).
+La especificaciones CIAA-NXP son :
+\begin{description}
+  \item[CPU:] Microcontrolador LPC4337JDB144\footnote{\url{http://www.nxp.com/products/microcontrollers/cortex_m4/lpc4300/LPC4337JBD144.html}}. Dual-core Cortex-M4 + Cortex-M0 @ 204MHz.
+  \item[Debuger:] USB-to-JTAG FT2232H\footnote{\url{http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_FT2232H.pdf}}. Soportado por OpenOCD.
 
-  Por este motivo, la temperatura es uno de los aspectos más vigilados en el proceso de fermentación del vino incluso desde antes de dejar que la naturaleza obre sus misterios químicos
-
-
-
+  \item[Memorias:]
+  \hspace{1cm}
+  \begin{itemize}
+      \item Memorias internas del LPC4337. Ver Hoja de datos del LPC4337JBD144
+      \item SDRAM 128 Mbit (IS42S16800F-7TL o compatible)
+      \item Flash QSPI 32 Mbit (S25FL032P0XMFI011 o compatible)
+      \item EEPROM 1 Mbit y 2 Kbit
+    \end{itemize}
+  \item[Interfaces de comunicación:] 
+  \hspace{1cm}
+    \begin{itemize}
+      \item Ethernet con soporte PoE.
+      \item USB On-The-Go.
+      \item USB Device Auxiliar.
+      \item RS232 (detalles técnicos).
+      \item RS485.
+      \item CAN (detalles técnicos).
+    \end{itemize}
+  \item[Entradas/Salidas:] 
+  \hspace{1cm}
+    \begin{itemize}
+      \item 8 entradas digitales optoacopladas.
+      \item 4 entradas analógicas configurables por jumper 0-10V o 0-20mA.
+      \item 4 salidas open-drain de 24V, 1A.
+      \item 4 salidas a relé 24V, 2A.
+      \item 1 salida analógica configurable por jumper 0-10V o 0-20mA.
+      \item Conectores de expansión LV-GPIO, SPI, I2C.
+    \end{itemize}
+\end{description}
 
 
