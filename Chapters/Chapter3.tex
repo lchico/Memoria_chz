@@ -46,7 +46,7 @@ En este capítulo se presenta cómo se desarrolló el hardware básico para simu
 
 Primeramente se diseñó un circuito electrónico que permite simular el entorno de funcionamiento de una bodega. Para ello se utilizó lo aprendido a la largo del curso de \emph{diseño de PCBs en KICAD}. 
 
-En la figura \ref{fig:diagrama_sistema} se aprecia el entorno de trabajo del sistema. El mismo interactua con una bomba de agua que permite llevar liquido refrigerante desde el depósito hacia los tanques que están en proceso de fermentación.
+En la figura \ref{fig:diagrama_sistema} se aprecia el entorno de trabajo del sistema. El mismo interactúa con una bomba de agua que permite llevar liquido refrigerante desde el depósito hacia los tanques que están en proceso de fermentación.
 Recibiendo como información la temperatura de los tanques, el equipo debe controlar la bomba y la electroválvula correspondiente. De esta forma se controla la temperatura acorde a los parámetros definidos por el usuario. 
 
 
@@ -58,18 +58,18 @@ Recibiendo como información la temperatura de los tanques, el equipo debe contr
 \end{figure}
 
 \subsection{ Módulos requeridos}
-Para llevar a cabo el proyecto, se dividió el sistema en los siguientes módulos:
+Para llevar a cabo el proyecto, se dividió el sistema en cuatro módulos:
 \begin{description}
   \item[Módem:] encargado de transmitir las alertas mediante SMS utilizando el modulo SIM800L.
   \item[Actuadores:] salidas que permiten controlar la bomba y electroválvulas.
-  \item[Sensores:] entradas que permitan simular el comportamiento de los sensores, para esto se utilizaron potenciómetros.
+  \item[Sensores:] entradas que permitan simular el comportamiento de los sensores.
   \item[CPU:] unidad encargada de controlar el funcionamiento del sistema incorporada en la placa CIAA-NXP. 
 \end{description}
 
 \subsection{Características del hardware}
 \label{hw_placa}
 
-Como se vió en la figura \ref{fig:diagrama_sistema} el dispositivo de monitoreo interactua con la temperatura de los tanques, el control de la bomba y la seleccion de la electrovalvula. Es por esto que se implementó un sitema que está compuesto por el modem y circuitos electronicos que permiten:
+Como se vio en la figura \ref{fig:diagrama_sistema} el dispositivo de monitoreo interactúa con la temperatura de los tanques, el control de la bomba y la selección de la electroválvula. Es por esto que se implementó un sistema que está compuesto por el módem y circuitos electrónicos que permiten:
 \begin{itemize}
   \item Simular el estado de la temperatura
   \item Adaptar los niveles de tensión.
@@ -77,12 +77,12 @@ Como se vió en la figura \ref{fig:diagrama_sistema} el dispositivo de monitoreo
   \item Conectar el módem GPRS.
 \end{itemize}
 
-    De esta forma la placa desarrollada la cual llamaremos simulador del sistema, nos permite conectar el modem y validar el correcto funcionamiento del software implementado. La forma de conexión con la CIAA-NXP se muesetra en la figura \ref{fig:diagrama_simulado}.
+    De esta forma la placa desarrollada la cual llamaremos simulador del sistema, nos permite conectar el módem y validar el correcto funcionamiento del software implementado. La forma de conexión con la CIAA-NXP se muestra en la figura \ref{fig:diagrama_simulado}.
 
 \begin{figure}[!htb]
   \centering
   \includegraphics[page=1,scale=1,clip,trim=1.5cm 16.5cm 5.5cm 3.5cm]{./Figures/ciaa_placa_base.pdf}
-  \caption{Conexion de la CIAA-NXP con el simulador del sistema.}
+  \caption{Conexión de la CIAA-NXP con el simulador del sistema.}
   \label{fig:diagrama_simulado}
 \end{figure}
 
@@ -134,7 +134,7 @@ Y para regular a 3.3V se utilizó el integrado LM11733 circuito extraído de la 
 \end{figure}
 
 Para lograr la simulación de distintos tipos de sensores, se utilizaron circuitos como el que se muestra en la figura \ref{fig:sch_ireg}  que permiten generar corrientes de 4mA a 20mA.
-También reguladores de tensión, vease en la figura \ref{fig:sch_vreg} y un sensor de temperatura en la figura \ref{fig:sch_lm35}. Para estos circuitos se utilizaron las notas de aplicación de Texas Instruments\citep{Texas:LM317} - capitulo 8 páginas 12 y 13 y sensor temperatura: \citep{Texas:LM35} - 8.2.1 Basic Centigrade Temperature Sensor. 
+También reguladores de tensión, véase en la figura \ref{fig:sch_vreg} y un sensor de temperatura en la figura \ref{fig:sch_lm35}. Para estos circuitos se utilizaron las notas de aplicación de Texas Instruments\citep{Texas:LM317} - capitulo 8 páginas 12 y 13 y sensor temperatura: \citep{Texas:LM35} - 8.2.1 Basic Centigrade Temperature Sensor. 
 \begin{figure}[!hp]
   \centering
   \includegraphics[scale=0.5]{./Figures/sch_ireg.png}
@@ -164,7 +164,7 @@ Los mismos fueron extraídos del esquemático utilizado en el proyecto de la EDU
     \includegraphics[width=1\linewidth]{./Figures/led_sch.png}
     \caption{Circuito de los leds.}
   \end{subfigure}
-  \caption{Esquematicos extraidos de la EDU-CIAA.}
+  \caption{Esquemáticos extraídos de la EDU-CIAA.}
   \label{fig:pul_leda_pulses}
 \end{figure}
 
@@ -216,7 +216,7 @@ No obstante, por cuestiones de tiempo no se llegó a implementar la placa que se
 
 \section{Software}
 \subsection{Aplicación}
-Para la implementacion de la lógica del sistema se dividieron en tres tareas: módem, control y sensores. 
+Para la implementación de la lógica del sistema se dividieron en tres tareas: módem, control y sensores. 
 
 \subsection*{Sensor}
 
@@ -233,13 +233,13 @@ El diagrama de flujo se puede apreciar en la figura \ref{fig:sensor_task}.
 
 
 \subsection*{Módem}
-  En esta tarea se inicializa las configuraciones iniciales para el uso del módem. El cual requiere que esté configurado en modo texto para poder transmitir mensajes SMS. A su vez, es la encargada de interactuar con el módulo GPRS realizando consultas del nivel de señal del módem y de enviar los mensajes de alarmas si estas estan activadas y son necesarias.
+  En esta tarea se inicializa las configuraciones iniciales para el uso del módem. El cual requiere que esté configurado en modo texto para poder transmitir mensajes SMS. A su vez, es la encargada de interactuar con el módulo GPRS realizando consultas del nivel de señal del módem y de enviar los mensajes de alarmas si estas están activadas y son necesarias.
 
   En el diagrama de flujo se aprecia en la figura \ref{fig:modem_task}.
 
   \begin{figure}[!htp]
     \includegraphics[scale=.7]{/Figures/modem_task.png}
-    \caption{Diagrama en flujo de la tarea modem}
+    \caption{Diagrama en flujo de la tarea módem}
     \label{fig:modem_task}
 \end{figure}
 
@@ -297,7 +297,7 @@ Cuando ya estaba funcionando en forma correcta, se pasó a mejorar la presentaci
   \label{fig:web_template}
 \end{figure}
 
-El template que se vió en la versión final, fue encontrando en w3school\footnote{\url{https://www.w3schools.com/w3css/w3css_templates.asp}}.
+El template que se vio en la versión final, fue encontrando en w3school\footnote{\url{https://www.w3schools.com/w3css/w3css_templates.asp}}.
 Y cumplía los siguientes requerimientos:
 \begin{itemize}
   \item Sea amigable.
@@ -358,7 +358,7 @@ Al presionar donde dice menú, se puede configurar lo siguiente:
   \item[2. Actuadores:] setear en forma manual el estado de los mismos. En la figura \ref{fig:web_act} se presenta esto en mayor detalle.
   \item[3. Batería:] Aquí se podrá setear la alarma debido al nivel de descarga de la batería. Esta enviará un SMS indicando que se alcanzó dicho estado. En la figura \ref{fig:web_bat} se muestra un ejemplo.
   \item[4. Módem GPRS:] En este menú podremos configurar 2 personas a quienes serán enviadas las alertas debido al accionar de alguna alarma.En la figura \ref{fig:web_Modem} se presenta esto en mayor detalle.
-  \item[5. Temperatura:] Aquí se configura el rango de temperatura, la alarma correspondiente y si se activa el control automático de la misma. De estar activado, actuará en forma automática sobre la bomba y la electroválvula para mantener la temperatura dentro de dicho rango. Para apreciar esto con mayor detalle, véa la figura \ref{fig:web_temp}.
+  \item[5. Temperatura:] Aquí se configura el rango de temperatura, la alarma correspondiente y si se activa el control automático de la misma. De estar activado, actuará en forma automática sobre la bomba y la electroválvula para mantener la temperatura dentro de dicho rango. Para apreciar esto con mayor detalle, vea la figura \ref{fig:web_temp}.
   \item[6. Network:] Aquí se configura los parámetros de la red, IP, mascara de red y puerta de enlace. En la figura \ref{fig:cfg_net} vemos el formulario con los campos mencionados que debemos completar.
   \item[7. Cerrar Menú:] Esta opción cierra el menú, permitiendo quitar las opciones de menú.
 \end{description}

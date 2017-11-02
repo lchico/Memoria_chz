@@ -17,7 +17,7 @@ En este capítulo se detallan las tareas que se realizaron, que contratiempos se
   \begin{itemize}
       \item Sensar la temepratura de un tanque de fermentación de vinos.
       \item Controlar que la temperatura se mantenga dentro del rango correspondiente según el tipo de vino. 
-      \item En caso de corte de energia notificar vía SMS a un celuar de contacto.
+      \item En caso de corte de energía notificar vía SMS a un celuar de contacto.
       \item Enviar mensajes de alerta vía SMS en caso de temperatura fuera de rango.
       \item Diseñar una página web para mostrar la información del sistema y realizar las configuraciones necesarias.
       \item Diseñar una placa básica para mostrar el funcionamiento del sistema.
@@ -36,19 +36,19 @@ El proyecto no include:
 Los requerimientos fueron consensuados con el responable de la Bodega Chico Zossi, para trabajar sobre un caso real y son los siguientes:
 
 \begin{enumerate}[label*=\arabic*.]
-  \item Medición de Temperatura:
+  \item Medición de temperatura:
     \begin{enumerate}[label*=\arabic*.]
       \item Se requiere medir la temperatura de un tanque.
-      \item Se tiene que poder definir un rango entre $7 a 25^oC$ con una apmlitud mínima de $1^oC$.
+      \item Se tiene que poder definir un rango entre $7 a 30^oC$ con una apmlitud mínima de $1^oC$.
     \end{enumerate}
   \item Comunicación:
     \begin{enumerate}[label*=\arabic*.]
       \item Debe transmitir mensajes SMS notificando el estado y los cambios que se produzcan.
       \item Configuración de los parámetros requeridos de temperatura via web. 
     \end{enumerate}
-  \item Funcionamiento del Sistema embebido:
+  \item Funcionamiento del sistema embebido:
     \begin{enumerate}[label*=\arabic*.]
-      \item El sistema deberá mantener la temperatura controlada a los parámetros configurados por el usuario. Para ello deberá hacer uso del actuadores.
+      \item El sistema deberá mantener la temperatura controlada a los parámetros configurados por el usuario. Para ello deberá hacer uso de actuadores.
       \item Deberá alertar si hay corte de energía mediante un SMS.
       \item Deberá mostrar el nivel de batería en porcentajes de 0 a 100\%  con una resolución mínima del 20\%. Y será mostrado en la página web.
   \end{enumerate}
@@ -81,9 +81,9 @@ Al desarrollar el presente proyecto resultó que dada a la falta de experiencia 
        &       & \multicolumn{2}{c|}{ Tiempo} & \%  \\ \cline{3-4}
     Nro& Tarea &       Estimado &  Real       & adicional \\
     \hline
-    9 & Soldado y verificacion de la placa & 15h & 24h & 60 \\
-    18 & Programacion de funciones p/ethernet & 30h & 50h & 66,7 \\
-    23 & Programacion de funciones p/ethernet & 25h & 35h & 40 \\
+    9 & Soldado y verificación de la placa & 15h & 24h & 60 \\
+    18 & Programación de funciones p/ethernet & 30h & 50h & 66,7 \\
+    23 & Programación de funciones p/ethernet & 25h & 35h & 40 \\
     \hline \hline
   \end{tabular}
   \caption{Comparación tiempo planificado vs real.}
