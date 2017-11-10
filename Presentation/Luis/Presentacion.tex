@@ -139,65 +139,67 @@
 \end{frame}
 %%%%%%%%%%%%%%%%
 
-\section{Motivación}
+\section{Introducción}
 
 \begin{frame}{\textbf{\LARGE{¿Cómo se elabora el vino?}}}
   \fontsize{18pt}{18}\selectfont
-  \begin{minipage}[c]{1.0\linewidth}
-
-    \hspace{-40px}
-    \begin{minipage}[l]{0.30\linewidth}
-      \begin{figure}[H]
-        \includegraphics[width=1.7\textwidth]{./imagenes/elaboracion-del-vino-tinto.png}
-      \end{figure}	  	  	
-    \end{minipage}
-
-
-    \begin{minipage}[c]{0.68\linewidth}
-      \begin{itemize}
-        \item Proceso de Fermentación 
-          \vspace{15px}
-        \item Vinos Tintos
-          \vspace{15px}
-        \item Vinos Blancos
-      \end{itemize}	
-    \end{minipage}
-
-      \end{minipage}
-\end{frame}
-
-\begin{frame}{\LARGE{\textbf{Nemo vale u\$d 300 ...}}}
+  \hspace{-40px}
+  \vspace{-30px}
   \begin{figure}[H]
-    {\includegraphics[width=1\textwidth]{./imagenes/nemo.jpg}}
+    \includegraphics[width=1\textwidth]{./imagenes/elaboracion-del-vino-tinto.png}
   \end{figure}	  	  	
 \end{frame}
 
+\begin{frame}{\LARGE{\textbf{Proceso de Fermentación}}}
+  \begin{itemize}
+      \vspace{15px}
+    \item Vinos Tintos
+      \vspace{5px}
+      \begin{itemize}
+        \item Tiempo de fermentación: 6 a 12 dias
+        \vspace{5px}
+        \item Temperatura de fermentación: $20^o\ a\ 24^oC$
+      \end{itemize}
+        \vspace{15px}
+      \item Vinos Blancos
+        \vspace{5px}
+        \begin{itemize}
+          \item Tiempo de fermentación: 5 a 15 dias
+          \vspace{5px}
+          \item Temperatura de fermentación: $10^o\ a\ 15^oC$
+        \end{itemize}
+  \end{itemize}	
+\end{frame}
 
-\section[Problema]{Planteo del problema a resolver}
 
-\begin{frame}{\textbf{\LARGE{Planteo del problema a resolver}}}
+\section[Problema]{Condiciones actuales}
+
+\begin{frame}{\textbf{\LARGE{Condiciones actuales}}}
   \fontsize{18pt}{18}\selectfont
   \begin{itemize}
-    \item {¿Qué hace falta medir?}
-      \vspace{20px}
-    \item ¿Qué hace falta controlar?
-      \vspace{20px}
-    \item ¿Sobre qué hace falta alertar?
-      \vspace{10px}
+    \item { Dificultad para conseguir personal }
+        \vspace{20px}
+    \item Requiere atención 7x24
+        \vspace{20px}
+    \item Problemas de energía
+        \vspace{10px}
+    \item Control manual
   \end{itemize}
 \end{frame}
 
-\begin{frame}{\textbf{\LARGE{¿Qué hace falta medir?}}}
+\begin{frame}{\textbf{\LARGE{Requerimientos}}}
   \fontsize{18pt}{18}\selectfont
   \begin{minipage}[c]{1.0\linewidth}
     \centering
       \begin{itemize}
-        \item Nivel de agua		
-          \vspace{20px}
-        \item Temperatura
-          \vspace{20px}      	
-        \item pH
-          \vspace{20px}
+        \item Monitoreo de la temperatura y el estado de la bateria
+          \vspace{10px}
+        \item Control de temperatura en forma automática
+          \vspace{10px}      	
+        \item Mensajes SMS de alerta
+          \vspace{10px}
+        \item Interfáz web: información + configuración
+          \vspace{10px}
       \end{itemize}
   \end{minipage}
 \end{frame}
@@ -242,15 +244,11 @@
 \end{frame}
 
 \begin{frame}{\textbf{\LARGE{Arquitectura del Software}}}
-  \begin{figure}[H]
-    {\includegraphics[width=1\textwidth]{./imagenes/bloques.pdf}}
-  \end{figure}	  	  	
 \end{frame}
 
 \begin{frame}{\textbf{\LARGE{Interfaz Web}}}
   \Wider{
     \begin{figure}[H]
-      {\includegraphics[width=1\textwidth]{./imagenes/interfaz_home_normal.png}}
     \end{figure}	  	  	
   }
 \end{frame}
@@ -258,20 +256,7 @@
 
 \begin{frame}{\textbf{\LARGE{Interfaz Web}}}
   \Wider{
-    \begin{figure}[H]
-      {\includegraphics[width=1\textwidth]{./imagenes/interfaz_control_normal.png}}
-    \end{figure}	
   }  	  	
-\end{frame}
-
-
-
-\begin{frame}{\textbf{\LARGE{Interfaz Web}}}
-  \Wider{	
-  \begin{figure}[H]
-    {\includegraphics[width=1\textwidth]{./imagenes/interfaz_config}}
-  \end{figure}	  	  	
-  }
 \end{frame}
 
 \begin{frame}{\textbf{\LARGE{Tecnologías utilizadas}}}
@@ -288,44 +273,6 @@
     \item Common Gateway Interface (CGI)
   \end{itemize}
 \end{frame}
-
-\section{Ensayos y validación}
-
-\begin{frame}{\textbf{\LARGE{Ensayos - Tabla de decisión}}}
-  \vspace{-10px}
-  \Wider{	
-  \begin{figure}[H]
-    {\includegraphics[height=.8\textheight]{./imagenes/tabla1alarma}}
-  \end{figure}	  	  	
-  }
-\end{frame}
-
-\begin{frame}{\textbf{\LARGE{Ensayos - Nivel de agua}}}
-  \Wider{	
-  \begin{figure}[H]
-    {\includegraphics[width=1\textwidth]{./imagenes/plot1Water}}
-  \end{figure}	  	  	
-  }
-\end{frame}
-
-\begin{frame}{\textbf{\LARGE{Ensayos - Temperatura}}}
-  \Wider{	
-  \begin{figure}[H]
-    {\includegraphics[width=1\textwidth]{./imagenes/plot1Temp}}
-  \end{figure}	  	  	
-  }
-\end{frame}
-
-\begin{frame}{\textbf{\LARGE{Ensayos - pH}}}
-  \Wider{	
-  \begin{figure}[H]
-    {\includegraphics[width=1\textwidth]{./imagenes/plot1pH}}
-  \end{figure}	  	  	
-  }
-\end{frame}
-
-\section{Demostración}
-
 
 \section{Conclusiones}
 
