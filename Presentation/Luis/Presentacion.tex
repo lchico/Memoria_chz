@@ -139,6 +139,17 @@
 \end{frame}
 %%%%%%%%%%%%%%%%
 
+\section{Motivación}
+\begin{frame}{\textbf{\LARGE{¿Cómo se elabora el vino?}}}
+  \begin{itemize}
+    \item Satisfacer las necesidades de la bodega Chico Zossi.
+      \vspace{5px}
+    \item Implementar en un microcontrolador un sistema de control con iterfaz web.
+      \vspace{5px}
+    \item Trabajar con la plataforma CIAA.
+  \end{itemize}
+\end{frame}
+
 \section{Introducción}
 
 \begin{frame}{\textbf{\LARGE{¿Cómo se elabora el vino?}}}
@@ -151,6 +162,8 @@
 \end{frame}
 
 \begin{frame}{\LARGE{\textbf{Proceso de Fermentación}}}
+  \fontsize{18pt}{18}\selectfont
+  \vspace{-30px}
   \begin{itemize}
       \vspace{15px}
     \item Vinos Tintos
@@ -187,79 +200,105 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{\textbf{\LARGE{Requerimientos}}}
+\begin{frame}{\textbf{\LARGE{Alcances del trabajo}}}
   \fontsize{18pt}{18}\selectfont
   \begin{minipage}[c]{1.0\linewidth}
     \centering
       \begin{itemize}
-        \item Monitoreo de la temperatura y el estado de la bateria
+        \item Monitoreo de la temperatura y el estado de la bateria.
           \vspace{10px}
-        \item Control de temperatura en forma automática
+        \item Control de temperatura en forma automática.
           \vspace{10px}      	
-        \item Mensajes SMS de alerta
+        \item Mensajes SMS de alerta.
           \vspace{10px}
-        \item Interfáz web: información + configuración
+        \item Interfáz web: información + configuración.
           \vspace{10px}
       \end{itemize}
   \end{minipage}
 \end{frame}
 
 
-\begin{frame}{\textbf{\LARGE{¿Qué hace falta controlar?}}}
+\begin{frame}{\textbf{\LARGE{No incluye}}}
   \fontsize{18pt}{18}\selectfont
   \begin{minipage}[c]{1.0\linewidth}
     \centering
-    \begin{itemize}
-        \vspace{-20px}
-      \item Inyección de $O_2$/$CO_2$
-        \vspace{15px}
-      \item Iluminación
-        \vspace{15px}
-      \item Bombas de agua entrada/salida
-        \vspace{15px}
-      \item Calefactor
-    \end{itemize}
+      \begin{itemize}
+        \item Estudio de los sensores y actuadores.
+          \vspace{10px}
+        \item Análisis del consumo eléctrico.
+          \vspace{10px}
+        \item Estudio del proceso de fermentación.
+          \vspace{10px}
+      \end{itemize}
   \end{minipage}
 \end{frame}
 
-\begin{frame}{\textbf{\LARGE{¿Sobre qué hace falta alertar?}}}
+
+\section{Diseño e implementación}
+
+\begin{frame}{\textbf{\LARGE{Esquema del sistema}}}
+  \vspace{-.7cm}
+  \begin{figure}[H]
+    {\includegraphics[width=1\textwidth]{./imagenes/diagrama_del_sistema.png}}
+  \end{figure}	
+\end{frame}
+
+
+\begin{frame}{\textbf{\LARGE{Planificación del proyecto }}}
   \fontsize{18pt}{18}\selectfont
   \begin{itemize}
-    \item Parámetros fuera de rango
-      \vspace{20px}
-    \item 2 alarmas por sensor
-      \vspace{20px}
-    \item Indicación visual: Rojo/Verde
+    \item Análisis del Proyecto
+      \vspace{10px}
+    \item Hardware
+      \vspace{10px}
+    \item Software
+      \vspace{10px}
+    \item Plataforma web
+      \vspace{10px}
+    \item Informes y conclusiones
   \end{itemize}	
 \end{frame}
 
 
-\section{Implementación}
-
+\subsection{Hardware}
 \begin{frame}{\textbf{\LARGE{CIAA-NXP}}}
   \vspace{-.7cm}
   \begin{figure}[H]
-    {\includegraphics[width=.7\textwidth]{./imagenes/ciaa.png}}
+    {\includegraphics[width=1\textwidth]{./imagenes/ciaa.png}}
   \end{figure}	
 \end{frame}
 
-\begin{frame}{\textbf{\LARGE{Arquitectura del Software}}}
+\begin{frame}{\textbf{\LARGE{Diseño del simulador del sistema}}}
+  \vspace{-.7cm}
+  \begin{figure}[H]
+    {\includegraphics[width=1\textwidth]{./imagenes/pcb_3d.png}}
+  \end{figure}	
 \end{frame}
 
-\begin{frame}{\textbf{\LARGE{Interfaz Web}}}
-  \Wider{
-    \begin{figure}[H]
-    \end{figure}	  	  	
-  }
+\begin{frame}{\textbf{\LARGE{Prototipo experimental}}}
+  \vspace{-.7cm}
+  \begin{figure}[H]
+    {\includegraphics[width=.5\textwidth]{./imagenes/placa_basica.jpg}}
+  \end{figure}	
+\end{frame}
+
+\subsection{Software}
+\begin{frame}{\textbf{\LARGE{Software}}}
+  \fontsize{18pt}{18}\selectfont
+    \begin{itemize}
+      \item CIAA Firmware Project
+      \vspace{15px}
+      \item Real Time Operating System (RTOS)
+      \vspace{15px}
+      \item LwIP
+    \end{itemize}
+
 \end{frame}
 
 
-\begin{frame}{\textbf{\LARGE{Interfaz Web}}}
-  \Wider{
-  }  	  	
-\end{frame}
+\subsection{Plataforma Web}
 
-\begin{frame}{\textbf{\LARGE{Tecnologías utilizadas}}}
+\begin{frame}{\textbf{\LARGE{Tecnologías Utilizadas}}}
   \fontsize{18pt}{18}\selectfont
   \begin{itemize}
     \item Webserver HTTP 2.0
@@ -274,16 +313,65 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}{\textbf{\LARGE{Interfaz Web}}}
+  \vspace{-.7cm}
+  \begin{figure}[H]
+    {\includegraphics[width=1\textwidth]{./imagenes/web_monitoreo.png}}
+  \end{figure}	
+\end{frame}
+
+\begin{frame}{\textbf{\LARGE{Menus de Configuración}}}
+  \vspace{-.7cm}
+  \begin{figure}[H]
+    {\includegraphics[width=1\textwidth]{./imagenes/web_menus.png}}
+  \end{figure}	
+\end{frame}
+
+\begin{frame}{\textbf{\LARGE{Configuración de Temperatura}}}
+  \vspace{-.7cm}
+  \begin{figure}[H]
+    {\includegraphics[width=1\textwidth]{./imagenes/config_temp.png}}
+  \end{figure}	
+\end{frame}
+
+\begin{frame}{\textbf{\LARGE{Configuración de Actuadores}}}
+  \vspace{-.7cm}
+  \begin{figure}[H]
+    {\includegraphics[width=1\textwidth]{./imagenes/config_act.png}}
+  \end{figure}	
+\end{frame}
+
+\begin{frame}{\textbf{\LARGE{Configuración de Contactos}}}
+  \vspace{-.7cm}
+  \begin{figure}[H]
+    {\includegraphics[width=1\textwidth]{./imagenes/config_Modem.png}}
+  \end{figure}	
+\end{frame}
+
+\begin{frame}{\textbf{\LARGE{Alarma por consumo de Batería}}}
+  \vspace{-.7cm}
+  \begin{figure}[H]
+    {\includegraphics[width=1\textwidth]{./imagenes/config_bat.png}}
+  \end{figure}	
+\end{frame}
+
+\begin{frame}{\textbf{\LARGE{Configuración de la Red}}}
+  \vspace{-.7cm}
+  \begin{figure}[H]
+    {\includegraphics[width=1\textwidth]{./imagenes/config_network.png}}
+  \end{figure}	
+\end{frame}
+
 \section{Conclusiones}
 
 \begin{frame}{\textbf{\LARGE{Conclusiones}}}
   \fontsize{16pt}{16}\selectfont
   \begin{itemize}
-    \item Se desarrolló un firmware que cumple con los criterios de aceptación.
+    \item Realizar un control manual y automático del sistema
       \vspace{10px}
     \item Se aplicaron los conocimientos adquiridos en la carrera para obtener un sistema embebido sobre la CIAA-NXP.
       \vspace{10px}
-    \item Se logró un código modular con posibilidades de aplicación a otros proyectos.
+    \item Acceder mediante una página web al estado del sistema.
   \end{itemize}
 \end{frame}
 
