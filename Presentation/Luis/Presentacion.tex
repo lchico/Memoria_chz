@@ -92,45 +92,50 @@
 }
 
 \begin{document}
-
 \begin{frame}[plain,noframenumbering]
   \begin{center}
     \vspace{5px}	
     \large\textbf{Carrera de Especialización en Sistemas Embebidos}\\
-    \vspace{10px}
-    \Large\textbf{Presentación de Trabajo Final}\\
     \vspace{5px}
-    \hfill
-      \begin{beamercolorbox}[center,dp=2ex,ht=.25\textheight, wd=1\paperwidth]{bgcolor}
-        \huge\textbf{Control automático del proceso de fermentación de vino usando la CIAA}\\
+    \Large\textbf{Presentación de Trabajo Final}\\
+    \vspace{10px}
+    \hspace{-20px}
+      \begin{beamercolorbox}[center,dp=2ex,ht=.22\textheight, wd=1\paperwidth]{bgcolor}
+        \large\textbf{Control automático del proceso de fermentación de vino usando la CIAA}\\
           \vspace{5px}
-        \Large\textbf{Ing. Luis Enrique Chico Capistrano}\\
-        %\texttt{pbos@fi.uba.ar}
+        \large{Ing. Luis Enrique Chico Capistrano}
+        %\texttt{lchico@fi.uba.ar}
       \end{beamercolorbox}
-    \hfill\hfill
-    \\
-    \vspace{-5px}
-    \begin{minipage}[t]{0.4\textwidth}
+    \hfill
+    \vspace{5px}
+    %\vfill
+    \begin{minipage}[t]{0.6\textwidth}
       \begin{flushleft} \large
+        \hspace{-20px}
         \textbf{Director:}\\
+        \vspace{5px}
         Ing. Juan Manuel Cruz\\
-      \end{flushleft}
-    \end{minipage}
-    \begin{minipage}[t]{0.4\textwidth}
-      \begin{flushright} \large
+        \vspace{5px}
+        \hspace{-20px}
         \textbf{Jurados:} \\
+        \vspace{5px}
         Dr. Ing. Pablo Gomez (FIUBA) \\
         Esp. Ing. Franco Bucafusco\\
         Esp. Ing. Sergio De Jesús Meleán\\
+      \end{flushleft}
+    \end{minipage}
+    \begin{minipage}[t]{0.3\textwidth}
+      \vspace{12px}
+      \begin{flushright} \large
+        \vfill
+        \begin{figure}[H]
+          \includegraphics[width=2cm]{./imagenes/logo_facu_circle}
+        \end{figure}	
       \end{flushright}
     \end{minipage}
-    \vfill
-    \begin{figure}[H]
-      \includegraphics[width=2cm]{./imagenes/logo_facu_circle}
-    \end{figure}	
-    \vspace{5px}
-  \end{center}
+      \end{center}
 \end{frame}
+
 
 % TOC
 \begin{frame}{\textbf{\LARGE{Agenda}}}
@@ -140,7 +145,9 @@
 %%%%%%%%%%%%%%%%
 
 \section{Motivación}
-\begin{frame}{\textbf{\LARGE{¿Cómo se elabora el vino?}}}
+\begin{frame}{\textbf{\LARGE{¿Porqué realizar este proyecto?}}}
+  \fontsize{18pt}{18}\selectfont
+  \vspace{-30px}
   \begin{itemize}
     \item Satisfacer las necesidades de la bodega Chico Zossi.
       \vspace{5px}
@@ -335,9 +342,9 @@
 \end{frame}
 
 \begin{frame}{\textbf{\LARGE{Configuración de Actuadores}}}
-  \vspace{-.7cm}
+  \vspace{-.6cm}
   \begin{figure}[H]
-    {\includegraphics[width=1\textwidth]{./imagenes/config_act.png}}
+    {\includegraphics[width=0.8\textwidth]{./imagenes/config_act.png}}
   \end{figure}	
 \end{frame}
 
@@ -351,7 +358,7 @@
 \begin{frame}{\textbf{\LARGE{Alarma por consumo de Batería}}}
   \vspace{-.7cm}
   \begin{figure}[H]
-    {\includegraphics[width=1\textwidth]{./imagenes/config_bat.png}}
+    {\includegraphics[width=0.8\textwidth]{./imagenes/config_bat.png}}
   \end{figure}	
 \end{frame}
 
@@ -378,52 +385,65 @@
 \begin{frame}{\textbf{\LARGE{Trabajo Futuro}}}
   \fontsize{16pt}{16}\selectfont
   \begin{itemize}
-    \item Migrar el RTOS a freeOSEK.
+    \item Ampliar la capacidad de control a cuatro tanques.
       \vspace{15px}
-    \item Mejorar el soporte para cambios en el dominio de aplicación.
+    \item Ampliar las funcionalidades de los SMS, para consultas y posibles controles. 
       \vspace{15px}
-    \item Optimizar el acceso desde dispositivos móbiles.
+    \item Agregar retroalimentación de sensores y actuadores por hardware para un control más robusto.
+      \vspace{15px}
+    \item Adicionar una opción de control por intervalos de tiempos. 
   \end{itemize}
 \end{frame}
+
+\begin{frame}{\textbf{\LARGE{Gracias por su atención!}}}
+      \begin{figure}[H]
+        {\includegraphics[width=.5\textwidth,clip,trim=2cm 5cm 3cm 2cm]{./imagenes/gracias.jpg}}
+      \end{figure}	
+\end{frame}
+
 
 \begin{frame}[plain,noframenumbering]
   \begin{center}
     \vspace{5px}	
     \large\textbf{Carrera de Especialización en Sistemas Embebidos}\\
-    \vspace{10px}
-    \Large\textbf{Presentación de Trabajo Final}\\
     \vspace{5px}
-    \hfill
-      \begin{beamercolorbox}[center,dp=2ex,ht=.25\textheight, wd=1\paperwidth]{bgcolor}
-        \huge\textbf{Control de acuario con la CIAA}\\
+    \Large\textbf{Presentación de Trabajo Final}\\
+    \vspace{10px}
+    \hspace{-20px}
+      \begin{beamercolorbox}[center,dp=2ex,ht=.22\textheight, wd=1\paperwidth]{bgcolor}
+        \large\textbf{Control automático del proceso de fermentación de vino usando la CIAA}\\
           \vspace{5px}
-        \Large\textbf{Ing. Patricio Bos}\\
-        %\texttt{pbos@fi.uba.ar}
+        \large{Ing. Luis Enrique Chico Capistrano}
+        %\texttt{lchico@fi.uba.ar}
       \end{beamercolorbox}
-    \hfill\hfill
-    \\
-    \vspace{-5px}
+    \hfill
+    \vspace{5px}
     %\vfill
-    \begin{minipage}[t]{0.4\textwidth}
+    \begin{minipage}[t]{0.6\textwidth}
       \begin{flushleft} \large
+        \hspace{-20px}
         \textbf{Director:}\\
+        \vspace{5px}
         Ing. Juan Manuel Cruz\\
+        \vspace{5px}
+        \hspace{-20px}
+        \textbf{Jurados:} \\
+        \vspace{5px}
+        Dr. Ing. Pablo Gomez (FIUBA) \\
+        Esp. Ing. Franco Bucafusco\\
+        Esp. Ing. Sergio De Jesús Meleán\\
       \end{flushleft}
     \end{minipage}
-    \begin{minipage}[t]{0.4\textwidth}
+    \begin{minipage}[t]{0.3\textwidth}
+      \vspace{12px}
       \begin{flushright} \large
-        \textbf{Jurados:} \\
-        Ing. Ramiro Alonso \\
-        Ing. Eric Pernia\\
-        Ing. Pablo Ridolfi\\
+        \vfill
+        \begin{figure}[H]
+          \includegraphics[width=2cm]{./imagenes/logo_facu_circle}
+        \end{figure}	
       \end{flushright}
     \end{minipage}
-    \vfill
-    \begin{figure}[H]
-      \includegraphics[width=2cm]{./imagenes/logo_facu_circle}
-    \end{figure}	
-    \vspace{5px}
-  \end{center}
+      \end{center}
 \end{frame}
 
 
