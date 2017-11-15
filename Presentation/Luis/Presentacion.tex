@@ -109,7 +109,7 @@
     \hfill
     \vspace{5px}
     %\vfill
-    \begin{minipage}[t]{0.6\textwidth}
+    \begin{minipage}[t]{0.75\textwidth}
       \begin{flushleft} \large
         \hspace{-20px}
         \textbf{Director:}\\
@@ -120,11 +120,11 @@
         \textbf{Jurados:} \\
         \vspace{5px}
         Dr. Ing. Pablo Gomez (FIUBA) \\
-        Esp. Ing. Franco Bucafusco\\
-        Esp. Ing. Sergio De Jesús Meleán\\
+        Esp. Ing. Franco Bucafusco (CESE)\\
+        Esp. Ing. Sergio De Jesús Meleán (CESE)\\
       \end{flushleft}
     \end{minipage}
-    \begin{minipage}[t]{0.3\textwidth}
+    \begin{minipage}[t]{0.2\textwidth}
       \vspace{12px}
       \begin{flushright} \large
         \vfill
@@ -151,7 +151,7 @@
   \begin{itemize}
     \item Satisfacer las necesidades de la bodega Chico Zossi.
       \vspace{5px}
-    \item Implementar en un microcontrolador un sistema de control con iterfaz web.
+    \item Implementar en un microcontrolador un sistema de control con interfaz web.
       \vspace{5px}
     \item Trabajar con la plataforma CIAA.
   \end{itemize}
@@ -202,7 +202,7 @@
     \item Requiere atención 7x24
         \vspace{20px}
     \item Problemas de energía
-        \vspace{10px}
+        \vspace{20px}
     \item Control manual
   \end{itemize}
 \end{frame}
@@ -212,7 +212,7 @@
   \begin{minipage}[c]{1.0\linewidth}
     \centering
       \begin{itemize}
-        \item Monitoreo de la temperatura y el estado de la bateria.
+        \item Monitoreo de la temperatura y el estado de la batería.
           \vspace{10px}
         \item Control de temperatura en forma automática.
           \vspace{10px}      	
@@ -246,8 +246,11 @@
 \begin{frame}{\textbf{\LARGE{Esquema del sistema}}}
   \vspace{-.7cm}
   \begin{figure}[H]
-    {\includegraphics[width=1\textwidth]{./imagenes/diagrama_del_sistema.png}}
+    {\includegraphics[width=.8\textwidth]{./imagenes/diagrama_del_sistema.png}}
   \end{figure}	
+  \vspace{-55px}
+  \hspace{25px}\small\color{black}{Dispositivo}\\
+  \hspace{20px}\small\color{black}{Implementado}
 \end{frame}
 
 
@@ -275,7 +278,7 @@
   \end{figure}	
 \end{frame}
 
-\begin{frame}{\textbf{\LARGE{Diseño del simulador del sistema}}}
+\begin{frame}{\textbf{\LARGE{Diseño simulador del sistema}}}
   \vspace{-.7cm}
   \begin{figure}[H]
     {\includegraphics[width=1\textwidth]{./imagenes/pcb_3d.png}}
@@ -293,7 +296,7 @@
 \begin{frame}{\textbf{\LARGE{Software}}}
   \fontsize{18pt}{18}\selectfont
     \begin{itemize}
-      \item CIAA Firmware Project
+      \item Proyecto CIAA Firmware
       \vspace{15px}
       \item Real Time Operating System (RTOS)
       \vspace{15px}
@@ -378,7 +381,7 @@
       \vspace{10px}
     \item Se aplicaron los conocimientos adquiridos en la carrera para obtener un sistema embebido sobre la CIAA-NXP.
       \vspace{10px}
-    \item Acceder mediante una página web al estado del sistema.
+    \item Permite acceder mediante una página web al estado del sistema.
   \end{itemize}
 \end{frame}
 
@@ -400,52 +403,5 @@
         {\includegraphics[width=.5\textwidth,clip,trim=2cm 5cm 3cm 2cm]{./imagenes/gracias.jpg}}
       \end{figure}	
 \end{frame}
-
-
-\begin{frame}[plain,noframenumbering]
-  \begin{center}
-    \vspace{5px}	
-    \large\textbf{Carrera de Especialización en Sistemas Embebidos}\\
-    \vspace{5px}
-    \Large\textbf{Presentación de Trabajo Final}\\
-    \vspace{10px}
-    \hspace{-20px}
-      \begin{beamercolorbox}[center,dp=2ex,ht=.22\textheight, wd=1\paperwidth]{bgcolor}
-        \large\textbf{Control automático del proceso de fermentación de vino usando la CIAA}\\
-          \vspace{5px}
-        \large{Ing. Luis Enrique Chico Capistrano}
-        %\texttt{lchico@fi.uba.ar}
-      \end{beamercolorbox}
-    \hfill
-    \vspace{5px}
-    %\vfill
-    \begin{minipage}[t]{0.6\textwidth}
-      \begin{flushleft} \large
-        \hspace{-20px}
-        \textbf{Director:}\\
-        \vspace{5px}
-        Ing. Juan Manuel Cruz\\
-        \vspace{5px}
-        \hspace{-20px}
-        \textbf{Jurados:} \\
-        \vspace{5px}
-        Dr. Ing. Pablo Gomez (FIUBA) \\
-        Esp. Ing. Franco Bucafusco\\
-        Esp. Ing. Sergio De Jesús Meleán\\
-      \end{flushleft}
-    \end{minipage}
-    \begin{minipage}[t]{0.3\textwidth}
-      \vspace{12px}
-      \begin{flushright} \large
-        \vfill
-        \begin{figure}[H]
-          \includegraphics[width=2cm]{./imagenes/logo_facu_circle}
-        \end{figure}	
-      \end{flushright}
-    \end{minipage}
-      \end{center}
-\end{frame}
-
-
 
 \end{document}
