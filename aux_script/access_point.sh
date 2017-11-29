@@ -21,6 +21,7 @@ start_ap(){
 
   [ipv4]
   method=shared
+  address1=192.168.1.1/24,192.168.1.1
 
   [ipv6]
   method=auto"

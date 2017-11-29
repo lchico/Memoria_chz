@@ -61,7 +61,7 @@
 
 % specify a logo on the titlepage (you can specify additional logos an include them in 
 % institute command below
-\pgfdeclareimage[height=1.5cm]{titlepagelogo}{imagenes/logo_facu_circle} % placed on the title page
+\pgfdeclareimage[height=1.5cm]{titlepagelogo}{imagenes/logo_chz_circle.jpg} % placed on the title page
 %\pgfdeclareimage[height=1.5cm]{titlepagelogo2}{AAUgraphics/aau_logo_new} % placed on the title page
 \titlegraphic{% is placed on the bottom of the title page
   \pgfuseimage{titlepagelogo}
@@ -120,8 +120,8 @@
         \textbf{Jurados:} \\
         \vspace{5px}
         Dr. Ing. Pablo Gomez (FIUBA) \\
-        Esp. Ing. Franco Bucafusco (CESE)\\
-        Esp. Ing. Sergio De Jesús Meleán (CESE)\\
+        Esp. Ing. Franco Bucafusco (FIUBA)\\
+        Esp. Ing. Sergio De Jesús Meleán (FIUBA)\\
       \end{flushleft}
     \end{minipage}
     \begin{minipage}[t]{0.2\textwidth}
@@ -129,7 +129,7 @@
       \begin{flushright} \large
         \vfill
         \begin{figure}[H]
-          \includegraphics[width=2cm]{./imagenes/logo_facu_circle}
+          \includegraphics[width=2cm]{./imagenes/logo_chz_circle.jpg}
         \end{figure}	
       \end{flushright}
     \end{minipage}
@@ -151,7 +151,7 @@
   \begin{itemize}
     \item Satisfacer las necesidades de la bodega Chico Zossi.
       \vspace{5px}
-    \item Implementar en un microcontrolador un sistema de control con interfaz web.
+    \item Implementar en un microcontrolador un sistema de control con interfáz web.
       \vspace{5px}
     \item Trabajar con la plataforma CIAA.
   \end{itemize}
@@ -169,11 +169,13 @@
 \end{frame}
 
 \begin{frame}{\LARGE{\textbf{Proceso de Fermentación}}}
-  \fontsize{18pt}{18}\selectfont
   \vspace{-30px}
-  \begin{itemize}
+
+  {\fontsize{17pt}{17}\selectfont
+  %\begin{itemize}
       \vspace{15px}
-    \item Vinos Tintos
+  %  \item
+      Vinos Tintos
       \vspace{5px}
       \begin{itemize}
         \item Tiempo de fermentación: 6 a 12 dias
@@ -181,14 +183,16 @@
         \item Temperatura de fermentación: $20^o\ a\ 24^oC$
       \end{itemize}
         \vspace{15px}
-      \item Vinos Blancos
+   %   \item 
+      Vinos Blancos
         \vspace{5px}
         \begin{itemize}
           \item Tiempo de fermentación: 5 a 15 dias
           \vspace{5px}
           \item Temperatura de fermentación: $10^o\ a\ 15^oC$
         \end{itemize}
-  \end{itemize}	
+ % \end{itemize}	
+  }
 \end{frame}
 
 
@@ -207,7 +211,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{\textbf{\LARGE{Alcances del trabajo}}}
+\begin{frame}{\textbf{\LARGE{Alcance del trabajo}}}
   \fontsize{18pt}{18}\selectfont
   \begin{minipage}[c]{1.0\linewidth}
     \centering
@@ -326,49 +330,44 @@
 \begin{frame}{\textbf{\LARGE{Interfaz Web}}}
   \vspace{-.7cm}
   \begin{figure}[H]
-    {\includegraphics[width=1\textwidth]{./imagenes/web_monitoreo.png}}
+    {\includegraphics[width=0.8\textwidth]{./imagenes/web_monitoreo.png}}
   \end{figure}	
 \end{frame}
 
-\begin{frame}{\textbf{\LARGE{Menus de Configuración}}}
-  \vspace{-.7cm}
-  \begin{figure}[H]
-    {\includegraphics[width=1\textwidth]{./imagenes/web_menus.png}}
-  \end{figure}	
-\end{frame}
-
-\begin{frame}{\textbf{\LARGE{Configuración de Temperatura}}}
+\begin{frame}{\textbf{\LARGE{Configuración de temperatura}}}
   \vspace{-.7cm}
   \begin{figure}[H]
     {\includegraphics[width=1\textwidth]{./imagenes/config_temp.png}}
   \end{figure}	
 \end{frame}
 
-\begin{frame}{\textbf{\LARGE{Configuración de Actuadores}}}
-  \vspace{-.6cm}
+\begin{frame}{\textbf{\LARGE{Configuración de actuadores}}}
+  \vspace{-30px}
+  \hspace{5px}
   \begin{figure}[H]
-    {\includegraphics[width=0.8\textwidth]{./imagenes/config_act.png}}
+    \centering
+    {\includegraphics[width=.8\textwidth]{./imagenes/config_act.png}}
   \end{figure}	
 \end{frame}
 
-\begin{frame}{\textbf{\LARGE{Configuración de Contactos}}}
+\begin{frame}{\textbf{\LARGE{Configuración de contactos}}}
   \vspace{-.7cm}
   \begin{figure}[H]
     {\includegraphics[width=1\textwidth]{./imagenes/config_Modem.png}}
   \end{figure}	
 \end{frame}
 
-\begin{frame}{\textbf{\LARGE{Alarma por consumo de Batería}}}
+\begin{frame}{\textbf{\LARGE{Alarma por estado de la batería}}}
   \vspace{-.7cm}
   \begin{figure}[H]
     {\includegraphics[width=0.8\textwidth]{./imagenes/config_bat.png}}
   \end{figure}	
 \end{frame}
 
-\begin{frame}{\textbf{\LARGE{Configuración de la Red}}}
+\begin{frame}{\textbf{\LARGE{Configuración de la red}}}
   \vspace{-.7cm}
   \begin{figure}[H]
-    {\includegraphics[width=1\textwidth]{./imagenes/config_network.png}}
+    {\includegraphics[width=.7\textwidth]{./imagenes/config_network.png}}
   \end{figure}	
 \end{frame}
 
